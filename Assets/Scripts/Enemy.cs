@@ -2,10 +2,10 @@ using UnityEngine;
 
 public abstract class Enemy : HealthSystem
 {
-    private Rigidbody2D _rb;
     public Transform target;
-    [SerializeField] private float _aggroRadius;
-    private bool onAggro = false;
+    [SerializeField] protected float _aggroRadius;
+    protected bool onAggro = false;
+    private Rigidbody2D _rb;
 
     [Header("Movement")]
     public float speed;
@@ -15,13 +15,17 @@ public abstract class Enemy : HealthSystem
     [Header("Attack")]
     [SerializeField] protected int _damage;
     [SerializeField] protected float _nextAttackTime;
-    [SerializeField] protected float _attackCooldown;
+    [SerializeField] protected float _nextAttackRate;
+    // The enemy is still attacking
+    protected float _attackingTime = 0f;
+    protected float _attackingRate;
 
-    private void Start()
+    protected virtual void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
         _rb = GetComponent<Rigidbody2D>();
         onAggro = false;
+        _attackingTime = _attackingRate;
     }
 
     private void Update()
@@ -33,18 +37,24 @@ public abstract class Enemy : HealthSystem
     {
         if (target && onAggro)
         {
-            RotateTowardsTarget();
+            if (_attackingTime <= 0f)
+            {
+                RotateTowardsTarget();
+            }
 
             if (_nextAttackTime > 0)
             {
                 _nextAttackTime -= Time.deltaTime;
+                _attackingTime -= Time.deltaTime;
             }
             else
             {
                 Attack();
-                _nextAttackTime = _attackCooldown;
+                _nextAttackTime = _nextAttackRate;
+                _attackingTime = _attackingRate;
             }
-        } else
+        }
+        else
         {
             Collider2D[] objects = Physics2D.OverlapCircleAll(gameObject.transform.position, _aggroRadius);
             foreach (Collider2D collider in objects)
@@ -69,7 +79,7 @@ public abstract class Enemy : HealthSystem
         }
     }
 
-    private void RotateTowardsTarget()
+    protected void RotateTowardsTarget()
     {
         Vector2 targetDirection = target.position - transform.position;
         float angle = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg - 90f;
