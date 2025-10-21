@@ -79,7 +79,7 @@ public class Player : HealthSystem
     private void RangedAttack()
     {
         // The bullet damage is in the Bullet script
-        GameObject bullet = BulletPool.Instance.RequestBullet(_facingPoint.transform.position, _facingPoint.transform.rotation);
+        GameObject bullet = BulletPool.Instance.RequestBullet(_facingPoint.transform.position, _facingPoint.transform.rotation, "Player");
     }
 
     public override void Death()

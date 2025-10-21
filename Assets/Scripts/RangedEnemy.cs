@@ -12,7 +12,7 @@ public class RangedEnemy : Enemy
         {
             // Ranged Enemy uses a different rotation too shoot the bullet, is not as lineal as the player
             // See preferences.
-            GameObject bullet = BulletPool.Instance.RequestBullet(_firingPoint.transform.position, transform.rotation);
+            GameObject bullet = BulletPool.Instance.RequestBullet(_firingPoint.transform.position, transform.rotation, "Enemy");
         }
     }
 }
