@@ -1,4 +1,7 @@
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : HealthSystem
 {
@@ -15,17 +18,29 @@ public class Player : HealthSystem
     [SerializeField] private float _attackRangedCooldown;
     [SerializeField] private GameObject _facingPoint;
 
+    [Header("Ui System")]
+    [SerializeField] private Image[] _heartsCanvas;
+    [SerializeField] private Image _hitCooldown;
+    [SerializeField] private Image _shotCooldown;
+    [SerializeField] private TextMeshProUGUI _potionText;
+    [SerializeField] private TextMeshProUGUI _keyText;
 
     private void Update()
     {
         if (_nextMeleeAttackTime > 0)
         {
             _nextMeleeAttackTime -= Time.deltaTime;
+            _hitCooldown.gameObject.SetActive(true);
+            _hitCooldown.fillAmount = _nextMeleeAttackTime / _attackMeleeCooldown;
         }
+
         if (_nextRangedAttackTime > 0)
         {
             _nextRangedAttackTime -= Time.deltaTime;
+            _shotCooldown.gameObject.SetActive(true);
+            _shotCooldown.fillAmount = _nextRangedAttackTime / _attackRangedCooldown;
         }
+
     }
 
     // ATTACK SYSTEM
@@ -72,6 +87,12 @@ public class Player : HealthSystem
         Debug.Log("You died");
     }
 
+    public override void TakeDamage(int damage)
+    {
+        base.TakeDamage(damage);
+
+        UpdateHeartsUI();
+    }
 
     // Comment this function if you don't want to see the melee range attack
     private void OnDrawGizmos()
@@ -88,6 +109,9 @@ public class Player : HealthSystem
         {
             health = maxHealth;
             healingPotions -= 1;
+
+            UpdateHeartsUI();
+            UpdatePotionText();
         }
     }
 
@@ -96,8 +120,30 @@ public class Player : HealthSystem
         if (collision.gameObject.CompareTag("HealingPotion"))
         {
             healingPotions += 1;
+            UpdatePotionText();
             Destroy(collision.gameObject);
         }
+    }
+
+
+    private void UpdateHeartsUI()
+    {
+        for (int i = 0; i < _heartsCanvas.Length; i++)
+        {
+            if (i < health)
+            {
+                _heartsCanvas[i].enabled = true; 
+            }
+            else 
+            {
+                _heartsCanvas[i].enabled = false; 
+            }
+        }
+    }
+
+    private void UpdatePotionText()
+    {
+        _potionText.text = healingPotions.ToString();
     }
 
 }

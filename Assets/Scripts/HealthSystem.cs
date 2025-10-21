@@ -6,12 +6,12 @@ public abstract class HealthSystem : MonoBehaviour
     public int health;
     public int maxHealth = 5;
 
-    public void Awake()
+    public virtual void Awake()
     {
         health = maxHealth;
     }
 
-    public void TakeDamage(int damage)
+    public virtual void TakeDamage(int damage)
     {
         health -= damage;
         if (health <= 0) Death();
