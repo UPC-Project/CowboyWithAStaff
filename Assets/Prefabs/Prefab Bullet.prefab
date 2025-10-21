@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2438810267388415406}
   - component: {fileID: 8026206165736800858}
   - component: {fileID: 5249053401821493386}
-  - component: {fileID: 7477155924531017474}
+  - component: {fileID: 7285174506584126002}
   - component: {fileID: 1198340466200433336}
   m_Layer: 0
   m_Name: Prefab Bullet
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 850543923579291309, guid: 678abe7842142ff4092846c7da3d0c49, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 678abe7842142ff4092846c7da3d0c49, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -120,8 +120,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!70 &7477155924531017474
-CapsuleCollider2D:
+--- !u!58 &7285174506584126002
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -154,9 +154,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.03802184, y: 0.040009912}
-  m_Size: {x: 4.6239567, y: 4.865732}
-  m_Direction: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 6
 --- !u!114 &1198340466200433336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe20263406cd5d142bc6fa37e3b06117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
-  _bulletSpeed: 5
+  _bulletSpeed: 35
   _damage: 1
   _rb: {fileID: 5249053401821493386}
   _lifeTime: 3

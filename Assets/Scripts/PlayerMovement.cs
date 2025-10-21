@@ -6,20 +6,27 @@ public class PlayerMovement : MonoBehaviour
     public float movementForce;
 
     [SerializeField] private Rigidbody2D _rb;
+    [SerializeField] private Animator _animator;
     private PlayerInput _playerInput;
     private Vector2 _input;
+    private Vector2 _lastDirection = Vector2.down;
+
+    [HideInInspector] public bool canMove = true;
 
     [SerializeField] private GameObject _facingPoint;
-    private float distanceFromPlayer = 1f;
+    private float distanceFromPlayer = 2.5f;
 
     private void Start()
     {
         _playerInput = GetComponent<PlayerInput>();
+        canMove = true;
     }
 
 
     private void Update()
     {
+
+        if (!canMove) { _rb.linearVelocity = Vector2.zero; return; }
         // Movement
         _input = _playerInput.actions["Move"].ReadValue<Vector2>();
         _input = _input.normalized;
@@ -32,10 +39,28 @@ public class PlayerMovement : MonoBehaviour
         Quaternion rot = Quaternion.Euler(0f, 0f, angle - 90f);
         _facingPoint.transform.localRotation = rot;
         _facingPoint.transform.localPosition = Quaternion.Euler(0, 0, angle) * new Vector3(distanceFromPlayer, 0, 0);
+
+        // Update animations
+        Vector2 animDir;
+        if (_input.sqrMagnitude > 0.01f)
+        {
+            animDir = _input;
+            _lastDirection = _input;
+        }
+        else
+        {
+            animDir = _lastDirection; // usa la última dirección caminada
+        }
+
+        // Actualizar Animator
+        _animator.SetFloat("horizontal", animDir.x);
+        _animator.SetFloat("vertical", animDir.y);
+        _animator.SetFloat("speed", _input.sqrMagnitude);
     }
 
     private void FixedUpdate()
     {
+        if (!canMove) { _rb.linearVelocity = Vector2.zero; return; }
         _rb.linearVelocity = new Vector2(_input.x * movementForce, _input.y * movementForce);
     }
 

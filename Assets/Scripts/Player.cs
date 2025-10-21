@@ -4,6 +4,11 @@ public class Player : HealthSystem
 {
     public int healingPotions = 0;
 
+    [Header("References")]
+    [SerializeField] private Animator _animator;
+    [SerializeField] private PlayerMovement _playerMovement;
+    [SerializeField] private GameObject _facingPoint;
+
     [Header("Melee Attack")]
     [SerializeField] private int _meleeAttackDamage = 1;
     [SerializeField] private float _nextMeleeAttackTime;
@@ -13,7 +18,8 @@ public class Player : HealthSystem
     [Header("Ranged Attack")]
     [SerializeField] private float _nextRangedAttackTime;
     [SerializeField] private float _attackRangedCooldown;
-    [SerializeField] private GameObject _facingPoint;
+
+    private Vector2 _attackDirection;
 
 
     private void Update()
@@ -32,21 +38,34 @@ public class Player : HealthSystem
     // Triggered when Z key is pressed
     public void OnMeleeAttack()
     {
-        if (_nextMeleeAttackTime <= 0)
-        {
-            MeleeAttack();
-            _nextMeleeAttackTime = _attackMeleeCooldown;
-        }
+        if (_nextMeleeAttackTime > 0) return;
+
+        _attackDirection = (_facingPoint.transform.position - transform.position).normalized;
+
+        _animator.SetFloat("horizontal", _attackDirection.x);
+        _animator.SetFloat("vertical", _attackDirection.y);
+        _animator.SetBool("isAttacking", true);
+
+        _playerMovement.canMove = false;
+
+        _nextMeleeAttackTime = _attackMeleeCooldown;
     }
 
     // Triggered when X key is pressed
     public void OnRangedAttack()
     {
-        if (_nextRangedAttackTime <= 0)
-        {
-            RangedAttack();
-            _nextRangedAttackTime = _attackRangedCooldown;
-        }
+        if (_nextRangedAttackTime > 0) return;
+
+        _attackDirection = (_facingPoint.transform.position - transform.position).normalized;
+
+        _animator.SetFloat("horizontal", _attackDirection.x);
+        _animator.SetFloat("vertical", _attackDirection.y);
+        _animator.SetBool("isAttackingRanged", true);
+
+        _playerMovement.canMove = false;
+
+
+        _nextRangedAttackTime = _attackRangedCooldown;
     }
 
     private void MeleeAttack()
@@ -67,8 +86,18 @@ public class Player : HealthSystem
         GameObject bullet = BulletPool.Instance.RequestBullet(_facingPoint.transform.position, _facingPoint.transform.rotation);
     }
 
+    // Called to notifiy player movement when movement is valid
+    public void EndAttackAnimation()
+    {
+        _animator.SetBool("isAttacking", false);
+        _animator.SetBool("isAttackingRanged", false);
+        _playerMovement.canMove = true;
+    }
+
     public override void Death()
     {
+        _animator.SetBool("isDead", true);
+        _playerMovement.canMove = false;
         Debug.Log("You died");
     }
 
