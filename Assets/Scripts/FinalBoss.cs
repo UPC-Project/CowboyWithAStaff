@@ -1,17 +1,19 @@
 using UnityEngine;
+using System.Collections;
 
 public class FinalBoss : RangedEnemy
 {
-    [SerializeField] private float _nextBrustAttackTime;
     [SerializeField] private int _attackTimeMultiplier = 1;
     [SerializeField] private int _timesAttacked = 0;
+    [SerializeField] private int _restartLoopAt = 2;
     [SerializeField] private bool _firstFase = true;
 
-    protected override void Start()
-    {
-        base.Start();
-        onAggro = true;
-    }
+    [SerializeField] private float _hitRadius;
+    [SerializeField] private bool _isRetreating = false;
+
+    public float safeDistance;
+    public float distanceToStopMelee = 2f;
+    public float retreatSpeed;
 
     protected override void OnUpdate()
     {
@@ -27,28 +29,115 @@ public class FinalBoss : RangedEnemy
                 _nextAttackTime -= Time.deltaTime;
                 _attackingTime -= Time.deltaTime;
             }
-            else
+            // Boss starts with ranged attacks, ends up attacking in melee
+            else if (_firstFase)
             {
-                Attack();
-                if (_timesAttacked == 2)
+                RangedAttack();
+
+                // there is a pattern when attacking
+                if (_timesAttacked == _restartLoopAt)
                 {
                     _timesAttacked = 0;
-                    _attackTimeMultiplier = 2;
                 }
                 else
                 {
                     _timesAttacked++;
-                    _attackTimeMultiplier = 1;
                 }
                 _nextAttackTime = _nextAttackRate * _attackTimeMultiplier;
                 _attackingTime = _attackingRate;
             }
-
-            // Check fase 
-            if (health < health / 2)
+            else if (!_firstFase && !_isRetreating) 
             {
-                _firstFase = false;
+                // there is a pattern when attacking
+                if (_timesAttacked == _restartLoopAt)
+                {
+                    _timesAttacked = 0;
+                }
+                else
+                {
+                    _timesAttacked++;
+                }
+
+                MeleeAttack();
+            }
+
+        }
+
+        // Check fase 
+        if (health < (maxHealth / 2) && _firstFase)
+        {
+            _firstFase = false;
+
+            // Change everything necessary for second fase
+            distanceToStop = distanceToStopMelee;
+            _nextAttackRate = 0;
+            _nextAttackTime = 0;
+            _timesAttacked = 0;
+            _attackingTime = 0;
+            _attackingRate = 0;
+        }
+    }
+
+    protected override void OnFixedUpdate()
+    {
+        if (Vector2.Distance(target.position, transform.position) >= distanceToStop && !_isRetreating && _attackingTime<=0)
+        {
+            _rb.linearVelocity = transform.up * speed;
+        }
+        else
+        {
+            _rb.linearVelocity = new Vector2(0, 0);
+        }
+    }
+
+    private void RangedAttack()
+    {
+        // Default Attack from RangedEnemy class
+        Attack();
+    }
+
+    private void MeleeAttack()
+    {
+        Collider2D[] objects = Physics2D.OverlapCircleAll(gameObject.transform.position, _hitRadius);
+        foreach (Collider2D collider in objects)
+        {
+            if (collider.CompareTag("Player"))
+            {
+                collider.transform.GetComponent<Player>().TakeDamage(_damage);
+                StartCoroutine(Retreat());
+            }
+            if (collider.CompareTag("Bullet"))
+            {
+                // Here should active the destroying bullets animation
+                (collider.gameObject).SetActive(false);
             }
         }
+    }
+
+    private IEnumerator Retreat()
+    {
+        _isRetreating = true;
+
+        while (Vector2.Distance(transform.position, target.position) < safeDistance)
+        {
+            Vector2 dir = (transform.position - target.position).normalized;
+            transform.position += (Vector3)dir * retreatSpeed * Time.deltaTime;
+
+            yield return null;
+        }
+        if(_timesAttacked == _restartLoopAt)
+        {
+            yield return new WaitForSeconds(3f);
+        }
+
+        _isRetreating = false;
+    }
+
+    // Melee attack range
+    protected override void OnDrawGizmos()
+    {
+        base.OnDrawGizmos();
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(gameObject.transform.position, _hitRadius);
     }
 }

@@ -5,7 +5,7 @@ public abstract class Enemy : HealthSystem
     public Transform target;
     [SerializeField] protected float _aggroRadius;
     protected bool onAggro = false;
-    private Rigidbody2D _rb;
+    protected Rigidbody2D _rb;
 
     [Header("Movement")]
     public float speed;
@@ -69,7 +69,12 @@ public abstract class Enemy : HealthSystem
 
     private void FixedUpdate()
     {
-        if (Vector2.Distance(target.position, transform.position) >= distanceToStop && onAggro)
+        OnFixedUpdate();
+    }
+
+    protected virtual void OnFixedUpdate()
+    {
+        if (Vector2.Distance(target.position, transform.position) >= distanceToStop && onAggro && _attackingTime <= 0)
         {
             _rb.linearVelocity = transform.up * speed;
         }

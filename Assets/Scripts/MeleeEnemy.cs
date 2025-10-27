@@ -16,6 +16,7 @@ public class MeleeEnemy : Enemy
         }
     }
 
+    // Melee attack range
     protected override void OnDrawGizmos()
     {
         base.OnDrawGizmos();

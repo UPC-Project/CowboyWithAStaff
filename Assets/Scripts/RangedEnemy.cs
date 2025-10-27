@@ -14,6 +14,19 @@ public class RangedEnemy : Enemy
         _attackingRate= bullets * timeBetweenBullets;
         _attackingTime = _attackingRate;
     }
+
+    protected override void OnFixedUpdate()
+    {
+        if(Vector2.Distance(target.position, transform.position) >= distanceToStop && onAggro && _attackingTime <= 0)
+        {
+            _rb.linearVelocity = transform.up * speed;
+        }
+        else
+        {
+            _rb.linearVelocity = new Vector2(0, 0);
+        }
+    }
+
     protected override void Attack()
     {
         if (Vector2.Distance(target.position, transform.position) <= distanceToShoot)
