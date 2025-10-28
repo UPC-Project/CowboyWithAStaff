@@ -26,7 +26,6 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
 
-        if (!canMove) { _rb.linearVelocity = Vector2.zero; return; }
         // Movement
         _input = _playerInput.actions["Move"].ReadValue<Vector2>();
         _input = _input.normalized;

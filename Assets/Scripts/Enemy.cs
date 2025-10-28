@@ -35,7 +35,13 @@ public abstract class Enemy : HealthSystem
 
     private void Update()
     {
-        // Cooldown is decreased constantly
+        OnUpdate();
+    }
+
+    protected virtual void OnUpdate()
+    {
+        if (!target || !canMove) return;
+
         if (_nextAttackTime > 0f)
             _nextAttackTime -= Time.deltaTime;
 
@@ -51,40 +57,53 @@ public abstract class Enemy : HealthSystem
                 }
             }
         }
-        else
-        {
-            OnUpdate();
-        }
-    }
 
-    protected virtual void OnUpdate()
-    {
-        if (!target || !canMove) return;
+        if (!_onAggro) return;
 
-        // Movement towards player
-        Vector2 dir = (target.position - transform.position).normalized;
+        RotateTowardsTarget();
+
         float dist = Vector2.Distance(transform.position, target.position);
-
-        // Update direction
-        Vector2 animDir = dir.sqrMagnitude > 0.01f ? dir : _lastDirection;
-        if (dir.sqrMagnitude > 0.01f) _lastDirection = dir;
-
-        _animator.SetFloat("horizontal", animDir.x);
-        _animator.SetFloat("vertical", animDir.y);
-        float normalized = Mathf.Clamp01(_rb.linearVelocity.magnitude / speed);
-        _animator.SetFloat("speed", normalized);
-
-        // Movement
-        if (dist > distanceToStop)
-        {
-            _rb.linearVelocity = dir * speed;
-        }
-        else
+        if (dist <= distanceToStop)
         {
             _rb.linearVelocity = Vector2.zero;
             TryAttack();
         }
     }
+
+    private void FixedUpdate()
+    {
+        if (!_onAggro || !canMove || !target)
+        {
+            _rb.linearVelocity = Vector2.zero;
+            return;
+        }
+
+        float dist = Vector2.Distance(transform.position, target.position);
+        if (dist > distanceToStop)
+        {
+            Vector2 dir = (target.position - transform.position).normalized;
+            _rb.linearVelocity = dir * speed;
+        }
+        else
+        {
+            _rb.linearVelocity = Vector2.zero;
+        }
+    }
+
+    protected virtual void RotateTowardsTarget()
+    {
+        Vector2 dir = (target.position - transform.position).normalized;
+
+        Vector2 animDir = dir.sqrMagnitude > 0.01f ? dir : _lastDirection;
+        if (dir.sqrMagnitude > 0.01f)
+            _lastDirection = dir;
+
+        _animator.SetFloat("horizontal", animDir.x);
+        _animator.SetFloat("vertical", animDir.y);
+        float normalized = Mathf.Clamp01(_rb.linearVelocity.magnitude / speed);
+        _animator.SetFloat("speed", normalized);
+    }
+
 
     private void TryAttack()
     {
@@ -110,6 +129,7 @@ public abstract class Enemy : HealthSystem
     {
         canMove = false;
         _animator.SetBool("isDead", true);
+        Destroy(gameObject);
     }
 
     protected abstract void Attack();

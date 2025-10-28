@@ -16,11 +16,6 @@ public class MeleeEnemy : Enemy
         }
     }
 
-    // Called by animation event when the animation is in the hit frame
-    public void OnAttackHit()
-    {
-        Attack();
-    }
 
     protected override void OnDrawGizmos()
     {

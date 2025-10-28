@@ -185,11 +185,11 @@ MonoBehaviour:
   _aggroRadius: 15
   speed: 1.5
   rotateSpeed: 0.05
-  distanceToStop: 1.6
+  distanceToStop: 2
   _damage: 1
   _nextAttackTime: 0
   _attackCooldown: 1
-  _hitRadius: 1.6
+  _hitRadius: 2
 --- !u!95 &5653298736414237399
 Animator:
   serializedVersion: 7
