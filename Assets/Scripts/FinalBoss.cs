@@ -13,6 +13,7 @@ public class FinalBoss : RangedEnemy
 
     public float safeDistance;
     public float distanceToStopMelee = 2f;
+    public float speedSecondFase = 5f;
     public float retreatSpeed;
 
     protected override void OnUpdate()
@@ -34,21 +35,24 @@ public class FinalBoss : RangedEnemy
             {
                 RangedAttack();
 
-                // there is a pattern when attacking
+                // There is a pattern when attacking
+                // The attack sequence is: (attack) - 2sec - (attack) - 2sec - (attack) - 4sec
                 if (_timesAttacked == _restartLoopAt)
                 {
                     _timesAttacked = 0;
+                    _attackTimeMultiplier = 2;
                 }
                 else
                 {
                     _timesAttacked++;
+                    _attackTimeMultiplier = 1;
                 }
                 _nextAttackTime = _nextAttackRate * _attackTimeMultiplier;
                 _attackingTime = _attackingRate;
             }
-            else if (!_firstFase && !_isRetreating) 
+            else if (!_firstFase && !_isRetreating)
             {
-                // there is a pattern when attacking
+                // There is a pattern when attacking
                 if (_timesAttacked == _restartLoopAt)
                 {
                     _timesAttacked = 0;
@@ -70,6 +74,7 @@ public class FinalBoss : RangedEnemy
 
             // Change everything necessary for second fase
             distanceToStop = distanceToStopMelee;
+            speed = speedSecondFase;
             _nextAttackRate = 0;
             _nextAttackTime = 0;
             _timesAttacked = 0;
@@ -80,7 +85,7 @@ public class FinalBoss : RangedEnemy
 
     protected override void OnFixedUpdate()
     {
-        if (Vector2.Distance(target.position, transform.position) >= distanceToStop && !_isRetreating && _attackingTime<=0)
+        if (Vector2.Distance(target.position, transform.position) >= distanceToStop && !_isRetreating && _attackingTime <= 0)
         {
             _rb.linearVelocity = transform.up * speed;
         }
@@ -98,7 +103,7 @@ public class FinalBoss : RangedEnemy
 
     private void MeleeAttack()
     {
-        Collider2D[] objects = Physics2D.OverlapCircleAll(gameObject.transform.position, _hitRadius);
+        Collider2D[] objects = Physics2D.OverlapCircleAll(transform.position, _hitRadius);
         foreach (Collider2D collider in objects)
         {
             if (collider.CompareTag("Player"))
@@ -106,11 +111,11 @@ public class FinalBoss : RangedEnemy
                 collider.transform.GetComponent<Player>().TakeDamage(_damage);
                 StartCoroutine(Retreat());
             }
-            if (collider.CompareTag("Bullet"))
-            {
-                // Here should active the destroying bullets animation
-                (collider.gameObject).SetActive(false);
-            }
+            // Boss destroys bullets when atacking melee, will be implementing depending on the animation
+            //if (collider.CompareTag("Bullet") && ...)
+            //{
+            //    (collider.gameObject).SetActive(false);
+            //}
         }
     }
 
@@ -125,7 +130,8 @@ public class FinalBoss : RangedEnemy
 
             yield return null;
         }
-        if(_timesAttacked == _restartLoopAt)
+        // After 3 attacks, the boss will wait 3 second before restart
+        if (_timesAttacked == _restartLoopAt)
         {
             yield return new WaitForSeconds(3f);
         }
@@ -138,6 +144,6 @@ public class FinalBoss : RangedEnemy
     {
         base.OnDrawGizmos();
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(gameObject.transform.position, _hitRadius);
+        Gizmos.DrawWireSphere(transform.position, _hitRadius);
     }
 }

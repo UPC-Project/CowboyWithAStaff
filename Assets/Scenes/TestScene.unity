@@ -405,13 +405,13 @@ MonoBehaviour:
   _firingPoint: {fileID: 158644729}
   _attackTimeMultiplier: 1
   _timesAttacked: 0
-  _restartLoopAt: 0
+  _restartLoopAt: 2
   _firstFase: 1
   _hitRadius: 1.5
   _isRetreating: 0
   safeDistance: 8
   distanceToStopMelee: 2
-  retreatSpeed: 7
+  retreatSpeed: 10
 --- !u!58 &1687755738
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -542,7 +542,7 @@ Transform:
   m_GameObject: {fileID: 1687755736}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.7, y: -0, z: 0}
+  m_LocalPosition: {x: 10.02, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -670,7 +670,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 11.17
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1019,7 +1019,7 @@ Transform:
   m_GameObject: {fileID: 1996439077}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.3, y: 0, z: 0}
+  m_LocalPosition: {x: -10.46, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
