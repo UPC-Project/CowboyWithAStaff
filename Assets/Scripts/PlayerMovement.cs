@@ -25,7 +25,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-
+        //This line is fundamental for the ranged attack to function properly
+        if (!canMove) { _rb.linearVelocity = Vector2.zero; return; }
+        
         // Movement
         _input = _playerInput.actions["Move"].ReadValue<Vector2>();
         _input = _input.normalized;
