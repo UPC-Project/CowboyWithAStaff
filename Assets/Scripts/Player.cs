@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class Player : HealthSystem
 {
@@ -15,17 +16,6 @@ public class Player : HealthSystem
     [SerializeField] private float _attackRangedCooldown;
     [SerializeField] private GameObject _facingPoint;
 
-
-    //CheckPoint System 
-    private Vector2 _respawnPoint;
-
-    void Start()
-    {
-
-
-
-        _respawnPoint = transform.position;
-    }
 
     private void Update()
     {
@@ -48,7 +38,6 @@ public class Player : HealthSystem
             MeleeAttack();
             _nextMeleeAttackTime = _attackMeleeCooldown;
         }
-        Debug.Log("Melee Attack");
     }
 
     // Triggered when X key is pressed
@@ -59,8 +48,6 @@ public class Player : HealthSystem
             RangedAttack();
             _nextRangedAttackTime = _attackRangedCooldown;
         }
-        Debug.Log("Ranged Attack");
-
     }
 
     private void MeleeAttack()
@@ -83,7 +70,7 @@ public class Player : HealthSystem
 
     public override void Death()
     {
-        Debug.Log("You died");
+        GameState.Instance.Respawn();
     }
 
 
@@ -94,16 +81,6 @@ public class Player : HealthSystem
         Gizmos.DrawWireSphere(gameObject.transform.position, _hitRadius);
     }
 
-    public void SetCheckpoint(Vector2 newPosition)
-    {
-        _respawnPoint = newPosition;
-    }
-
-    public void Respawn()
-    {
-        transform.position = _respawnPoint;
-    }
-    
     // HEAL SYSTEM
     // Triggered when H key is pressed
     public void OnHeal()
@@ -120,7 +97,8 @@ public class Player : HealthSystem
         if (collision.gameObject.CompareTag("HealingPotion"))
         {
             healingPotions += 1;
-            Destroy(collision.gameObject);
+            collision.gameObject.SetActive(false);
+            GameState.Instance.RegisterCollectedItem(collision.gameObject);
         }
     }
 

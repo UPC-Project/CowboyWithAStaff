@@ -6,6 +6,8 @@ public abstract class Enemy : HealthSystem
     public Transform target;
     [SerializeField] private float _aggroRadius;
     private bool onAggro = false;
+    private Player _playerCache;
+    private Vector3 _startPosition;
 
     [Header("Movement")]
     public float speed;
@@ -22,7 +24,9 @@ public abstract class Enemy : HealthSystem
         target = GameObject.FindGameObjectWithTag("Player").transform;
         _rb = GetComponent<Rigidbody2D>();
         onAggro = false;
-    }
+        _playerCache = FindAnyObjectByType<Player>();
+        _startPosition = transform.position;
+}
 
     private void Update()
     {
@@ -84,5 +88,21 @@ public abstract class Enemy : HealthSystem
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(gameObject.transform.position, _aggroRadius);
+    }
+
+    public override void Death()
+    {
+        GameState.Instance.RegisterDefeatedEnemy(this.gameObject);
+        gameObject.SetActive(false);
+        onAggro = false;
+    }
+
+    public void ResetEnemyState()
+    {
+        onAggro = false;
+        _rb = GetComponent<Rigidbody2D>();
+        _rb.linearVelocity = Vector2.zero;
+        _nextAttackTime = 0;
+        transform.position = _startPosition;
     }
 }

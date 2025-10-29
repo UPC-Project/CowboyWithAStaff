@@ -14,11 +14,13 @@ public abstract class HealthSystem : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
-        if (health <= 0)
-        {
-            Death();
-            GetComponent<Player>().Respawn();
-        }
+        if (health <= 0) Death();
+    }
+
+    // Reset healt state for respawn at checkpoint
+    public void ResetHealth()
+    {
+        health = maxHealth;
     }
 
     // if necessary, override this method.
