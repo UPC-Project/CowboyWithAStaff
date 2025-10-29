@@ -3,40 +3,75 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float movementForce;
-
+    [Header("Movement")]
+    public float movementSpeed;
+    public bool isAttacking = false;
     [SerializeField] private Rigidbody2D _rb;
     private PlayerInput _playerInput;
     private Vector2 _input;
 
+    [Header("Mouse Direction")]
     [SerializeField] private GameObject _facingPoint;
-    private float distanceFromPlayer = 1f;
+    private float distanceFromPlayer = 3f;
+
+    [Header("Animation")]
+    [SerializeField] private Animator _animator;
+    private Vector2 _lastDirection = Vector2.down;
 
     private void Start()
     {
         _playerInput = GetComponent<PlayerInput>();
+        isAttacking = false;
     }
 
 
     private void Update()
     {
-        // Movement
-        _input = _playerInput.actions["Move"].ReadValue<Vector2>();
-        _input = _input.normalized;
+        if (!isAttacking)
+        {
+            // Movement
+            _input = _playerInput.actions["Move"].ReadValue<Vector2>();
+            _input = _input.normalized;
 
-        // Aiming with mouse
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 direction = mousePos - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        angle = fixAngle(angle);
-        Quaternion rot = Quaternion.Euler(0f, 0f, angle - 90f);
-        _facingPoint.transform.localRotation = rot;
-        _facingPoint.transform.localPosition = Quaternion.Euler(0, 0, angle) * new Vector3(distanceFromPlayer, 0, 0);
+            // Aiming with mouse
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 direction = mousePos - transform.position;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            angle = fixAngle(angle);
+            Quaternion rot = Quaternion.Euler(0f, 0f, angle - 90f);
+            _facingPoint.transform.localRotation = rot;
+            _facingPoint.transform.localPosition = Quaternion.Euler(0, 0, angle) * new Vector3(distanceFromPlayer, 0, 0);
+
+            // Update animations
+            Vector2 animDir;
+            if (_input.sqrMagnitude > 0.01f)
+            {
+                animDir = _input;
+                _lastDirection = _input;
+            }
+            else
+            {
+                animDir = _lastDirection; // Last walk animation
+            }
+
+            // Actualizar Animator
+            _animator.SetFloat("horizontal", animDir.x);
+            _animator.SetFloat("vertical", animDir.y);
+            _animator.SetFloat("speed", _input.sqrMagnitude);
+        }
     }
 
     private void FixedUpdate()
     {
-        _rb.linearVelocity = new Vector2(_input.x * movementForce, _input.y * movementForce);
+        if (isAttacking)
+        {
+            _rb.linearVelocity = Vector2.zero;
+        }
+        else
+        {
+            _rb.linearVelocity = new Vector2(_input.x * movementSpeed, _input.y * movementSpeed);
+            Debug.Log("asdasd");
+        }
     }
 
     // The animation will be only in 8 angles

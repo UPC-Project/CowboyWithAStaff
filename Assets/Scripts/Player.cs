@@ -3,6 +3,7 @@ using UnityEngine;
 public class Player : HealthSystem
 {
     public int healingPotions = 0;
+    [SerializeField] private PlayerMovement _playerMovement;
 
     [Header("Melee Attack")]
     [SerializeField] private int _meleeAttackDamage = 1;
@@ -14,6 +15,10 @@ public class Player : HealthSystem
     [SerializeField] private float _nextRangedAttackTime;
     [SerializeField] private float _attackRangedCooldown;
     [SerializeField] private GameObject _facingPoint;
+
+    [Header("Animation")]
+    [SerializeField] private Animator _animator;
+    private Vector2 _attackDirection;
 
 
     private void Update()
@@ -34,7 +39,8 @@ public class Player : HealthSystem
     {
         if (_nextMeleeAttackTime <= 0)
         {
-            MeleeAttack();
+            // MeleeAttack() is called in animator
+            AttackAnimation("isAttacking");
             _nextMeleeAttackTime = _attackMeleeCooldown;
         }
     }
@@ -44,9 +50,29 @@ public class Player : HealthSystem
     {
         if (_nextRangedAttackTime <= 0)
         {
-            RangedAttack();
+            // RangedAttack() is called in animator
+            AttackAnimation("isAttackingRanged");
             _nextRangedAttackTime = _attackRangedCooldown;
         }
+    }
+
+    private void AttackAnimation(string attack)
+    {
+        _attackDirection = (_facingPoint.transform.position - transform.position).normalized;
+
+        _animator.SetFloat("horizontal", _attackDirection.x);
+        _animator.SetFloat("vertical", _attackDirection.y);
+        _animator.SetBool(attack, true);
+
+        _playerMovement.isAttacking = true;
+    }
+
+    // Called by the animator when attack is completed
+    public void EndAttackAnimation()
+    {
+        _animator.SetBool("isAttacking", false);
+        _animator.SetBool("isAttackingRanged", false);
+        _playerMovement.isAttacking = false;
     }
 
     private void MeleeAttack()
