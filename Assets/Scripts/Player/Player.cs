@@ -37,22 +37,20 @@ public class Player : HealthSystem
     // Triggered when Z key is pressed
     public void OnMeleeAttack()
     {
-        if (_nextMeleeAttackTime <= 0)
+        if (_nextMeleeAttackTime <= 0 && !_playerMovement.isAttacking)
         {
-            // MeleeAttack() is called in animator
-            AttackAnimation("isAttacking");
-            _nextMeleeAttackTime = _attackMeleeCooldown;
+            AttackAnimation("MeleeAttack");
+            // MeleeAttack() is called in PlayerMeleeAttackStateBehaviour
         }
     }
 
     // Triggered when X key is pressed
     public void OnRangedAttack()
     {
-        if (_nextRangedAttackTime <= 0)
+        if (_nextRangedAttackTime <= 0 && !_playerMovement.isAttacking)
         {
-            // RangedAttack() is called in animator
-            AttackAnimation("isAttackingRanged");
-            _nextRangedAttackTime = _attackRangedCooldown;
+            AttackAnimation("RangedAttack");
+            // RangedAttack() is called in PlayerRangedAttackStateBehaviour
         }
     }
 
@@ -62,32 +60,41 @@ public class Player : HealthSystem
 
         _animator.SetFloat("horizontal", _attackDirection.x);
         _animator.SetFloat("vertical", _attackDirection.y);
-        _animator.SetBool(attack, true);
+        // The trigger starts the animation and enters to the corresponding attack state
+        _animator.SetTrigger(attack); 
 
         _playerMovement.isAttacking = true;
     }
 
-    // Called by the animator when attack is completed
-    public void EndAttackAnimation()
+    // Called by PlayerRangedAttackStateBehaviour/PlayerMeleeAttackStateBehaviour when attack is completed
+    public void OnExitAttackState(bool isMelee)
     {
-        _animator.SetBool("isAttacking", false);
-        _animator.SetBool("isAttackingRanged", false);
         _playerMovement.isAttacking = false;
+        // Cooldown begins once the animation has finished
+        if (isMelee)
+        {
+            _nextMeleeAttackTime = _attackMeleeCooldown;
+        }
+        else
+        {
+            _nextRangedAttackTime = _attackRangedCooldown;
+        }
     }
 
-    private void MeleeAttack()
+    public void MeleeAttack()
     {
         Collider2D[] objects = Physics2D.OverlapCircleAll(gameObject.transform.position, _hitRadius);
         foreach (Collider2D collider in objects)
         {
             if (collider.CompareTag("Enemy"))
             {
+                Debug.Log("found");
                 collider.transform.GetComponent<Enemy>().TakeDamage(_meleeAttackDamage);
             }
         }
     }
 
-    private void RangedAttack()
+    public void RangedAttack()
     {
         // The bullet damage is in the Bullet script
         GameObject bullet = BulletPool.Instance.RequestBullet(_facingPoint.transform.position, _facingPoint.transform.rotation);

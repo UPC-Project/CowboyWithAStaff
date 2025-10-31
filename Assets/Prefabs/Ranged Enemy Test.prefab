@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 1595270020075018596}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.7, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -41,9 +41,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5717694944300907761}
   - component: {fileID: 6290301493939293924}
-  - component: {fileID: 1813520635387683080}
+  - component: {fileID: 2301704372885458823}
   - component: {fileID: 6611640911989574291}
   - component: {fileID: 7758528851404140414}
+  - component: {fileID: 357932377360902129}
   m_Layer: 0
   m_Name: Ranged Enemy Test
   m_TagString: Enemy
@@ -114,8 +115,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 86dcc01d3bbbfd54fac82b915b0e5c18, type: 3}
+  m_Color: {r: 0.9433962, g: 0.8588017, b: 0.6274475, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -125,8 +126,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &1813520635387683080
-BoxCollider2D:
+--- !u!58 &2301704372885458823
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -159,18 +160,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0.085179806, y: 0}
+  m_Radius: 1.0421095
 --- !u!50 &6611640911989574291
 Rigidbody2D:
   serializedVersion: 5
@@ -214,13 +205,38 @@ MonoBehaviour:
   maxHealth: 5
   target: {fileID: 0}
   _aggroRadius: 15
+  _onAggro: 0
+  _animator: {fileID: 357932377360902129}
   speed: 2
-  rotateSpeed: 0.05
   distanceToStop: 8
   _damage: 1
   _nextAttackTime: 0
   _nextAttackRate: 3
+  isAttacking: 0
   distanceToShoot: 12
   bullets: 2
-  timeBetweenBullets: 0.1
-  _firingPoint: {fileID: 1595270020075018596}
+  timeBetweenBullets: 0.15
+  _firingPoint: {fileID: 2764932193950245700}
+  _firingPointDistance: 2
+--- !u!95 &357932377360902129
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8828888363831825223}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a61cfed9c34235c47aaf3efbcb8bd5c1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

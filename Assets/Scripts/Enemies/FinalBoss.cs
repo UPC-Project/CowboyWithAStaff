@@ -16,6 +16,8 @@ public class FinalBoss : RangedEnemy
     public float speedSecondFase = 5f;
     public float retreatSpeed;
 
+    public float _attackingTime;
+    public float _attackingRate;
     protected override void OnUpdate()
     {
         if (target)

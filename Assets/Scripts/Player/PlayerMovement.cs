@@ -70,7 +70,6 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             _rb.linearVelocity = new Vector2(_input.x * movementSpeed, _input.y * movementSpeed);
-            Debug.Log("asdasd");
         }
     }
 
