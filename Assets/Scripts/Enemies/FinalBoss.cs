@@ -16,15 +16,17 @@ public class FinalBoss : RangedEnemy
     public float speedSecondFase = 5f;
     public float retreatSpeed;
 
+    // Parameters wont be necessary when animation is added
     public float _attackingTime;
     public float _attackingRate;
+
     protected override void OnUpdate()
     {
         if (target)
         {
-            if (_attackingTime <= 0f)
+            if (_attackingTime <= 0)
             {
-                RotateTowardsTarget();
+                OldRotateTowardsTarget();
             }
 
             if (_nextAttackTime > 0)
@@ -33,7 +35,7 @@ public class FinalBoss : RangedEnemy
                 _attackingTime -= Time.deltaTime;
             }
             // Boss starts with ranged attacks, ends up attacking in melee
-            else if (_firstFase)
+            else if (_firstFase && PlayerInRangeToAttack())
             {
                 RangedAttack();
 
@@ -66,7 +68,6 @@ public class FinalBoss : RangedEnemy
 
                 MeleeAttack();
             }
-
         }
 
         // Check fase 
@@ -87,9 +88,10 @@ public class FinalBoss : RangedEnemy
 
     protected override void OnFixedUpdate()
     {
-        if (Vector2.Distance(target.position, transform.position) >= distanceToStop && !_isRetreating && _attackingTime <= 0)
+        if (!PlayerInRangeToStop() && !_isRetreating && _attackingTime <= 0)
         {
-            _rb.linearVelocity = transform.up * speed;
+            Vector2 dir = (target.position - transform.position).normalized;
+            _rb.linearVelocity = dir * speed;
         }
         else
         {
@@ -148,4 +150,22 @@ public class FinalBoss : RangedEnemy
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, _hitRadius);
     }
+    // Delete this when animation is implemented, use default rotation from Enemy class
+    private void OldRotateTowardsTarget()
+    {
+        Vector2 targetDirection = target.position - transform.position;
+        float angle = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg - 90f;
+        Quaternion q = Quaternion.Euler(new Vector3(0, 0, angle));
+        float difference = Quaternion.Angle(transform.localRotation, q);
+        transform.localRotation = Quaternion.Slerp(transform.localRotation, q, 0.1f);
+    }
+
+    // Delete this when animation is implemented, use default rotation from RangedEnemy class 
+    public override void Attack()
+    {
+        StartCoroutine(BurstAttack(_firingPoint.position, transform.rotation));
+    }
+
 }
+
+

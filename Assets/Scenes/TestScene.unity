@@ -144,7 +144,7 @@ Transform:
   m_GameObject: {fileID: 158644729}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.7, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -201,6 +201,10 @@ PrefabInstance:
     - target: {fileID: 8828888363831825223, guid: 51a544580d11f654f9095ac6feeac8ba, type: 3}
       propertyPath: m_Name
       value: Ranged Enemy Test
+      objectReference: {fileID: 0}
+    - target: {fileID: 8828888363831825223, guid: 51a544580d11f654f9095ac6feeac8ba, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -362,6 +366,7 @@ GameObject:
   - component: {fileID: 1687755739}
   - component: {fileID: 1687755738}
   - component: {fileID: 1687755737}
+  - component: {fileID: 1687755742}
   m_Layer: 0
   m_Name: Final Boss
   m_TagString: Enemy
@@ -386,7 +391,7 @@ MonoBehaviour:
   target: {fileID: 0}
   _aggroRadius: 0
   _onAggro: 0
-  _animator: {fileID: 0}
+  _animator: {fileID: 1687755742}
   speed: 2
   distanceToStop: 8
   _damage: 1
@@ -397,7 +402,7 @@ MonoBehaviour:
   bullets: 3
   timeBetweenBullets: 0.1
   _firingPoint: {fileID: 158644730}
-  _firingPointDistance: 0
+  _firingPointDistance: 1
   _attackTimeMultiplier: 1
   _timesAttacked: 0
   _restartLoopAt: 2
@@ -409,7 +414,7 @@ MonoBehaviour:
   speedSecondFase: 5
   retreatSpeed: 10
   _attackingTime: 0
-  _attackingRate: 0
+  _attackingRate: 0.4
 --- !u!58 &1687755738
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -540,13 +545,35 @@ Transform:
   m_GameObject: {fileID: 1687755736}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.02, y: -0, z: 0}
+  m_LocalPosition: {x: 10, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 158644730}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1687755742
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687755736}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5a1db202daa79b64e8892d020b55eee1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1898377280
 GameObject:
   m_ObjectHideFlags: 0
