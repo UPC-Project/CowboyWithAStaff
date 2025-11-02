@@ -121,6 +121,11 @@ public abstract class Enemy : HealthSystem
         return distanceToTarget <= distanceToStop;
     }
 
+    public override void Death()
+    {
+        _animator.SetBool("isDead", true);
+    }
+
 
     protected virtual void OnDrawGizmos()
     {

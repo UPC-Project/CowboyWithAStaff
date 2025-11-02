@@ -102,6 +102,7 @@ public class Player : HealthSystem
 
     public override void Death()
     {
+        _animator.SetBool("isDead", true);
         Debug.Log("You died");
     }
 

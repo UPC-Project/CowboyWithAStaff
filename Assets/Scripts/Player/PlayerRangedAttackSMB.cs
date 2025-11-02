@@ -12,7 +12,7 @@ public class PlayerRangedAttackSMB : StateMachineBehaviour
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (!_hasAttacked && stateInfo.normalizedTime >= 0.75f)
+        if (!_hasAttacked && stateInfo.normalizedTime >= 0.62f)
         {
             var player = animator.GetComponentInParent<Player>();
             player?.RangedAttack();
