@@ -100,12 +100,15 @@ public class Player : HealthSystem
         GameObject bullet = BulletPool.Instance.RequestBullet(_facingPoint.transform.position, _facingPoint.transform.rotation);
     }
 
-    public override void Death()
+    public override void StartDeath()
     {
         _animator.SetBool("isDead", true);
-        Debug.Log("You died");
     }
 
+    public override void Death()
+    {
+        Debug.Log("You died");
+    }
 
     // Comment this function if you don't want to see the melee range attack
     private void OnDrawGizmos()

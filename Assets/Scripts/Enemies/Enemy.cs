@@ -121,7 +121,7 @@ public abstract class Enemy : HealthSystem
         return distanceToTarget <= distanceToStop;
     }
 
-    public override void Death()
+    public override void StartDeath()
     {
         _animator.SetBool("isDead", true);
     }
