@@ -1,7 +1,9 @@
 using UnityEngine;
+using System;
 
 public class Player : HealthSystem
 {
+    public event Action OnPlayerDied;
     public int healingPotions = 0;
 
     [Header("Melee Attack")]
@@ -14,6 +16,7 @@ public class Player : HealthSystem
     [SerializeField] private float _nextRangedAttackTime;
     [SerializeField] private float _attackRangedCooldown;
     [SerializeField] private GameObject _facingPoint;
+
 
 
     private void Update()
@@ -69,7 +72,7 @@ public class Player : HealthSystem
 
     public override void Death()
     {
-        Debug.Log("You died");
+        OnPlayerDied?.Invoke();
     }
 
 

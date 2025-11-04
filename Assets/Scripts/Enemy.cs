@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public abstract class Enemy : HealthSystem
@@ -17,11 +18,12 @@ public abstract class Enemy : HealthSystem
     [SerializeField] protected float _nextAttackTime;
     [SerializeField] protected float _attackCooldown;
 
+    public event Action<HealthSystem> OnEnemyDied;
+
     private void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
         _rb = GetComponent<Rigidbody2D>();
-        onAggro = false;
     }
 
     private void Update()
@@ -84,5 +86,17 @@ public abstract class Enemy : HealthSystem
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(gameObject.transform.position, _aggroRadius);
+    }
+
+    public override void Death()
+    {
+        OnEnemyDied?.Invoke(this);
+        base.Death();
+    }
+
+
+    public void ForceAggro ()
+    {
+        onAggro = true;
     }
 }
