@@ -7053,6 +7053,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c8e37680ba5e2e47b262b2839019988, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameState
+  _respawnPoint: {x: 0, y: 0}
+  _activatedEnemiesSinceCheckpoint: []
 --- !u!4 &883561780
 Transform:
   m_ObjectHideFlags: 0
@@ -7493,15 +7495,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8307164122614967128, guid: e90acb46266f57b43a532be2bbf02b76, type: 3}
       propertyPath: m_LocalScale.x
-      value: 30
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8307164122614967128, guid: e90acb46266f57b43a532be2bbf02b76, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8307164122614967128, guid: e90acb46266f57b43a532be2bbf02b76, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 8307164122614967128, guid: e90acb46266f57b43a532be2bbf02b76, type: 3}
       propertyPath: m_LocalPosition.y
@@ -10181,7 +10183,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8307164122614967128, guid: e90acb46266f57b43a532be2bbf02b76, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8307164122614967128, guid: e90acb46266f57b43a532be2bbf02b76, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10590,7 +10592,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8307164122614967128, guid: e90acb46266f57b43a532be2bbf02b76, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8307164122614967128, guid: e90acb46266f57b43a532be2bbf02b76, type: 3}
       propertyPath: m_LocalPosition.x

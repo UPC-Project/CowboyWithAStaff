@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public abstract class Enemy : HealthSystem
@@ -7,6 +8,7 @@ public abstract class Enemy : HealthSystem
     [SerializeField] private float _aggroRadius;
     [SerializeField] private bool onAggro = false;
     private Vector3 _startPosition;
+    private bool _respawnFlag = true;
 
     [Header("Movement")]
     public float speed;
@@ -51,7 +53,7 @@ public abstract class Enemy : HealthSystem
             Collider2D[] objects = Physics2D.OverlapCircleAll(gameObject.transform.position, _aggroRadius);
             foreach (Collider2D collider in objects)
             {
-                if (collider.CompareTag("Player"))
+                if (collider.CompareTag("Player") && _respawnFlag)
                 {
                     onAggro = true;
                     GameState.Instance.RegisterActivatedEnemy(this.gameObject);
@@ -97,11 +99,20 @@ public abstract class Enemy : HealthSystem
 
     public void ResetEnemyState()
     {
+        StartCoroutine(JustRespawn());
         ResetHealth();
         transform.position = _startPosition;
         _nextAttackTime = 0;
         onAggro = false;
         _rb.linearVelocity = Vector2.zero;
         gameObject.SetActive(true);
+    }
+
+    // Avoids activating aggro at respawn
+    IEnumerator JustRespawn()
+    {
+        _respawnFlag = false;
+        yield return new WaitForSeconds(.1f);
+        _respawnFlag = true;
     }
 }

@@ -5,11 +5,11 @@ using UnityEngine;
 public class GameState : MonoBehaviour
 {
     public static GameState Instance;
-    private Vector2 _respawnPoint;
+    [SerializeField] private Vector2 _respawnPoint;
     private int _respawnHealth;
     private int _respawnHealingPotions;
     private List<GameObject> _collectedItemsSinceCheckpoint = new List<GameObject>();
-    private List<GameObject> _activatedEnemiesSinceCheckpoint = new List<GameObject>();
+    [SerializeField] private List<GameObject> _activatedEnemiesSinceCheckpoint = new List<GameObject>();
     private Player _player;
 
     public void Awake()
@@ -32,7 +32,17 @@ public class GameState : MonoBehaviour
         _respawnHealth = _player.health;
         _respawnHealingPotions = _player.healingPotions;
         _collectedItemsSinceCheckpoint.Clear();
-        _activatedEnemiesSinceCheckpoint.Clear();
+
+        foreach (GameObject enemy in _activatedEnemiesSinceCheckpoint.ToList())
+        {
+            // Enemy is already dead and the player has reached a new checkpoint
+            if (!enemy.activeSelf)
+            {
+                _activatedEnemiesSinceCheckpoint.Remove(enemy);
+                Destroy(enemy);
+            }
+            // Any other enemy that has not been killed, will remain on the list
+        }
     }
 
     // Called by Death()
