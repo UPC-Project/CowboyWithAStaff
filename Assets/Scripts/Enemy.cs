@@ -5,8 +5,7 @@ public abstract class Enemy : HealthSystem
     private Rigidbody2D _rb;
     public Transform target;
     [SerializeField] private float _aggroRadius;
-    private bool onAggro = false;
-    private Player _playerCache;
+    [SerializeField] private bool onAggro = false;
     private Vector3 _startPosition;
 
     [Header("Movement")]
@@ -23,10 +22,8 @@ public abstract class Enemy : HealthSystem
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
         _rb = GetComponent<Rigidbody2D>();
-        onAggro = false;
-        _playerCache = FindAnyObjectByType<Player>();
         _startPosition = transform.position;
-}
+    }
 
     private void Update()
     {
@@ -48,7 +45,8 @@ public abstract class Enemy : HealthSystem
                 Attack();
                 _nextAttackTime = _attackCooldown;
             }
-        } else
+        }
+        else
         {
             Collider2D[] objects = Physics2D.OverlapCircleAll(gameObject.transform.position, _aggroRadius);
             foreach (Collider2D collider in objects)
@@ -56,6 +54,7 @@ public abstract class Enemy : HealthSystem
                 if (collider.CompareTag("Player"))
                 {
                     onAggro = true;
+                    GameState.Instance.RegisterActivatedEnemy(this.gameObject);
                 }
             }
         }
@@ -63,7 +62,7 @@ public abstract class Enemy : HealthSystem
 
     private void FixedUpdate()
     {
-        if (Vector2.Distance(target.position, transform.position) >= distanceToStop && onAggro)
+        if ((Vector2.Distance(target.position, transform.position) >= distanceToStop) && onAggro)
         {
             _rb.linearVelocity = transform.up * speed;
         }
@@ -92,17 +91,17 @@ public abstract class Enemy : HealthSystem
 
     public override void Death()
     {
-        GameState.Instance.RegisterDefeatedEnemy(this.gameObject);
         gameObject.SetActive(false);
         onAggro = false;
     }
 
     public void ResetEnemyState()
     {
-        onAggro = false;
-        _rb = GetComponent<Rigidbody2D>();
-        _rb.linearVelocity = Vector2.zero;
-        _nextAttackTime = 0;
+        ResetHealth();
         transform.position = _startPosition;
+        _nextAttackTime = 0;
+        onAggro = false;
+        _rb.linearVelocity = Vector2.zero;
+        gameObject.SetActive(true);
     }
 }

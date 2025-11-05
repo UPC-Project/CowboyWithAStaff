@@ -211,8 +211,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RangedEnemy
   health: 3
+  maxHealth: 5
   target: {fileID: 0}
-  _aggroRadius: 15
+  _aggroRadius: 9
   speed: 2
   rotateSpeed: 0.05
   distanceToStop: 6
