@@ -179,8 +179,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MeleeEnemy
   health: 4
+  maxHealth: 5
   target: {fileID: 0}
-  _aggroRadius: 15
+  _aggroRadius: 8
   speed: 2
   rotateSpeed: 0.05
   distanceToStop: 1.3
