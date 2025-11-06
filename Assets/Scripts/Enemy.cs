@@ -1,11 +1,14 @@
+using System.Collections;
 using UnityEngine;
 
 public abstract class Enemy : HealthSystem
 {
     public Transform target;
     [SerializeField] protected float _aggroRadius;
-    protected bool onAggro = false;
     protected Rigidbody2D _rb;
+    [SerializeField] protected bool onAggro = false;
+    private Vector3 _startPosition;
+    private bool _respawnFlag = true;
 
     [Header("Movement")]
     public float speed;
@@ -24,7 +27,7 @@ public abstract class Enemy : HealthSystem
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
         _rb = GetComponent<Rigidbody2D>();
-        onAggro = false;
+        _startPosition = transform.position;
         _attackingTime = _attackingRate;
     }
 
@@ -59,9 +62,10 @@ public abstract class Enemy : HealthSystem
             Collider2D[] objects = Physics2D.OverlapCircleAll(gameObject.transform.position, _aggroRadius);
             foreach (Collider2D collider in objects)
             {
-                if (collider.CompareTag("Player"))
+                if (collider.CompareTag("Player") && _respawnFlag)
                 {
                     onAggro = true;
+                    GameState.Instance.RegisterActivatedEnemy(this.gameObject);
                 }
             }
         }
@@ -99,5 +103,30 @@ public abstract class Enemy : HealthSystem
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(gameObject.transform.position, _aggroRadius);
+    }
+
+    public override void Death()
+    {
+        gameObject.SetActive(false);
+        onAggro = false;
+    }
+
+    public void ResetEnemyState()
+    {
+        StartCoroutine(JustRespawn());
+        ResetHealth();
+        transform.position = _startPosition;
+        _nextAttackTime = 0;
+        onAggro = false;
+        _rb.linearVelocity = Vector2.zero;
+        gameObject.SetActive(true);
+    }
+
+    // Avoids activating aggro at respawn
+    IEnumerator JustRespawn()
+    {
+        _respawnFlag = false;
+        yield return new WaitForSeconds(.1f);
+        _respawnFlag = true;
     }
 }
