@@ -21,6 +21,8 @@ public abstract class Enemy : HealthSystem
     [SerializeField] protected float _nextAttackRate;
     // The enemy is still attacking
     public bool isAttacking = false;
+    // The enemy is defeated
+    public bool isDead = false;
 
     protected virtual void Start()
     {
@@ -37,7 +39,7 @@ public abstract class Enemy : HealthSystem
     {
         if (target && _onAggro)
         {
-            if (!isAttacking)
+            if (!isAttacking || isDead)
             {
                 RotateTowardsTarget();
             }
@@ -46,7 +48,7 @@ public abstract class Enemy : HealthSystem
             {
                 _nextAttackTime -= Time.deltaTime;
             }
-            else if (PlayerInRangeToAttack() && !isAttacking)
+            else if (PlayerInRangeToAttack() && !isAttacking && !isDead)
             {
                 isAttacking = true;
                 // Here the attack animation starts and calls AttackStateBehaviour.OnStateEnter() function
@@ -74,7 +76,7 @@ public abstract class Enemy : HealthSystem
 
     protected virtual void OnFixedUpdate()
     {
-        if (!PlayerInRangeToStop() && _onAggro && !isAttacking)
+        if (!PlayerInRangeToStop() && _onAggro && !isAttacking && !isDead)
         {
             Vector2 dir = (target.position - transform.position).normalized;
             _rb.linearVelocity = dir * speed;
@@ -124,6 +126,7 @@ public abstract class Enemy : HealthSystem
     public override void StartDeath()
     {
         _animator.SetBool("isDead", true);
+        isDead = true;
     }
 
 
