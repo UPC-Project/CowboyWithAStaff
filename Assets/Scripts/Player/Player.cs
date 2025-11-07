@@ -34,7 +34,7 @@ public class Player : HealthSystem
     }
 
     // ATTACK SYSTEM
-    // Triggered when Z key is pressed
+    // Triggered when Z key or RMB is pressed
     public void OnMeleeAttack()
     {
         if (_nextMeleeAttackTime <= 0 && !_playerMovement.isAttacking)
@@ -44,7 +44,7 @@ public class Player : HealthSystem
         }
     }
 
-    // Triggered when X key is pressed
+    // Triggered when X key or LMB is pressed
     public void OnRangedAttack()
     {
         if (_nextRangedAttackTime <= 0 && !_playerMovement.isAttacking)
@@ -88,7 +88,6 @@ public class Player : HealthSystem
         {
             if (collider.CompareTag("Enemy"))
             {
-                Debug.Log("found");
                 collider.transform.GetComponent<Enemy>().TakeDamage(_meleeAttackDamage);
             }
         }
