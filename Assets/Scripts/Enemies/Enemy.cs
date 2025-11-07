@@ -139,7 +139,7 @@ public abstract class Enemy : Health
     // Avoids activating aggro at respawn
     public override void StartDeath()
     {
-        _animator.SetBool("isDead", true);
+        _animator.SetTrigger("Death");
         isDead = true;
     }
 

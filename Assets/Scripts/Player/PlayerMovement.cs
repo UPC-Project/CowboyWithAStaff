@@ -5,7 +5,8 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
     public float movementSpeed;
-    public bool isAttacking = false;
+    // Is not attacking or not dead
+    public bool canMove = true;
     [SerializeField] private Rigidbody2D _rb;
     private PlayerInput _playerInput;
     private Vector2 _input;
@@ -15,19 +16,18 @@ public class PlayerMovement : MonoBehaviour
     private float distanceFromPlayer = 3f;
 
     [Header("Animation")]
-    [SerializeField] private Animator _animator;
+    [SerializeField] private Animator animator;
     private Vector2 _lastDirection = Vector2.down;
 
     private void Start()
     {
         _playerInput = GetComponent<PlayerInput>();
-        isAttacking = false;
     }
 
 
     private void Update()
     {
-        if (!isAttacking)
+        if (canMove)
         {
             // Movement
             _input = _playerInput.actions["Move"].ReadValue<Vector2>();
@@ -55,21 +55,21 @@ public class PlayerMovement : MonoBehaviour
             }
 
             // Actualizar Animator
-            _animator.SetFloat("horizontal", animDir.x);
-            _animator.SetFloat("vertical", animDir.y);
-            _animator.SetFloat("speed", _input.sqrMagnitude);
+            animator.SetFloat("horizontal", animDir.x);
+            animator.SetFloat("vertical", animDir.y);
+            animator.SetFloat("speed", _input.sqrMagnitude);
         }
     }
 
     private void FixedUpdate()
     {
-        if (isAttacking)
+        if (canMove)
         {
-            _rb.linearVelocity = Vector2.zero;
+            _rb.linearVelocity = new Vector2(_input.x * movementSpeed, _input.y * movementSpeed);
         }
         else
         {
-            _rb.linearVelocity = new Vector2(_input.x * movementSpeed, _input.y * movementSpeed);
+            _rb.linearVelocity = Vector2.zero;
         }
     }
 
