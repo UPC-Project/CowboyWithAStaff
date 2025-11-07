@@ -66,7 +66,7 @@ public class Player : Health
     // Triggered when C key or MMB is pressed
     public void OnBlockSkill()
     {
-        if (_nextBlockTime <= 0 && !_playerMovement.isAttacking)
+        if (_nextBlockTime <= 0 && _playerMovement.canMove)
         {
             // Change when animation is done
             AttackAnimation(PlayerSkill.Block.ToString());
