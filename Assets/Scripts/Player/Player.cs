@@ -34,7 +34,7 @@ public class Player : HealthSystem
     }
 
     // ATTACK SYSTEM
-    // Triggered when Z key is pressed
+    // Triggered when Z key or RMB is pressed
     public void OnMeleeAttack()
     {
         if (_nextMeleeAttackTime <= 0 && !_playerMovement.isAttacking)
@@ -44,7 +44,7 @@ public class Player : HealthSystem
         }
     }
 
-    // Triggered when X key is pressed
+    // Triggered when X key or LMB is pressed
     public void OnRangedAttack()
     {
         if (_nextRangedAttackTime <= 0 && !_playerMovement.isAttacking)
@@ -88,7 +88,6 @@ public class Player : HealthSystem
         {
             if (collider.CompareTag("Enemy"))
             {
-                Debug.Log("found");
                 collider.transform.GetComponent<Enemy>().TakeDamage(_meleeAttackDamage);
             }
         }
@@ -97,7 +96,7 @@ public class Player : HealthSystem
     public void RangedAttack()
     {
         // The bullet damage is in the Bullet script
-        GameObject bullet = BulletPool.Instance.RequestBullet(_facingPoint.transform.position, _facingPoint.transform.rotation);
+        BulletPool.Instance.RequestBullet(_facingPoint.transform.position, _facingPoint.transform.rotation);
     }
 
     public override void StartDeath()
@@ -107,7 +106,7 @@ public class Player : HealthSystem
 
     public override void Death()
     {
-        Debug.Log("You died");
+        GameState.Instance.Respawn();
     }
 
     // Comment this function if you don't want to see the melee range attack
@@ -133,7 +132,8 @@ public class Player : HealthSystem
         if (collision.gameObject.CompareTag("HealingPotion"))
         {
             healingPotions += 1;
-            Destroy(collision.gameObject);
+            collision.gameObject.SetActive(false);
+            GameState.Instance.RegisterCollectedItem(collision.gameObject);
         }
     }
 

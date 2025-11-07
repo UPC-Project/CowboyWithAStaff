@@ -1,11 +1,14 @@
+using System.Collections;
 using UnityEngine;
 
 public abstract class Enemy : HealthSystem
 {
     public Transform target;
+    protected Rigidbody2D _rb;
     [SerializeField] protected float _aggroRadius;
     [SerializeField] protected bool _onAggro = false;
-    protected Rigidbody2D _rb;
+    private Vector3 _startPosition;
+    private bool _respawnFlag = true;
 
     [Header("Animation")]
     [SerializeField] protected Animator _animator;
@@ -28,6 +31,7 @@ public abstract class Enemy : HealthSystem
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
         _rb = GetComponent<Rigidbody2D>();
+        _startPosition = transform.position;
     }
 
     private void Update()
@@ -43,7 +47,7 @@ public abstract class Enemy : HealthSystem
             {
                 RotateTowardsTarget();
             }
-            
+
             if (_nextAttackTime > 0)
             {
                 _nextAttackTime -= Time.deltaTime;
@@ -52,7 +56,7 @@ public abstract class Enemy : HealthSystem
             {
                 isAttacking = true;
                 // Here the attack animation starts and calls AttackStateBehaviour.OnStateEnter() function
-                _animator.SetTrigger("Attack"); 
+                _animator.SetTrigger("Attack");
             }
         }
         else if (!_onAggro)
@@ -60,10 +64,10 @@ public abstract class Enemy : HealthSystem
             Collider2D[] objects = Physics2D.OverlapCircleAll(gameObject.transform.position, _aggroRadius);
             foreach (Collider2D collider in objects)
             {
-                if (collider.CompareTag("Player"))
+                if (collider.CompareTag("Player") && _respawnFlag)
                 {
                     _onAggro = true;
-                    break;
+                    GameState.Instance.RegisterActivatedEnemy(this.gameObject);
                 }
             }
         }
@@ -109,6 +113,35 @@ public abstract class Enemy : HealthSystem
         isAttacking = false;
         // Cooldown begins once the animation has finished
         _nextAttackTime = _nextAttackRate;
+    }
+
+    public override void Death()
+    {
+        gameObject.SetActive(false);
+        _onAggro = false;
+    }
+
+    public void ResetEnemyState()
+    {
+        StartCoroutine(JustRespawn());
+        ResetHealth();
+        transform.position = _startPosition;
+        _nextAttackTime = 0;
+        _onAggro = false;
+        _rb.linearVelocity = Vector2.zero;
+        // This will change when implemented death animation
+        _animator.SetFloat("horizontal", 0f);
+        _animator.SetFloat("vertical", -1f);
+        gameObject.SetActive(true);
+    }
+
+    // UTILS
+    // Avoids activating aggro at respawn
+    IEnumerator JustRespawn()
+    {
+        _respawnFlag = false;
+        yield return new WaitForSeconds(.2f);
+        _respawnFlag = true;
     }
 
     protected virtual bool PlayerInRangeToStop()
