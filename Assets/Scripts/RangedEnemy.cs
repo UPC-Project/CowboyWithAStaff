@@ -17,7 +17,7 @@ public class RangedEnemy : Enemy
 
     protected override void OnFixedUpdate()
     {
-        if(Vector2.Distance(target.position, transform.position) >= distanceToStop && onAggro && _attackingTime <= 0)
+        if(Vector2.Distance(target.position, transform.position) >= distanceToStop && _onAggro && _attackingTime <= 0)
         {
             _rb.linearVelocity = transform.up * speed;
         }

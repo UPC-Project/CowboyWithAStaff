@@ -4,9 +4,9 @@ using UnityEngine;
 public abstract class Enemy : HealthSystem
 {
     public Transform target;
-    [SerializeField] protected float _aggroRadius;
     protected Rigidbody2D _rb;
-    [SerializeField] protected bool onAggro = false;
+    [SerializeField] protected bool _onAggro = false;
+    [SerializeField] protected float _aggroRadius;
     private Vector3 _startPosition;
     private bool _respawnFlag = true;
 
@@ -38,7 +38,7 @@ public abstract class Enemy : HealthSystem
 
     protected virtual void OnUpdate()
     {
-        if (target && onAggro)
+        if (target && _onAggro)
         {
             if (_attackingTime <= 0f)
             {
@@ -64,7 +64,7 @@ public abstract class Enemy : HealthSystem
             {
                 if (collider.CompareTag("Player") && _respawnFlag)
                 {
-                    onAggro = true;
+                    _onAggro = true;
                     GameState.Instance.RegisterActivatedEnemy(this.gameObject);
                 }
             }
@@ -78,7 +78,7 @@ public abstract class Enemy : HealthSystem
 
     protected virtual void OnFixedUpdate()
     {
-        if (Vector2.Distance(target.position, transform.position) >= distanceToStop && onAggro && _attackingTime <= 0)
+        if (Vector2.Distance(target.position, transform.position) >= distanceToStop && _onAggro && _attackingTime <= 0)
         {
             _rb.linearVelocity = transform.up * speed;
         }
@@ -108,7 +108,7 @@ public abstract class Enemy : HealthSystem
     public override void Death()
     {
         gameObject.SetActive(false);
-        onAggro = false;
+        _onAggro = false;
     }
 
     public void ResetEnemyState()
@@ -117,7 +117,7 @@ public abstract class Enemy : HealthSystem
         ResetHealth();
         transform.position = _startPosition;
         _nextAttackTime = 0;
-        onAggro = false;
+        _onAggro = false;
         _rb.linearVelocity = Vector2.zero;
         gameObject.SetActive(true);
     }

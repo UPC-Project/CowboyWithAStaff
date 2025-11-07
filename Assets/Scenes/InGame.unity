@@ -7871,10 +7871,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1019271672}
-  - component: {fileID: 1019271675}
   - component: {fileID: 1019271671}
   - component: {fileID: 1019271676}
   - component: {fileID: 1019271674}
+  - component: {fileID: 1019271675}
   - component: {fileID: 1019271673}
   - component: {fileID: 1019271670}
   m_Layer: 0
@@ -13402,6 +13402,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4347738930083180683, guid: 9a556f5871c94c1429e509364267d88e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7718632321217019906, guid: 9a556f5871c94c1429e509364267d88e, type: 3}
+      propertyPath: _nextAttackTime
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
