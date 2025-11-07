@@ -30,7 +30,6 @@ public abstract class Enemy : HealthSystem
         target = GameObject.FindGameObjectWithTag("Player").transform;
         _rb = GetComponent<Rigidbody2D>();
         _startPosition = transform.position;
->>>>>>>>> Temporary merge branch 2
     }
 
     private void Update()
@@ -128,6 +127,9 @@ public abstract class Enemy : HealthSystem
         _nextAttackTime = 0;
         _onAggro = false;
         _rb.linearVelocity = Vector2.zero;
+        // This will change when implemented death animation
+        _animator.SetFloat("horizontal", 0f);
+        _animator.SetFloat("vertical", -1f);
         gameObject.SetActive(true);
     }
 
