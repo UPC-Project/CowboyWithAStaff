@@ -30,6 +30,7 @@ public abstract class Enemy : HealthSystem
         target = GameObject.FindGameObjectWithTag("Player").transform;
         _rb = GetComponent<Rigidbody2D>();
         _startPosition = transform.position;
+>>>>>>>>> Temporary merge branch 2
     }
 
     private void Update()
