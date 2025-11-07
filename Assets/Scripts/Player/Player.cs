@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Player : HealthSystem
+public class Player : Health
 {
     public int healingPotions = 0;
     [SerializeField] private PlayerMovement _playerMovement;

@@ -6865,7 +6865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c8e37680ba5e2e47b262b2839019988, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameState
-  _respawnPoint: {x: 0, y: 0}
+  _respawnPoint: {x: -4, y: -10}
   _activatedEnemiesSinceCheckpoint: []
 --- !u!4 &883561780
 Transform:
@@ -12915,11 +12915,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3686721714059810549, guid: 5b52c14190872c94a958202b75210e15, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.25
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 3686721714059810549, guid: 5b52c14190872c94a958202b75210e15, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.77
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 3686721714059810549, guid: 5b52c14190872c94a958202b75210e15, type: 3}
       propertyPath: m_LocalPosition.z

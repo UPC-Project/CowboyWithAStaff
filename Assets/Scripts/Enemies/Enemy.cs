@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public abstract class Enemy : HealthSystem
+public abstract class Enemy : Health
 {
     public Transform target;
     protected Rigidbody2D _rb;
@@ -137,6 +137,12 @@ public abstract class Enemy : HealthSystem
 
     // UTILS
     // Avoids activating aggro at respawn
+    public override void StartDeath()
+    {
+        _animator.SetBool("isDead", true);
+        isDead = true;
+    }
+
     IEnumerator JustRespawn()
     {
         _respawnFlag = false;
@@ -155,13 +161,6 @@ public abstract class Enemy : HealthSystem
         float distanceToTarget = Vector2.Distance(transform.position, target.position);
         return distanceToTarget <= distanceToStop;
     }
-
-    public override void StartDeath()
-    {
-        _animator.SetBool("isDead", true);
-        isDead = true;
-    }
-
 
     protected virtual void OnDrawGizmos()
     {

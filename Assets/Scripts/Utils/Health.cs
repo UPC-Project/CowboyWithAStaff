@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class HealthSystem : MonoBehaviour
+public abstract class Health : MonoBehaviour
 {
     [Header("Health")]
     public int health;
@@ -22,7 +22,6 @@ public abstract class HealthSystem : MonoBehaviour
     {
         health = maxHealth;
     }
-
 
     public abstract void StartDeath();
 
