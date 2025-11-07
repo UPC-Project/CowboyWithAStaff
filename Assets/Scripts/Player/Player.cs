@@ -1,4 +1,5 @@
 using UnityEngine;
+using Constants;
 
 public class Player : Health
 {
@@ -16,10 +17,13 @@ public class Player : Health
     [SerializeField] private float _attackRangedCooldown;
     [SerializeField] private GameObject _facingPoint;
 
+    [Header("Block Skill")]
+    [SerializeField] private float _nextBlockTime;
+    [SerializeField] private float _attackBlockCooldown;
+
     [Header("Animation")]
     [SerializeField] private Animator _animator;
     private Vector2 _attackDirection;
-
 
     private void Update()
     {
@@ -31,6 +35,10 @@ public class Player : Health
         {
             _nextRangedAttackTime -= Time.deltaTime;
         }
+        if (_nextBlockTime > 0)
+        {
+            _nextBlockTime -= Time.deltaTime;
+        }
     }
 
     // ATTACK SYSTEM
@@ -39,7 +47,7 @@ public class Player : Health
     {
         if (_nextMeleeAttackTime <= 0 && !_playerMovement.isAttacking)
         {
-            AttackAnimation("MeleeAttack");
+            AttackAnimation(PlayerSkill.MeleeAttack.ToString());
             // MeleeAttack() is called in PlayerMeleeAttackStateBehaviour
         }
     }
@@ -49,9 +57,25 @@ public class Player : Health
     {
         if (_nextRangedAttackTime <= 0 && !_playerMovement.isAttacking)
         {
-            AttackAnimation("RangedAttack");
+            AttackAnimation(PlayerSkill.RangedAttack.ToString());
             // RangedAttack() is called in PlayerRangedAttackStateBehaviour
         }
+    }
+
+    // Triggered when C key or MMB is pressed
+    public void OnBlockSkill()
+    {
+        if (_nextBlockTime <= 0 && !_playerMovement.isAttacking)
+        {
+            // Change when animation is done
+            AttackAnimation(PlayerSkill.Block.ToString());
+            BlockSkill();
+        }
+    }
+
+    private void BlockSkill()
+    {
+        Debug.Log("Block skill activated");
     }
 
     private void AttackAnimation(string attack)
@@ -67,17 +91,20 @@ public class Player : Health
     }
 
     // Called by PlayerRangedAttackStateBehaviour/PlayerMeleeAttackStateBehaviour when attack is completed
-    public void OnExitAttackState(bool isMelee)
+    public void OnExitAttackState(PlayerSkill playerSkill)
     {
         _playerMovement.isAttacking = false;
         // Cooldown begins once the animation has finished
-        if (isMelee)
+        if (playerSkill == PlayerSkill.MeleeAttack)
         {
             _nextMeleeAttackTime = _attackMeleeCooldown;
         }
-        else
+        else if (playerSkill == PlayerSkill.RangedAttack)
         {
             _nextRangedAttackTime = _attackRangedCooldown;
+        } else
+        {
+            _nextBlockTime = _attackBlockCooldown;
         }
     }
 

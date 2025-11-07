@@ -334,8 +334,10 @@ MonoBehaviour:
   _attackMeleeCooldown: 1
   _hitRadius: 3
   _nextRangedAttackTime: 0
-  _attackRangedCooldown: 0.5
+  _attackRangedCooldown: 1
   _facingPoint: {fileID: 5486496809863762681}
+  _nextBlockTime: 0
+  _attackBlockCooldown: 5
   _animator: {fileID: 6881568274525310399}
 --- !u!95 &6881568274525310399
 Animator:

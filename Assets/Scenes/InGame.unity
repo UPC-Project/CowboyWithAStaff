@@ -12953,6 +12953,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7368951889331973350, guid: 5b52c14190872c94a958202b75210e15, type: 3}
+      propertyPath: _attackBlockCooldown
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7368951889331973350, guid: 5b52c14190872c94a958202b75210e15, type: 3}
+      propertyPath: _attackRangedCooldown
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078200177674512349, guid: 5b52c14190872c94a958202b75210e15, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078200177674512349, guid: 5b52c14190872c94a958202b75210e15, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078200177674512349, guid: 5b52c14190872c94a958202b75210e15, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
