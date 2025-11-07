@@ -204,7 +204,7 @@ MonoBehaviour:
   health: 3
   maxHealth: 5
   target: {fileID: 0}
-  _aggroRadius: 15
+  _aggroRadius: 9
   _onAggro: 0
   _animator: {fileID: 357932377360902129}
   speed: 2
