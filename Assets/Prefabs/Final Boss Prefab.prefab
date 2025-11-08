@@ -177,13 +177,15 @@ MonoBehaviour:
   _animator: {fileID: 0}
   speed: 2
   distanceToStop: 8
+  _isRepealing: 0
   _damage: 1
   _nextAttackTime: 0
   _nextAttackRate: 2
   isAttacking: 0
+  isDead: 0
   distanceToShoot: 20
   bullets: 3
-  timeBetweenBullets: 0.1
+  timeBetweenBullets: 0.2
   _firingPoint: {fileID: 3977118988319342750}
   _firingPointDistance: 0
   _attackTimeMultiplier: 1
@@ -197,7 +199,7 @@ MonoBehaviour:
   speedSecondFase: 5
   retreatSpeed: 10
   _attackingTime: 0
-  _attackingRate: 0
+  _attackingRate: 0.6
 --- !u!1 &3670927437408735752
 GameObject:
   m_ObjectHideFlags: 0
