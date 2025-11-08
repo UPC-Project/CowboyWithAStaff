@@ -326,19 +326,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
   health: 5
-  maxHealth: 5
+  maxHealth: 10
   healingPotions: 0
   _playerMovement: {fileID: 3995635937428024576}
   _meleeAttackDamage: 1
   _nextMeleeAttackTime: 0
   _attackMeleeCooldown: 1
-  _hitRadius: 3
+  hitRadius: 3
   _nextRangedAttackTime: 0
   _attackRangedCooldown: 1
   _facingPoint: {fileID: 5486496809863762681}
   _nextBlockTime: 0
   _attackBlockCooldown: 5
+  repelForce: 20
   _animator: {fileID: 6881568274525310399}
+  _isDying: 0
 --- !u!95 &6881568274525310399
 Animator:
   serializedVersion: 7

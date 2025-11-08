@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public abstract class Enemy : Health
 {
@@ -17,6 +18,7 @@ public abstract class Enemy : Health
     [Header("Movement")]
     public float speed;
     public float distanceToStop = 5f;
+    public bool _isRepealing = false;
 
     [Header("Attack")]
     [SerializeField] protected int _damage;
@@ -80,12 +82,12 @@ public abstract class Enemy : Health
 
     protected virtual void OnFixedUpdate()
     {
-        if (!PlayerInRangeToStop() && _onAggro && !isAttacking && !isDead)
+        if (!PlayerInRangeToStop() && _onAggro && !isAttacking && !isDead && !_isRepealing)
         {
             Vector2 dir = (target.position - transform.position).normalized;
             _rb.linearVelocity = dir * speed;
         }
-        else
+        else if (!_isRepealing)
         {
             _rb.linearVelocity = new Vector2(0, 0);
         }
@@ -135,6 +137,13 @@ public abstract class Enemy : Health
         gameObject.SetActive(true);
     }
 
+    public void RepelFromPLayer(Vector3 playerPos, float repelForce)
+    {
+        StartCoroutine(isRepealing());
+        Vector2 dir = -((playerPos - transform.position).normalized);
+        _rb.linearVelocity = dir * repelForce;
+    }
+
     // UTILS
     // Avoids activating aggro at respawn
     public override void StartDeath()
@@ -148,6 +157,13 @@ public abstract class Enemy : Health
         _respawnFlag = false;
         yield return new WaitForSeconds(.2f);
         _respawnFlag = true;
+    }
+
+    IEnumerator isRepealing()
+    {
+        _isRepealing = true;
+        yield return new WaitForSeconds(.2f);
+        _isRepealing = false;
     }
 
     protected virtual bool PlayerInRangeToStop()

@@ -10,7 +10,7 @@ public class Player : Health
     [SerializeField] private int _meleeAttackDamage = 1;
     [SerializeField] private float _nextMeleeAttackTime;
     [SerializeField] private float _attackMeleeCooldown;
-    [SerializeField] private float _hitRadius;
+    public float hitRadius;
 
     [Header("Ranged Attack")]
     [SerializeField] private float _nextRangedAttackTime;
@@ -20,6 +20,7 @@ public class Player : Health
     [Header("Block Skill")]
     [SerializeField] private float _nextBlockTime;
     [SerializeField] private float _attackBlockCooldown;
+    public float repelForce;
 
     [Header("Animation")]
     [SerializeField] private Animator _animator;
@@ -70,13 +71,21 @@ public class Player : Health
         {
             // Change when animation is done
             AttackAnimation(PlayerSkill.Block.ToString());
-            BlockSkill();
+            // Bullets are destroy at the SMB script
+            RepelEnemies();
         }
     }
 
-    private void BlockSkill()
+    private void RepelEnemies()
     {
-        Debug.Log("Block skill activated");
+        Collider2D[] objects = Physics2D.OverlapCircleAll(transform.position, hitRadius * 2);
+        foreach (Collider2D collider in objects)
+        {
+            if (collider.CompareTag("Enemy"))
+            {
+                collider.transform.GetComponent<Enemy>().RepelFromPLayer(transform.position, repelForce);
+            }
+        }
     }
 
     private void AttackAnimation(string attack)
@@ -111,7 +120,7 @@ public class Player : Health
 
     public void MeleeAttack()
     {
-        Collider2D[] objects = Physics2D.OverlapCircleAll(gameObject.transform.position, _hitRadius);
+        Collider2D[] objects = Physics2D.OverlapCircleAll(gameObject.transform.position, hitRadius);
         foreach (Collider2D collider in objects)
         {
             if (collider.CompareTag("Enemy"))
@@ -144,12 +153,7 @@ public class Player : Health
         _playerMovement.canMove = true;
     }
 
-    // Comment this function if you don't want to see the melee range attack
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(gameObject.transform.position, _hitRadius);
-    }
+    
 
     // HEAL SYSTEM
     // Triggered when H key is pressed
@@ -170,6 +174,13 @@ public class Player : Health
             collision.gameObject.SetActive(false);
             GameState.Instance.RegisterCollectedItem(collision.gameObject);
         }
+    }
+
+    // Comment this function if you don't want to see the melee range attack
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(gameObject.transform.position, hitRadius);
     }
 
 }
