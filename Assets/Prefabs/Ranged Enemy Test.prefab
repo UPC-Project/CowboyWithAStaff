@@ -216,9 +216,11 @@ MonoBehaviour:
   _aggroRadius: 9
   speed: 2
   rotateSpeed: 0.05
-  distanceToStop: 6
+  distanceToStop: 8
   _damage: 1
   _nextAttackTime: 0
-  _attackCooldown: 0.5
-  distanceToShoot: 8
+  _nextAttackRate: 3
+  distanceToShoot: 12
+  bullets: 2
+  timeBetweenBullets: 0.1
   _firingPoint: {fileID: 1595270020075018596}

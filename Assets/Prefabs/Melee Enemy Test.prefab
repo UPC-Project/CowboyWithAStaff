@@ -181,11 +181,12 @@ MonoBehaviour:
   health: 4
   maxHealth: 5
   target: {fileID: 0}
+  _onAggro: 0
   _aggroRadius: 8
   speed: 2
   rotateSpeed: 0.05
   distanceToStop: 1.3
   _damage: 1
   _nextAttackTime: 0
-  _attackCooldown: 3
+  _nextAttackRate: 3
   _hitRadius: 1
