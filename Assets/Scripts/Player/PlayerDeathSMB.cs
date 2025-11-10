@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DeathSMB : StateMachineBehaviour
+public class PlayerDeathSMB : StateMachineBehaviour
 {
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {

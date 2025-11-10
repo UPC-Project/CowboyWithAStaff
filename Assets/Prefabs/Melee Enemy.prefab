@@ -171,8 +171,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MeleeEnemy
   health: 5
-  maxHealth: 5
+  maxHealth: 1
   target: {fileID: 0}
+  col2D: {fileID: 0}
+  spriteRenderer: {fileID: 0}
   _aggroRadius: 8
   _onAggro: 0
   _animator: {fileID: 361486152876841280}
@@ -182,6 +184,7 @@ MonoBehaviour:
   _nextAttackTime: 0
   _nextAttackRate: 3
   isAttacking: 0
+  isDead: 0
   _hitRadius: 2.5
 --- !u!95 &361486152876841280
 Animator:

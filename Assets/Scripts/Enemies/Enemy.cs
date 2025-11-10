@@ -5,6 +5,8 @@ public abstract class Enemy : Health
 {
     public Transform target;
     protected Rigidbody2D _rb;
+    public Collider2D col2D;
+    public SpriteRenderer spriteRenderer;
     [SerializeField] protected float _aggroRadius;
     [SerializeField] protected bool _onAggro = false;
     private Vector3 _startPosition;
@@ -31,6 +33,8 @@ public abstract class Enemy : Health
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
         _rb = GetComponent<Rigidbody2D>();
+        col2D = GetComponent<Collider2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         _startPosition = transform.position;
     }
 
@@ -117,29 +121,37 @@ public abstract class Enemy : Health
 
     public override void Death()
     {
+        GameState.Instance.RegisterActivatedEnemy(this.gameObject);
         gameObject.SetActive(false);
         _onAggro = false;
     }
 
     public void ResetEnemyState()
     {
+        gameObject.SetActive(true);
         StartCoroutine(JustRespawn());
         ResetHealth();
         transform.position = _startPosition;
         _nextAttackTime = 0;
         _onAggro = false;
+        isDead = false;
+        var tempColor = spriteRenderer.color;
+        tempColor.a = 1;
+        spriteRenderer.color = tempColor;
+        col2D.enabled = true;
+
+        _animator.SetBool("isDead", false);
         _rb.linearVelocity = Vector2.zero;
         // This will change when implemented death animation
         _animator.SetFloat("horizontal", 0f);
         _animator.SetFloat("vertical", -1f);
-        gameObject.SetActive(true);
     }
 
     // UTILS
     // Avoids activating aggro at respawn
     public override void StartDeath()
     {
-        _animator.SetTrigger("Death");
+        _animator.SetBool("isDead", true);
         isDead = true;
     }
 
@@ -148,6 +160,31 @@ public abstract class Enemy : Health
         _respawnFlag = false;
         yield return new WaitForSeconds(.2f);
         _respawnFlag = true;
+    }
+
+    public void ChangeAlpha()
+    {
+        StartCoroutine(FadeOutCoroutine());
+        col2D.enabled = false;
+    }
+
+    IEnumerator FadeOutCoroutine()
+    {
+        Color color = spriteRenderer.color;
+        float startAlpha = color.a;
+        float elapsed = 0f;
+
+        while (elapsed < 1.2f)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / 1.2f;
+            color.a = Mathf.Lerp(startAlpha, 0f, t);
+            spriteRenderer.color = color;
+            yield return null;
+        }
+
+        color.a = 0f;
+        spriteRenderer.color = color;
     }
 
     protected virtual bool PlayerInRangeToStop()

@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private float distanceFromPlayer = 3f;
 
     [Header("Animation")]
-    [SerializeField] private Animator animator;
+    [SerializeField] private Animator _animator;
     private Vector2 _lastDirection = Vector2.down;
 
     private void Start()
@@ -55,9 +55,9 @@ public class PlayerMovement : MonoBehaviour
             }
 
             // Actualizar Animator
-            animator.SetFloat("horizontal", animDir.x);
-            animator.SetFloat("vertical", animDir.y);
-            animator.SetFloat("speed", _input.sqrMagnitude);
+            _animator.SetFloat("horizontal", animDir.x);
+            _animator.SetFloat("vertical", animDir.y);
+            _animator.SetFloat("speed", _input.sqrMagnitude);
         }
     }
 
