@@ -121,6 +121,7 @@ public abstract class Enemy : HealthSystem
 
     public void ResetEnemyState()
     {
+        gameObject.SetActive(true);
         StartCoroutine(JustRespawn());
         ResetHealth();
         transform.position = _startPosition;
@@ -130,7 +131,6 @@ public abstract class Enemy : HealthSystem
         // This will change when implemented death animation
         _animator.SetFloat("horizontal", 0f);
         _animator.SetFloat("vertical", -1f);
-        gameObject.SetActive(true);
     }
 
     // UTILS
