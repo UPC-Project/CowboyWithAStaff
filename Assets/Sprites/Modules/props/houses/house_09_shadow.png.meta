@@ -1,13 +1,22 @@
 fileFormatVersion: 2
-guid: da001157e07623144ac50018569d35dc
+guid: fd86382d77bbb284f951fdb44c0451aa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8058918097557086119
-    second: houses_00_0
+      213: -6840985722899632693
+    second: house_09_shadow_0
   - first:
-      213: 8235202368544795740
-    second: houses_00_1
+      213: -8090455056975056968
+    second: house_09_shadow_1
+  - first:
+      213: -1346927537071569133
+    second: house_09_shadow_2
+  - first:
+      213: -5535720249944611492
+    second: house_09_shadow_3
+  - first:
+      213: 7161334913525330395
+    second: house_09_shadow_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,13 +112,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: houses_00_0
+      name: house_09_shadow_0
       rect:
         serializedVersion: 2
-        x: 479
-        y: 844
-        width: 372
-        height: 236
+        x: 261
+        y: 43
+        width: 89
+        height: 142
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,20 +127,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7af5bdecf4707df60800000000000000
-      internalID: 8058918097557086119
+      spriteID: bcd6c09eabfef01a0800000000000000
+      internalID: -6840985722899632693
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: houses_00_1
+      name: house_09_shadow_1
       rect:
         serializedVersion: 2
-        x: 538
-        y: 529
-        width: 202
-        height: 298
+        x: 402
+        y: 90
+        width: 56
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +149,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c5c61961ce0594270800000000000000
-      internalID: 8235202368544795740
+      spriteID: 8bf2db1adfde8bf80800000000000000
+      internalID: -8090455056975056968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house_09_shadow_2
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 140
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31748a69a80ce4de0800000000000000
+      internalID: -1346927537071569133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house_09_shadow_3
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 109
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c556d1e13cb2d23b0800000000000000
+      internalID: -5535720249944611492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house_09_shadow_4
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 58
+        width: 28
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd1b746592c226360800000000000000
+      internalID: 7161334913525330395
       vertices: []
       indices: 
       edges: []
@@ -160,8 +235,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      houses_00_0: 8058918097557086119
-      houses_00_1: 8235202368544795740
+      house_09_shadow_0: -6840985722899632693
+      house_09_shadow_1: -8090455056975056968
+      house_09_shadow_2: -1346927537071569133
+      house_09_shadow_3: -5535720249944611492
+      house_09_shadow_4: 7161334913525330395
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

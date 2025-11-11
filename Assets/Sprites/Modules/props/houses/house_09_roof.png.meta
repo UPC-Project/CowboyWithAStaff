@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: c5c4722cc14a21149a477c3cb7480710
+guid: b437fa8f57359e247beb5279af60ec2a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2236065537537159692
-    second: houses_04_0
-  - first:
-      213: 3167569491549769280
-    second: houses_04_1
+      213: -7406792281305370912
+    second: house_09_roof_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: houses_04_0
+      name: house_09_roof_0
       rect:
         serializedVersion: 2
-        x: 677
-        y: 674
-        width: 403
-        height: 406
+        x: 261
+        y: 3
+        width: 260
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,30 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c02356b52c9180f10800000000000000
-      internalID: 2236065537537159692
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: houses_04_1
-      rect:
-        serializedVersion: 2
-        x: 494
-        y: 53
-        width: 323
-        height: 439
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 04e40398ba775fb20800000000000000
-      internalID: 3167569491549769280
+      spriteID: 0ee20bbb9a9c53990800000000000000
+      internalID: -7406792281305370912
       vertices: []
       indices: 
       edges: []
@@ -160,8 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      houses_04_0: 2236065537537159692
-      houses_04_1: 3167569491549769280
+      house_09_roof_0: -7406792281305370912
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 8e71be75b2313db4da4f2326c4c25dda
+guid: c80edddea7b21764a8340bf30cdc1e14
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6379490612127458461
-    second: houses_03_0
-  - first:
-      213: 5352850770194098271
-    second: houses_03_1
-  - first:
-      213: 7624122108071926503
-    second: houses_03_2
+      213: -4900042440235517092
+    second: sheriff_house_roof_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -106,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: houses_03_0
+      name: sheriff_house_roof_0
       rect:
         serializedVersion: 2
-        x: 496
-        y: 79
-        width: 301
-        height: 679
+        x: 142
+        y: 15
+        width: 228
+        height: 213
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,52 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d94ebc769e0888850800000000000000
-      internalID: 6379490612127458461
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: houses_03_1
-      rect:
-        serializedVersion: 2
-        x: 913
-        y: 498
-        width: 167
-        height: 405
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f5868153a65294a40800000000000000
-      internalID: 5352850770194098271
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: houses_03_2
-      rect:
-        serializedVersion: 2
-        x: 479
-        y: 0
-        width: 352
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7ea54d7b9a25ec960800000000000000
-      internalID: 7624122108071926503
+      spriteID: c5b7c65bc5d8ffbb0800000000000000
+      internalID: -4900042440235517092
       vertices: []
       indices: 
       edges: []
@@ -185,9 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      houses_03_0: 6379490612127458461
-      houses_03_1: 5352850770194098271
-      houses_03_2: 7624122108071926503
+      sheriff_house_roof_0: -4900042440235517092
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
