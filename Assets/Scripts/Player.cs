@@ -73,6 +73,7 @@ public class Player : HealthSystem
     public override void Death()
     {
         OnPlayerDied?.Invoke();
+        GameState.Instance.Respawn();
     }
 
 
@@ -99,7 +100,8 @@ public class Player : HealthSystem
         if (collision.gameObject.CompareTag("HealingPotion"))
         {
             healingPotions += 1;
-            Destroy(collision.gameObject);
+            collision.gameObject.SetActive(false);
+            GameState.Instance.RegisterCollectedItem(collision.gameObject);
         }
     }
 
