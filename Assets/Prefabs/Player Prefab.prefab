@@ -312,7 +312,7 @@ MonoBehaviour:
   canMove: 1
   _rb: {fileID: 2292355812158504671}
   _facingPoint: {fileID: 5486496809863762681}
-  animator: {fileID: 6881568274525310399}
+  _animator: {fileID: 6881568274525310399}
 --- !u!114 &7368951889331973350
 MonoBehaviour:
   m_ObjectHideFlags: 0
