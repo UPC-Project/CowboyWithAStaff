@@ -112,26 +112,26 @@ public abstract class Enemy : HealthSystem
     public override void Death()
     {
         OnEnemyDied?.Invoke(this);
-        base.Death();
+        gameObject.SetActive(false);
     }
 
 
-    public void ForceAggro ()
+    public void ForceAggro()
     {
-        onAggro = true;
-        gameObject.SetActive(false);
-        _onAggro = false;
+        gameObject.SetActive(true);
+        _onAggro = true;
     }
 
     public void ResetEnemyState()
     {
+        gameObject.SetActive(true);
         StartCoroutine(JustRespawn());
         ResetHealth();
         transform.position = _startPosition;
         _nextAttackTime = 0;
         _onAggro = false;
         _rb.linearVelocity = Vector2.zero;
-        gameObject.SetActive(true);
+
     }
 
     // Avoids activating aggro at respawn
