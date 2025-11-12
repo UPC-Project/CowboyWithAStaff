@@ -5,6 +5,7 @@ public class Player : Health
 {
     public int healingPotions = 0;
     [SerializeField] private PlayerMovement _playerMovement;
+    public bool _inBossFight = false;
 
     [Header("Melee Attack")]
     [SerializeField] private int _meleeAttackDamage = 1;
@@ -21,6 +22,7 @@ public class Player : Health
     [SerializeField] private float _nextBlockTime;
     [SerializeField] private float _attackBlockCooldown;
     public float repelForce;
+    public bool invulnerable = false;
 
     [Header("Animation")]
     [SerializeField] private Animator _animator;
@@ -43,7 +45,7 @@ public class Player : Health
         }
     }
 
-    // ATTACK SYSTEM
+    // ATTACK
     // Triggered when Z key or RMB is pressed
     public void OnMeleeAttack()
     {
@@ -71,8 +73,9 @@ public class Player : Health
         {
             // Change when animation is done
             AttackAnimation(PlayerSkill.Block.ToString());
+            invulnerable = true;
             // Bullets are destroy at the SMB script
-            RepelEnemies();
+            if (!_inBossFight) RepelEnemies();
         }
     }
 
@@ -114,6 +117,7 @@ public class Player : Health
             _nextRangedAttackTime = _attackRangedCooldown;
         } else
         {
+            invulnerable = false;
             _nextBlockTime = _attackBlockCooldown;
         }
     }
@@ -136,6 +140,7 @@ public class Player : Health
         BulletPool.Instance.RequestBullet(_facingPoint.transform.position, _facingPoint.transform.rotation);
     }
 
+    // DEATH
     public override void StartDeath()
     {
         if (!_isDying)
@@ -153,9 +158,7 @@ public class Player : Health
         _playerMovement.canMove = true;
     }
 
-    
-
-    // HEAL SYSTEM
+    // HEALTH
     // Triggered when H key is pressed
     public void OnHeal()
     {
@@ -164,6 +167,12 @@ public class Player : Health
             health = maxHealth;
             healingPotions -= 1;
         }
+    }
+
+    public override void TakeDamage(int damage)
+    {
+        if (!invulnerable) health -= damage;
+        if (health <= 0) StartDeath();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

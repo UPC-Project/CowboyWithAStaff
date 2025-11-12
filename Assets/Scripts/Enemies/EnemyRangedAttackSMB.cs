@@ -6,7 +6,7 @@ public class EnemyRangedAttackSMB : StateMachineBehaviour
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-            _hasAttacked = false;
+        _hasAttacked = false;
     }
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

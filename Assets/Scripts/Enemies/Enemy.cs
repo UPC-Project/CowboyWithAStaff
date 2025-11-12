@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public abstract class Enemy : Health
 {
@@ -19,15 +18,14 @@ public abstract class Enemy : Health
     public float speed;
     public float distanceToStop = 5f;
     public bool _isRepealing = false;
+    public bool _isStuned = false;
 
     [Header("Attack")]
     [SerializeField] protected int _damage;
     [SerializeField] protected float _nextAttackTime;
     [SerializeField] protected float _nextAttackRate;
-    // The enemy is still attacking
-    public bool isAttacking = false;
-    // The enemy is defeated
-    public bool isDead = false;
+    // The enemy is not attacking nor defeated
+    public bool canMove = true;
 
     protected virtual void Start()
     {
@@ -45,7 +43,7 @@ public abstract class Enemy : Health
     {
         if (target && _onAggro)
         {
-            if (!isAttacking || isDead)
+            if (canMove)
             {
                 RotateTowardsTarget();
             }
@@ -54,9 +52,9 @@ public abstract class Enemy : Health
             {
                 _nextAttackTime -= Time.deltaTime;
             }
-            else if (PlayerInRangeToAttack() && !isAttacking && !isDead)
+            else if (PlayerInRangeToAttack() && canMove)
             {
-                isAttacking = true;
+                canMove = false;
                 // Here the attack animation starts and calls AttackStateBehaviour.OnStateEnter() function
                 _animator.SetTrigger("Attack");
             }
@@ -82,7 +80,7 @@ public abstract class Enemy : Health
 
     protected virtual void OnFixedUpdate()
     {
-        if (!PlayerInRangeToStop() && _onAggro && !isAttacking && !isDead && !_isRepealing)
+        if (!PlayerInRangeToStop() && _onAggro && canMove && !_isRepealing)
         {
             Vector2 dir = (target.position - transform.position).normalized;
             _rb.linearVelocity = dir * speed;
@@ -112,7 +110,7 @@ public abstract class Enemy : Health
     // Called by AttackStateBehaviour when attack is completed
     public void OnExitAttackState()
     {
-        isAttacking = false;
+        canMove = true;
         // Cooldown begins once the animation has finished
         _nextAttackTime = _nextAttackRate;
     }
@@ -137,9 +135,9 @@ public abstract class Enemy : Health
         gameObject.SetActive(true);
     }
 
-    public void RepelFromPLayer(Vector3 playerPos, float repelForce)
+    public virtual void RepelFromPLayer(Vector3 playerPos, float repelForce)
     {
-        StartCoroutine(isRepealing());
+        StartCoroutine(RepealSelf());
         Vector2 dir = -((playerPos - transform.position).normalized);
         _rb.linearVelocity = dir * repelForce;
     }
@@ -149,7 +147,7 @@ public abstract class Enemy : Health
     public override void StartDeath()
     {
         _animator.SetTrigger("Death");
-        isDead = true;
+        canMove = false;
     }
 
     IEnumerator JustRespawn()
@@ -159,11 +157,17 @@ public abstract class Enemy : Health
         _respawnFlag = true;
     }
 
-    IEnumerator isRepealing()
+    IEnumerator RepealSelf()
     {
+        // Repealing enemy
         _isRepealing = true;
         yield return new WaitForSeconds(.2f);
         _isRepealing = false;
+        // Enemy stuned
+        canMove = false;
+        _animator.SetFloat("speed", 0f);
+        yield return new WaitForSeconds(.5f);
+        canMove = true;
     }
 
     protected virtual bool PlayerInRangeToStop()
