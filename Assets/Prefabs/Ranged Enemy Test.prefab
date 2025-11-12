@@ -204,7 +204,9 @@ MonoBehaviour:
   health: 3
   maxHealth: 5
   target: {fileID: 0}
-  _aggroRadius: 9
+  col2D: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  _aggroRadius: 13
   _onAggro: 0
   _animator: {fileID: 357932377360902129}
   speed: 2
@@ -212,7 +214,7 @@ MonoBehaviour:
   _damage: 1
   _nextAttackTime: 0
   _nextAttackRate: 3
-  isAttacking: 0
+  canMove: 1
   distanceToShoot: 12
   bullets: 2
   timeBetweenBullets: 0.15
