@@ -145,6 +145,8 @@ public abstract class Enemy : Health
         // This will change when implemented death animation
         _animator.SetFloat("horizontal", 0f);
         _animator.SetFloat("vertical", -1f);
+        _animator.SetFloat("speed", 0f);
+        _animator.Play("idle",0,0f);
     }
 
     // UTILS

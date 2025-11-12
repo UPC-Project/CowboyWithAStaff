@@ -71,7 +71,7 @@ public class FinalBoss : RangedEnemy
         }
 
         // Check fase 
-        if (health < (maxHealth / 2) && _firstFase)
+        if (health <= (maxHealth / 2) && _firstFase)
         {
             _firstFase = false;
 
