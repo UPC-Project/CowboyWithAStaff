@@ -312,7 +312,7 @@ MonoBehaviour:
   canMove: 1
   _rb: {fileID: 2292355812158504671}
   _facingPoint: {fileID: 5486496809863762681}
-  animator: {fileID: 6881568274525310399}
+  _animator: {fileID: 6881568274525310399}
 --- !u!114 &7368951889331973350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -329,6 +329,7 @@ MonoBehaviour:
   maxHealth: 10
   healingPotions: 0
   _playerMovement: {fileID: 3995635937428024576}
+  _inBossFight: 0
   _meleeAttackDamage: 1
   _nextMeleeAttackTime: 0
   _attackMeleeCooldown: 1
@@ -337,8 +338,9 @@ MonoBehaviour:
   _attackRangedCooldown: 1
   _facingPoint: {fileID: 5486496809863762681}
   _nextBlockTime: 0
-  _attackBlockCooldown: 5
+  _attackBlockCooldown: 7
   repelForce: 20
+  invulnerable: 0
   _animator: {fileID: 6881568274525310399}
   _isDying: 0
 --- !u!95 &6881568274525310399

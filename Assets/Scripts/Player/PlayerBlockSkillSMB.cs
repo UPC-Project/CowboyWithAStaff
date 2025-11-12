@@ -12,12 +12,15 @@ public class PlayerBlockSkillSMB : StateMachineBehaviour
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Collider2D[] objects = Physics2D.OverlapCircleAll(_player.transform.position, _player.hitRadius);
-        foreach (Collider2D collider in objects)
+        if (!_player._inBossFight)
         {
-            if (collider.CompareTag("Bullet"))
+            Collider2D[] objects = Physics2D.OverlapCircleAll(_player.transform.position, _player.hitRadius);
+            foreach (Collider2D collider in objects)
             {
-                collider.gameObject.SetActive(false);
+                if (collider.CompareTag("Bullet"))
+                {
+                    collider.gameObject.SetActive(false);
+                }
             }
         }
     }

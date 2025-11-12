@@ -185,7 +185,7 @@ MonoBehaviour:
   isDead: 0
   distanceToShoot: 20
   bullets: 3
-  timeBetweenBullets: 0.2
+  timeBetweenBullets: 0.1
   _firingPoint: {fileID: 3977118988319342750}
   _firingPointDistance: 0
   _attackTimeMultiplier: 1
@@ -199,7 +199,7 @@ MonoBehaviour:
   speedSecondFase: 5
   retreatSpeed: 10
   _attackingTime: 0
-  _attackingRate: 0.6
+  _attackingRate: 0.3
 --- !u!1 &3670927437408735752
 GameObject:
   m_ObjectHideFlags: 0

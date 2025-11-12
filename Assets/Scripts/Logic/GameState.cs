@@ -68,7 +68,7 @@ public class GameState : MonoBehaviour
     }
     public void RegisterActivatedEnemy(GameObject enemy)
     {
-        _activatedEnemiesSinceCheckpoint.Add(enemy);
+        if (!_activatedEnemiesSinceCheckpoint.Contains(enemy)) _activatedEnemiesSinceCheckpoint.Add(enemy);
     }
 
     public void RegisterCollectedItem(GameObject item)

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -16,14 +17,13 @@ public class PlayerMovement : MonoBehaviour
     private float distanceFromPlayer = 3f;
 
     [Header("Animation")]
-    [SerializeField] private Animator animator;
+    [SerializeField] private Animator _animator;
     private Vector2 _lastDirection = Vector2.down;
 
     private void Start()
     {
         _playerInput = GetComponent<PlayerInput>();
     }
-
 
     private void Update()
     {
@@ -55,9 +55,9 @@ public class PlayerMovement : MonoBehaviour
             }
 
             // Actualizar Animator
-            animator.SetFloat("horizontal", animDir.x);
-            animator.SetFloat("vertical", animDir.y);
-            animator.SetFloat("speed", _input.sqrMagnitude);
+            _animator.SetFloat("horizontal", animDir.x);
+            _animator.SetFloat("vertical", animDir.y);
+            _animator.SetFloat("speed", _input.sqrMagnitude);
         }
     }
 
@@ -72,6 +72,15 @@ public class PlayerMovement : MonoBehaviour
             _rb.linearVelocity = Vector2.zero;
         }
     }
+
+    // See if it's worth it
+    //public IEnumerator Stune()
+    //{
+    //    canMove = false;
+    //    _animator.SetFloat("speed", 0f);
+    //    yield return new WaitForSeconds(.5f);
+    //    canMove = true;
+    //}
 
     // The animation will be only in 8 angles
     private float fixAngle(float angle)
