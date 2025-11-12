@@ -5,8 +5,8 @@ public abstract class Enemy : Health
 {
     public Transform target;
     protected Rigidbody2D _rb;
-    public Collider2D col2D;
-    public SpriteRenderer spriteRenderer;
+    private Collider2D _col2D;
+    private SpriteRenderer _spriteRenderer;
     [SerializeField] protected float _aggroRadius;
     [SerializeField] protected bool _onAggro = false;
     private Vector3 _startPosition;
@@ -33,8 +33,8 @@ public abstract class Enemy : Health
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
         _rb = GetComponent<Rigidbody2D>();
-        col2D = GetComponent<Collider2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        _col2D = GetComponent<Collider2D>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
         _startPosition = transform.position;
     }
 
@@ -134,10 +134,10 @@ public abstract class Enemy : Health
         _nextAttackTime = 0;
         _onAggro = false;
         canMove = true;
-        var tempColor = spriteRenderer.color;
+        var tempColor = _spriteRenderer.color;
         tempColor.a = 1;
-        spriteRenderer.color = tempColor;
-        col2D.enabled = true;
+        _spriteRenderer.color = tempColor;
+        _col2D.enabled = true;
 
         _rb.linearVelocity = Vector2.zero;
         // This will change when implemented death animation
@@ -162,7 +162,7 @@ public abstract class Enemy : Health
         GameState.Instance.RegisterActivatedEnemy(this.gameObject);
         _animator.SetBool("isDead", true);
         canMove = false;
-        col2D.enabled = false;
+        _col2D.enabled = false;
     }
 
     IEnumerator JustRespawn()
@@ -192,7 +192,7 @@ public abstract class Enemy : Health
 
     IEnumerator FadeOutCoroutine()
     {
-        Color color = spriteRenderer.color;
+        Color color = _spriteRenderer.color;
         float startAlpha = color.a;
         float elapsed = 0f;
 
@@ -201,12 +201,12 @@ public abstract class Enemy : Health
             elapsed += Time.deltaTime;
             float t = elapsed / 1.2f;
             color.a = Mathf.Lerp(startAlpha, 0f, t);
-            spriteRenderer.color = color;
+            _spriteRenderer.color = color;
             yield return null;
         }
 
         color.a = 0f;
-        spriteRenderer.color = color;
+        _spriteRenderer.color = color;
     }
 
     protected virtual bool PlayerInRangeToStop()

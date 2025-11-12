@@ -29,6 +29,12 @@ public class Player : Health
     private Vector2 _attackDirection;
     public bool _isDying = false;
 
+    private void Awake()
+    {
+        health = maxHealth;
+        DontDestroyOnLoad(this.gameObject);
+    }
+
     private void Update()
     {
         if (_nextMeleeAttackTime > 0)

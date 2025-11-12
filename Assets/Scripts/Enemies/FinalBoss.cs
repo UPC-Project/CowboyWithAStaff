@@ -22,13 +22,6 @@ public class FinalBoss : RangedEnemy
 
     [SerializeField] private WinGameUI _winGameUI;
 
-    protected override void Start()
-    {
-        base.Start();
-        _playerMovement = target.GetComponent<PlayerMovement>();
-    }
-
-
     protected override void OnUpdate()
     {
         if (target)
@@ -178,10 +171,13 @@ public class FinalBoss : RangedEnemy
         StartCoroutine(BurstAttack(_firingPoint.position, transform.rotation));
     }
 
+    // It's not repealed
+    public override void RepelFromPLayer(Vector3 playerPos, float repelForce) { }
+
     // override not necessary when animation is implemented
     public override void StartDeath()
     {
-        isDead = true;
+        canMove = false;
         // this call will be in Death()
         StartCoroutine(_winGameUI.WinGame());
     }
@@ -189,10 +185,6 @@ public class FinalBoss : RangedEnemy
     {
         //StartCoroutine(WinGame());
     }
-
-    // It's not repealed
-    public override void RepelFromPLayer(Vector3 playerPos, float repelForce) { }
-    
 }
 
 

@@ -4,6 +4,7 @@ using TMPro;
 
 public class WinGameUI : MonoBehaviour
 {
+    [SerializeField] private GameObject _camera;
     [SerializeField] private GameObject _winGameCanvas;
     [SerializeField] private TextMeshProUGUI _textWinGame;
     [SerializeField] private CanvasGroup _buttonsWinGame;
@@ -11,6 +12,7 @@ public class WinGameUI : MonoBehaviour
     public IEnumerator WinGame()
     {
         Time.timeScale = 0f;
+        _camera.SetActive(true);
         _winGameCanvas.SetActive(true);
         yield return new WaitForSecondsRealtime(2f);
         _textWinGame.gameObject.SetActive(true);
