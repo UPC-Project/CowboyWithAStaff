@@ -5,7 +5,8 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
     public float movementSpeed;
-    public bool isAttacking = false;
+    // Is not attacking or not dead
+    public bool canMove = true;
     [SerializeField] private Rigidbody2D _rb;
     private PlayerInput _playerInput;
     private Vector2 _input;
@@ -21,13 +22,12 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         _playerInput = GetComponent<PlayerInput>();
-        isAttacking = false;
     }
 
 
     private void Update()
     {
-        if (!isAttacking)
+        if (canMove)
         {
             // Movement
             _input = _playerInput.actions["Move"].ReadValue<Vector2>();
@@ -63,13 +63,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isAttacking)
+        if (canMove)
         {
-            _rb.linearVelocity = Vector2.zero;
+            _rb.linearVelocity = new Vector2(_input.x * movementSpeed, _input.y * movementSpeed);
         }
         else
         {
-            _rb.linearVelocity = new Vector2(_input.x * movementSpeed, _input.y * movementSpeed);
+            _rb.linearVelocity = Vector2.zero;
         }
     }
 

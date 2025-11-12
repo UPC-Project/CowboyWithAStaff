@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Player : HealthSystem
+public class Player : Health
 {
     public int healingPotions = 0;
     [SerializeField] private PlayerMovement _playerMovement;
@@ -19,6 +19,7 @@ public class Player : HealthSystem
     [Header("Animation")]
     [SerializeField] private Animator _animator;
     private Vector2 _attackDirection;
+    public bool _isDying = false;
 
 
     private void Update()
@@ -37,7 +38,7 @@ public class Player : HealthSystem
     // Triggered when Z key or RMB is pressed
     public void OnMeleeAttack()
     {
-        if (_nextMeleeAttackTime <= 0 && !_playerMovement.isAttacking)
+        if (_nextMeleeAttackTime <= 0 && _playerMovement.canMove)
         {
             AttackAnimation("MeleeAttack");
             // MeleeAttack() is called in PlayerMeleeAttackStateBehaviour
@@ -47,7 +48,7 @@ public class Player : HealthSystem
     // Triggered when X key or LMB is pressed
     public void OnRangedAttack()
     {
-        if (_nextRangedAttackTime <= 0 && !_playerMovement.isAttacking)
+        if (_nextRangedAttackTime <= 0 && _playerMovement.canMove)
         {
             AttackAnimation("RangedAttack");
             // RangedAttack() is called in PlayerRangedAttackStateBehaviour
@@ -61,15 +62,15 @@ public class Player : HealthSystem
         _animator.SetFloat("horizontal", _attackDirection.x);
         _animator.SetFloat("vertical", _attackDirection.y);
         // The trigger starts the animation and enters to the corresponding attack state
-        _animator.SetTrigger(attack); 
+        _animator.SetTrigger(attack);
 
-        _playerMovement.isAttacking = true;
+        _playerMovement.canMove = false;
     }
 
     // Called by PlayerRangedAttackStateBehaviour/PlayerMeleeAttackStateBehaviour when attack is completed
     public void OnExitAttackState(bool isMelee)
     {
-        _playerMovement.isAttacking = false;
+        _playerMovement.canMove = true;
         // Cooldown begins once the animation has finished
         if (isMelee)
         {
@@ -99,11 +100,22 @@ public class Player : HealthSystem
         BulletPool.Instance.RequestBullet(_facingPoint.transform.position, _facingPoint.transform.rotation);
     }
 
+    public override void StartDeath()
+    {
+        if (!_isDying)
+        {
+            _animator.SetTrigger("Death");
+            _playerMovement.canMove = false;
+            _isDying = true;
+        }
+    }
+
     public override void Death()
     {
         GameState.Instance.Respawn();
+        _isDying = false;
+        _playerMovement.canMove = true;
     }
-
 
     // Comment this function if you don't want to see the melee range attack
     private void OnDrawGizmos()

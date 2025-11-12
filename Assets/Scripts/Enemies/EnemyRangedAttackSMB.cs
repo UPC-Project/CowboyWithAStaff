@@ -11,7 +11,7 @@ public class EnemyRangedAttackSMB : StateMachineBehaviour
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (!_hasAttacked && stateInfo.normalizedTime >= 0.5f)
+        if (!_hasAttacked && stateInfo.normalizedTime >= 0.29f)
         {
             var enemy = animator.GetComponentInParent<RangedEnemy>();
             enemy?.Attack();
