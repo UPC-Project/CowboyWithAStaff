@@ -4,25 +4,19 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 using TMPro;
 
-public class BossFight : MonoBehaviour
+public class EnterBossFight : MonoBehaviour
 {
-    private PlayerMovement _playerMovement;
     public List<string> cinematicText;
     [SerializeField] private GameObject _EnterBossFightCanvas;
-    [SerializeField] public TextMeshProUGUI _textCavnas;
-
-    private void Start() 
-    {
-        _playerMovement = FindAnyObjectByType<PlayerMovement>();
-    }
-    public IEnumerator EnterBossFight()
+    [SerializeField] private TextMeshProUGUI _textEnterBossFight;
+    
+    public IEnumerator BossFightCinematic()
     {
         Time.timeScale = 0f;
-        //_playerMovement.canMove = false;
         _EnterBossFightCanvas.SetActive(true);
         foreach (string t in cinematicText)
         {
-            _textCavnas.text = t;
+            _textEnterBossFight.text = t;
             yield return new WaitForSecondsRealtime(3f);
         }
         SceneManager.LoadScene("BossFight");

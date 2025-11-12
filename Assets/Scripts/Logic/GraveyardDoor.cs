@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class GraveyardDoor : MonoBehaviour
 {
-    private BossFight _bossFight;
+    private EnterBossFight _bossFight;
     private void Start()
     {
-        _bossFight = FindAnyObjectByType<BossFight>();
+        _bossFight = FindAnyObjectByType<EnterBossFight>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        StartCoroutine(_bossFight.EnterBossFight()); 
+        StartCoroutine(_bossFight.BossFightCinematic()); 
     }
 }

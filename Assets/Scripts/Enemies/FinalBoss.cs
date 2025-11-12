@@ -20,6 +20,8 @@ public class FinalBoss : RangedEnemy
     public float _attackingTime;
     public float _attackingRate;
 
+    [SerializeField] private WinGameUI _winGameUI;
+
     protected override void OnUpdate()
     {
         if (target)
@@ -164,6 +166,18 @@ public class FinalBoss : RangedEnemy
     public override void Attack()
     {
         StartCoroutine(BurstAttack(_firingPoint.position, transform.rotation));
+    }
+
+    // override not necessary when animation is implemented
+    public override void StartDeath()
+    {
+        isDead = true;
+        // this call will be in Death()
+        StartCoroutine(_winGameUI.WinGame());
+    }
+    public override void Death()
+    {
+        //StartCoroutine(WinGame());
     }
 
 }
