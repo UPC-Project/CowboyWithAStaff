@@ -36,7 +36,7 @@ public abstract class Enemy : Health
         _startPosition = transform.position;
     }
 
-    private void Update()
+    public virtual void Update()
     {
         OnUpdate();
     }

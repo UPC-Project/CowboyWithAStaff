@@ -4,6 +4,21 @@ public class MeleeEnemy : Enemy
 {
     [SerializeField] private float _hitRadius;
 
+    private bool _wasIdleLastFrame;
+    [SerializeField] private AudioSource _idleAudioSource;
+
+    protected override void Start()
+    {
+        base.Start();
+        _wasIdleLastFrame = true;
+        _idleAudioSource.Play();
+    }
+
+    public override void Update()
+    {
+        base.Update();
+        ZombieIdle();
+    }
     public override void Attack()
     {
         FindFirstObjectByType<AudioManager>().Play("ZombieHit");
@@ -31,6 +46,31 @@ public class MeleeEnemy : Enemy
         base.TakeDamage(damage); 
     }
 
+    public void ZombieIdle()
+    {
+
+        float h = _animator.GetFloat("horizontal");
+        float v = _animator.GetFloat("vertical");
+        bool isCurrentlyMoving = Mathf.Abs(h) > 0.1f || Mathf.Abs(v) > 0.1f;
+
+        bool isCurrentlyIdle = !isCurrentlyMoving;
+
+        if (isCurrentlyIdle == _wasIdleLastFrame)
+        {
+            return;
+        }
+
+        if (isCurrentlyIdle)
+        {
+            _idleAudioSource.Play();
+        }
+        else
+        {
+            _idleAudioSource.Stop();
+        }
+
+        _wasIdleLastFrame = isCurrentlyIdle;
+    }
 
     public void PlayFootstepSound()
     {

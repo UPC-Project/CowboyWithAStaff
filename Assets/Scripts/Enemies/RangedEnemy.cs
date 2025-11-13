@@ -8,7 +8,6 @@ public class RangedEnemy : Enemy
     public float timeBetweenBullets = 0.1f;
     [SerializeField] protected Transform _firingPoint;
     [SerializeField] protected float _firingPointDistance;
-
     public override void Attack()
     {
         float h = _animator.GetFloat("horizontal");
@@ -40,6 +39,13 @@ public class RangedEnemy : Enemy
     {
         float distanceToTarget = Vector2.Distance(target.position, transform.position);
         return distanceToTarget <= distanceToShoot;
+    }
+
+    private void IdleSound()
+    {
+
+        FindFirstObjectByType<AudioManager>().Play("SnakeIdle");
+
     }
 
     public void PlayFootstepSound()
