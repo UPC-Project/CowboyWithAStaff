@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 64c09a50ccf5bc14fb9edbeadb28e49b
+guid: fe17ed608a272964b95c189352366bd9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8816266714735831800
-    second: house_10_0
+      213: 8088812288201446253
+    second: house_09_upper_layer_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -50,7 +50,7 @@ TextureImporter:
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 9
-  spritePivot: {x: 0.37128824, y: 0.220358}
+  spritePivot: {x: 0.057327997, y: 0.21911506}
   spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: house_10_0
+      name: house_09_upper_layer_0
       rect:
         serializedVersion: 2
-        x: 68
-        y: 102
-        width: 401
-        height: 288
+        x: 7
+        y: 109
+        width: 412
+        height: 352
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8faede0dddba95a70800000000000000
-      internalID: 8816266714735831800
+      spriteID: d63df057beb314070800000000000000
+      internalID: 8088812288201446253
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      house_10_0: 8816266714735831800
+      house_09_upper_layer_0: 8088812288201446253
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

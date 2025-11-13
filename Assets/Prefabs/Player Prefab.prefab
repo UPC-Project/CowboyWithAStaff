@@ -399,7 +399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db3e84eaa6caa6040b64a1ee1181e5cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  movementSpeed: 7
+  movementSpeed: 8
   canMove: 1
   _rb: {fileID: 2292355812158504671}
   _facingPoint: {fileID: 5486496809863762681}

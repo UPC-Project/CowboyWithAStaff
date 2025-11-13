@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 64c09a50ccf5bc14fb9edbeadb28e49b
+guid: 0c1968907f0fd6e40bb58a3ab3bb6b79
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8816266714735831800
-    second: house_10_0
+      213: 2064146043923075225
+    second: house_08_floor_0
+  - first:
+      213: 4441758832399229198
+    second: house_08_floor_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,8 +52,8 @@ TextureImporter:
   spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 9
-  spritePivot: {x: 0.37128824, y: 0.220358}
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -100,23 +103,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: house_10_0
+      name: house_08_floor_0
       rect:
         serializedVersion: 2
-        x: 68
-        y: 102
-        width: 401
-        height: 288
+        x: 209
+        y: 20
+        width: 117
+        height: 121
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8faede0dddba95a70800000000000000
-      internalID: 8816266714735831800
+      spriteID: 990109004e155ac10800000000000000
+      internalID: 2064146043923075225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: house_08_floor_1
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 66
+        width: 36
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e012c17ef1c44ad30800000000000000
+      internalID: 4441758832399229198
       vertices: []
       indices: 
       edges: []
@@ -126,7 +151,7 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -135,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      house_10_0: 8816266714735831800
+      house_08_floor_0: 2064146043923075225
+      house_08_floor_1: 4441758832399229198
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

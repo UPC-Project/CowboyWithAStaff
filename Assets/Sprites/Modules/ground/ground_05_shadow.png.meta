@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 64c09a50ccf5bc14fb9edbeadb28e49b
+guid: ad68164acb9021c49b17d3f0ad0bd852
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8816266714735831800
-    second: house_10_0
+      213: -8246664953811494871
+    second: ground_05_shadow_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -49,8 +49,8 @@ TextureImporter:
   spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 9
-  spritePivot: {x: 0.37128824, y: 0.220358}
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: house_10_0
+      name: ground_05_shadow_0
       rect:
         serializedVersion: 2
-        x: 68
-        y: 102
-        width: 401
-        height: 288
+        x: 762
+        y: 0
+        width: 305
+        height: 543
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8faede0dddba95a70800000000000000
-      internalID: 8816266714735831800
+      spriteID: 928176ecae5fd8d80800000000000000
+      internalID: -8246664953811494871
       vertices: []
       indices: 
       edges: []
@@ -126,7 +126,7 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      house_10_0: 8816266714735831800
+      ground_05_shadow_0: -8246664953811494871
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
