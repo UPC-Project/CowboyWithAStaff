@@ -20,6 +20,8 @@ public class RangedEnemy : Enemy
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         _firingPoint.localRotation = Quaternion.Euler(0f, 0f, angle - 90f);
 
+        FindFirstObjectByType<AudioManager>().Play("SnakeShoot");
+
         StartCoroutine(BurstAttack(_firingPoint.position, _firingPoint.rotation));
     }
 
@@ -39,4 +41,10 @@ public class RangedEnemy : Enemy
         float distanceToTarget = Vector2.Distance(target.position, transform.position);
         return distanceToTarget <= distanceToShoot;
     }
+
+    public void PlayFootstepSound()
+    {
+        FindFirstObjectByType<AudioManager>().Play("SnakeWalk");
+    }
 }
+

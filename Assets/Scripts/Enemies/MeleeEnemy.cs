@@ -6,6 +6,7 @@ public class MeleeEnemy : Enemy
 
     public override void Attack()
     {
+        FindFirstObjectByType<AudioManager>().Play("ZombieHit");
         Collider2D[] objects = Physics2D.OverlapCircleAll(transform.position, _hitRadius);
         foreach (Collider2D collider in objects)
         {
@@ -22,5 +23,17 @@ public class MeleeEnemy : Enemy
         base.OnDrawGizmos();
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, _hitRadius);
+    }
+
+    public override void TakeDamage(int damage)
+    {
+        FindFirstObjectByType<AudioManager>().Play("ZombieTakeDamage");
+        base.TakeDamage(damage); 
+    }
+
+
+    public void PlayFootstepSound()
+    {
+        FindFirstObjectByType<AudioManager>().Play("ZombieWalk");
     }
 }

@@ -92,12 +92,15 @@ public class Player : Health
                 collider.transform.GetComponent<Enemy>().TakeDamage(_meleeAttackDamage);
             }
         }
+        FindFirstObjectByType<AudioManager>().Play("PlayerMeleeAttack");
+
     }
 
     public void RangedAttack()
     {
         // The bullet damage is in the Bullet script
         BulletPool.Instance.RequestBullet(_facingPoint.transform.position, _facingPoint.transform.rotation);
+        FindFirstObjectByType<AudioManager>().Play("PlayerShoot");
     }
 
     public override void StartDeath()
@@ -130,6 +133,7 @@ public class Player : Health
     {
         if (healingPotions > 0)
         {
+            FindFirstObjectByType<AudioManager>().Play("PotionUse");
             health = maxHealth;
             healingPotions -= 1;
         }
@@ -139,10 +143,16 @@ public class Player : Health
     {
         if (collision.gameObject.CompareTag("HealingPotion"))
         {
+            FindFirstObjectByType<AudioManager>().Play("PotionPickup");
             healingPotions += 1;
             collision.gameObject.SetActive(false);
             GameState.Instance.RegisterCollectedItem(collision.gameObject);
         }
+    }
+
+    public void PlayFootstepSound()
+    {
+        FindFirstObjectByType<AudioManager>().Play("PlayerWalk");
     }
 
 }
