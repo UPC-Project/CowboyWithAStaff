@@ -1,0 +1,1781 @@
+fileFormatVersion: 2
+guid: 282814dab845d1945958a0d9d61ca01c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7509041194680978515
+    second: tombstones_01_0
+  - first:
+      213: -6809128842910212278
+    second: tombstones_01_1
+  - first:
+      213: 862048190234817872
+    second: tombstones_01_2
+  - first:
+      213: -5077715562329986706
+    second: tombstones_01_3
+  - first:
+      213: -4493201983395699863
+    second: tombstones_01_4
+  - first:
+      213: -1529838958228628843
+    second: tombstones_01_5
+  - first:
+      213: 8835692666414722139
+    second: tombstones_01_6
+  - first:
+      213: -293625692021320676
+    second: tombstones_01_7
+  - first:
+      213: 6195549250884292583
+    second: tombstones_01_8
+  - first:
+      213: 4523539839803741380
+    second: tombstones_01_9
+  - first:
+      213: -7796908172893030286
+    second: tombstones_01_10
+  - first:
+      213: 4688993994749150456
+    second: tombstones_01_11
+  - first:
+      213: -2671457163371728032
+    second: tombstones_01_12
+  - first:
+      213: -3078661568681027143
+    second: tombstones_01_13
+  - first:
+      213: -1697367166704483161
+    second: tombstones_01_14
+  - first:
+      213: -9108470011061589901
+    second: tombstones_01_15
+  - first:
+      213: -474279535088376499
+    second: tombstones_01_16
+  - first:
+      213: -723500848767518468
+    second: tombstones_01_17
+  - first:
+      213: 7402392207246304381
+    second: tombstones_01_18
+  - first:
+      213: 5041629379525500202
+    second: tombstones_01_19
+  - first:
+      213: 5602291026685609117
+    second: tombstones_01_20
+  - first:
+      213: 1119745682710347004
+    second: tombstones_01_21
+  - first:
+      213: 4693891259894401910
+    second: tombstones_01_22
+  - first:
+      213: 4910279262455863226
+    second: tombstones_01_23
+  - first:
+      213: -5421477103286899126
+    second: tombstones_01_24
+  - first:
+      213: -6908185216326515239
+    second: tombstones_01_25
+  - first:
+      213: -6284138537590877566
+    second: tombstones_01_26
+  - first:
+      213: -5395838850251574456
+    second: tombstones_01_27
+  - first:
+      213: -5846822716957216090
+    second: tombstones_01_28
+  - first:
+      213: 6690323037366953003
+    second: tombstones_01_29
+  - first:
+      213: -5991786390713101273
+    second: tombstones_01_30
+  - first:
+      213: -391528589545035074
+    second: tombstones_01_31
+  - first:
+      213: 233026546433443526
+    second: tombstones_01_32
+  - first:
+      213: -7404566636518221630
+    second: tombstones_01_33
+  - first:
+      213: -6001486243166789801
+    second: tombstones_01_34
+  - first:
+      213: 6526819716742731922
+    second: tombstones_01_35
+  - first:
+      213: -8646978536904144062
+    second: tombstones_01_36
+  - first:
+      213: 7769610600512496708
+    second: tombstones_01_37
+  - first:
+      213: -5896386200397642352
+    second: tombstones_01_38
+  - first:
+      213: 7044386643116617592
+    second: tombstones_01_39
+  - first:
+      213: -3245223326517051544
+    second: tombstones_01_40
+  - first:
+      213: -7377300823286076088
+    second: tombstones_01_41
+  - first:
+      213: 156326940935022251
+    second: tombstones_01_42
+  - first:
+      213: 4495557081986116645
+    second: tombstones_01_43
+  - first:
+      213: -2755106161540659669
+    second: tombstones_01_44
+  - first:
+      213: 2932746443645080585
+    second: tombstones_01_45
+  - first:
+      213: 1990379125993343753
+    second: tombstones_01_46
+  - first:
+      213: 6148679471571155978
+    second: tombstones_01_47
+  - first:
+      213: 7838071579069885978
+    second: tombstones_01_48
+  - first:
+      213: -8088284796041109021
+    second: tombstones_01_49
+  - first:
+      213: -2997293842172626148
+    second: tombstones_01_50
+  - first:
+      213: 8186737069486592091
+    second: tombstones_01_51
+  - first:
+      213: 6958980902665116597
+    second: tombstones_01_52
+  - first:
+      213: 3185537435039209828
+    second: tombstones_01_53
+  - first:
+      213: -4527317045211567282
+    second: tombstones_01_54
+  - first:
+      213: 4834207104406626788
+    second: tombstones_01_55
+  - first:
+      213: -701017360591807423
+    second: tombstones_01_56
+  - first:
+      213: 606516519943500676
+    second: tombstones_01_57
+  - first:
+      213: 3779103607237977755
+    second: tombstones_01_58
+  - first:
+      213: -2040250181165345904
+    second: tombstones_01_59
+  - first:
+      213: -773296071914090879
+    second: tombstones_01_60
+  - first:
+      213: -4170775536988381144
+    second: tombstones_01_61
+  - first:
+      213: -2303227328656789743
+    second: tombstones_01_62
+  - first:
+      213: 4200730860666772114
+    second: tombstones_01_63
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 20
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tombstones_01_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 912
+        width: 53
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35c0cb49e29753860800000000000000
+      internalID: 7509041194680978515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_1
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 913
+        width: 25
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4f5878c46d1181a0800000000000000
+      internalID: -6809128842910212278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_2
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 856
+        width: 42
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 055f63ef24c96fb00800000000000000
+      internalID: 862048190234817872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_3
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 912
+        width: 32
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6929d459945889b0800000000000000
+      internalID: -5077715562329986706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_4
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 911
+        width: 36
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9636e932a90f4a1c0800000000000000
+      internalID: -4493201983395699863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_5
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 913
+        width: 25
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59a9a3ba29be4cae0800000000000000
+      internalID: -1529838958228628843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_6
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 912
+        width: 33
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5c6c26aaafae9a70800000000000000
+      internalID: 8835692666414722139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_7
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 911
+        width: 37
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1414222df4dcebf0800000000000000
+      internalID: -293625692021320676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_8
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 799
+        width: 26
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ef456fd7330bf550800000000000000
+      internalID: 6195549250884292583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_9
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 743
+        width: 43
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c454de7487d6ce30800000000000000
+      internalID: 4523539839803741380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_10
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 735
+        width: 37
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 278fe589351dbc390800000000000000
+      internalID: -7796908172893030286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_11
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 797
+        width: 44
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f486f2e137a21140800000000000000
+      internalID: 4688993994749150456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_12
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 799
+        width: 25
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0633e882dd31dead0800000000000000
+      internalID: -2671457163371728032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_13
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 797
+        width: 33
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b9de1f5d956645d0800000000000000
+      internalID: -3078661568681027143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_14
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 797
+        width: 37
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a40b2f0e8db178e0800000000000000
+      internalID: -1697367166704483161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_15
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 735
+        width: 37
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 378206f98c6389180800000000000000
+      internalID: -9108470011061589901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_16
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 674
+        width: 44
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d45e1d296450b69f0800000000000000
+      internalID: -474279535088376499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_17
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 672
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf8b482bfcb95f5f0800000000000000
+      internalID: -723500848767518468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_18
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 675
+        width: 25
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7429013e749ab660800000000000000
+      internalID: 7402392207246304381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_19
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 672
+        width: 37
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2d5acf753777f540800000000000000
+      internalID: 5041629379525500202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_20
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 619
+        width: 43
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9444fda1065fbd40800000000000000
+      internalID: 5602291026685609117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_21
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 674
+        width: 43
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfc3ab804c22a8f00800000000000000
+      internalID: 1119745682710347004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_22
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 673
+        width: 33
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67b01584b3d042140800000000000000
+      internalID: 4693891259894401910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_23
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 676
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab716a239f0d42440800000000000000
+      internalID: 4910279262455863226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_24
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 488
+        width: 37
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4eabac7c4b03c4b0800000000000000
+      internalID: -5421477103286899126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_25
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 553
+        width: 25
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d5c04a95223120a0800000000000000
+      internalID: -6908185216326515239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_26
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 551
+        width: 33
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2829d8b7b414ac8a0800000000000000
+      internalID: -6284138537590877566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_27
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 551
+        width: 43
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 843b08177212e15b0800000000000000
+      internalID: -5395838850251574456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_28
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 551
+        width: 31
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a2b41b77b9ebdea0800000000000000
+      internalID: -5846822716957216090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_29
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 553
+        width: 25
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b24aeda0b5dc8dc50800000000000000
+      internalID: 6690323037366953003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_30
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 496
+        width: 43
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72496830606e8dca0800000000000000
+      internalID: -5991786390713101273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_31
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 550
+        width: 37
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eba22cc72d2019af0800000000000000
+      internalID: -391528589545035074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_32
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 426
+        width: 44
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c6c66bc860eb3300800000000000000
+      internalID: 233026546433443526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_33
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 427
+        width: 26
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c85f9a00e1bd3990800000000000000
+      internalID: -7404566636518221630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_34
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 370
+        width: 42
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75f56af1f0076bca0800000000000000
+      internalID: -6001486243166789801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_35
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 426
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2985779a3fbe39a50800000000000000
+      internalID: 6526819716742731922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_36
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 425
+        width: 36
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24bc66795d2cff780800000000000000
+      internalID: -8646978536904144062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_37
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 427
+        width: 25
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44428ae0da333db60800000000000000
+      internalID: 7769610600512496708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_38
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 426
+        width: 33
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09588cabdf3db2ea0800000000000000
+      internalID: -5896386200397642352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_39
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 425
+        width: 36
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87fe8734450b2c160800000000000000
+      internalID: 7044386643116617592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_40
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 313
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86fb3261496a6f2d0800000000000000
+      internalID: -3245223326517051544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_41
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 257
+        width: 43
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84d26d2ecff8e9990800000000000000
+      internalID: -7377300823286076088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_42
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 249
+        width: 37
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba6614746826b2200800000000000000
+      internalID: 156326940935022251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_43
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 312
+        width: 44
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52c264bf85d636e30800000000000000
+      internalID: 4495557081986116645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_44
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 313
+        width: 25
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2601e21b85e3c9d0800000000000000
+      internalID: -2755106161540659669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_45
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 311
+        width: 33
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90451c52a5533b820800000000000000
+      internalID: 2932746443645080585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_46
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 311
+        width: 37
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90b8f25054f3f9b10800000000000000
+      internalID: 1990379125993343753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_47
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 249
+        width: 37
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0c3cbcf66f745550800000000000000
+      internalID: 6148679471571155978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_48
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 188
+        width: 44
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1eab82c29c66cc60800000000000000
+      internalID: 7838071579069885978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_49
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 187
+        width: 32
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e1e6c1e4d3a0cf80800000000000000
+      internalID: -8088284796041109021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_50
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 189
+        width: 25
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1bb5d181297766d0800000000000000
+      internalID: -2997293842172626148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_51
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 186
+        width: 37
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5055405df12d9170800000000000000
+      internalID: 8186737069486592091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_52
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 132
+        width: 43
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bbd41eb244439060800000000000000
+      internalID: 6958980902665116597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_53
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 188
+        width: 43
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46998326b6d453c20800000000000000
+      internalID: 3185537435039209828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_54
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 187
+        width: 33
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4be796522dbb21c0800000000000000
+      internalID: -4527317045211567282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_55
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 190
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e1a3dcafbd861340800000000000000
+      internalID: 4834207104406626788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_56
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 2
+        width: 37
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14c1b88bc6c7546f0800000000000000
+      internalID: -701017360591807423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_57
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 67
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48373a9bf87ca6800800000000000000
+      internalID: 606516519943500676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_58
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 65
+        width: 33
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9621de45b2127430800000000000000
+      internalID: 3779103607237977755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_59
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 65
+        width: 43
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09396ba15439fa3e0800000000000000
+      internalID: -2040250181165345904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_60
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 65
+        width: 31
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18e0b57d153b445f0800000000000000
+      internalID: -773296071914090879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_61
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 67
+        width: 25
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8202bef2fbd6e16c0800000000000000
+      internalID: -4170775536988381144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_62
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 10
+        width: 43
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11fa07692fa4900e0800000000000000
+      internalID: -2303227328656789743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombstones_01_63
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 64
+        width: 37
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29a501b167efb4a30800000000000000
+      internalID: 4200730860666772114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      tombstones_01_0: 7509041194680978515
+      tombstones_01_1: -6809128842910212278
+      tombstones_01_10: -7796908172893030286
+      tombstones_01_11: 4688993994749150456
+      tombstones_01_12: -2671457163371728032
+      tombstones_01_13: -3078661568681027143
+      tombstones_01_14: -1697367166704483161
+      tombstones_01_15: -9108470011061589901
+      tombstones_01_16: -474279535088376499
+      tombstones_01_17: -723500848767518468
+      tombstones_01_18: 7402392207246304381
+      tombstones_01_19: 5041629379525500202
+      tombstones_01_2: 862048190234817872
+      tombstones_01_20: 5602291026685609117
+      tombstones_01_21: 1119745682710347004
+      tombstones_01_22: 4693891259894401910
+      tombstones_01_23: 4910279262455863226
+      tombstones_01_24: -5421477103286899126
+      tombstones_01_25: -6908185216326515239
+      tombstones_01_26: -6284138537590877566
+      tombstones_01_27: -5395838850251574456
+      tombstones_01_28: -5846822716957216090
+      tombstones_01_29: 6690323037366953003
+      tombstones_01_3: -5077715562329986706
+      tombstones_01_30: -5991786390713101273
+      tombstones_01_31: -391528589545035074
+      tombstones_01_32: 233026546433443526
+      tombstones_01_33: -7404566636518221630
+      tombstones_01_34: -6001486243166789801
+      tombstones_01_35: 6526819716742731922
+      tombstones_01_36: -8646978536904144062
+      tombstones_01_37: 7769610600512496708
+      tombstones_01_38: -5896386200397642352
+      tombstones_01_39: 7044386643116617592
+      tombstones_01_4: -4493201983395699863
+      tombstones_01_40: -3245223326517051544
+      tombstones_01_41: -7377300823286076088
+      tombstones_01_42: 156326940935022251
+      tombstones_01_43: 4495557081986116645
+      tombstones_01_44: -2755106161540659669
+      tombstones_01_45: 2932746443645080585
+      tombstones_01_46: 1990379125993343753
+      tombstones_01_47: 6148679471571155978
+      tombstones_01_48: 7838071579069885978
+      tombstones_01_49: -8088284796041109021
+      tombstones_01_5: -1529838958228628843
+      tombstones_01_50: -2997293842172626148
+      tombstones_01_51: 8186737069486592091
+      tombstones_01_52: 6958980902665116597
+      tombstones_01_53: 3185537435039209828
+      tombstones_01_54: -4527317045211567282
+      tombstones_01_55: 4834207104406626788
+      tombstones_01_56: -701017360591807423
+      tombstones_01_57: 606516519943500676
+      tombstones_01_58: 3779103607237977755
+      tombstones_01_59: -2040250181165345904
+      tombstones_01_6: 8835692666414722139
+      tombstones_01_60: -773296071914090879
+      tombstones_01_61: -4170775536988381144
+      tombstones_01_62: -2303227328656789743
+      tombstones_01_63: 4200730860666772114
+      tombstones_01_7: -293625692021320676
+      tombstones_01_8: 6195549250884292583
+      tombstones_01_9: 4523539839803741380
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
