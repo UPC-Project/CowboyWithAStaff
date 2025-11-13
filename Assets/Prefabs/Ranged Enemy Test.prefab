@@ -305,8 +305,7 @@ MonoBehaviour:
   _damage: 1
   _nextAttackTime: 0
   _nextAttackRate: 3
-  isAttacking: 0
-  isDead: 0
+  canMove: 1
   distanceToShoot: 12
   bullets: 2
   timeBetweenBullets: 0.15

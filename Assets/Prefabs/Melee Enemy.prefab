@@ -176,7 +176,7 @@ MonoBehaviour:
   target: {fileID: 0}
   col2D: {fileID: 0}
   spriteRenderer: {fileID: 0}
-  _aggroRadius: 8
+  _aggroRadius: 12
   _onAggro: 0
   _animator: {fileID: 361486152876841280}
   speed: 2
@@ -184,8 +184,7 @@ MonoBehaviour:
   _damage: 1
   _nextAttackTime: 0
   _nextAttackRate: 3
-  isAttacking: 0
-  isDead: 0
+  canMove: 1
   _hitRadius: 2.5
 --- !u!95 &361486152876841280
 Animator:

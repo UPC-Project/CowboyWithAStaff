@@ -24,10 +24,8 @@ public abstract class Enemy : Health
     [SerializeField] protected int _damage;
     [SerializeField] protected float _nextAttackTime;
     [SerializeField] protected float _nextAttackRate;
-    // The enemy is still attacking
-    public bool isAttacking = false;
-    // The enemy is defeated
-    public bool isDead = false;
+    // The enemy is not attacking nor dead
+    public bool canMove = true;
 
     protected virtual void Start()
     {
@@ -47,7 +45,7 @@ public abstract class Enemy : Health
     {
         if (target && _onAggro)
         {
-            if (!isAttacking || isDead)
+            if (canMove)
             {
                 RotateTowardsTarget();
             }
@@ -56,9 +54,9 @@ public abstract class Enemy : Health
             {
                 _nextAttackTime -= Time.deltaTime;
             }
-            else if (PlayerInRangeToAttack() && !isAttacking && !isDead)
+            else if (PlayerInRangeToAttack() && canMove)
             {
-                isAttacking = true;
+                canMove = false;
                 // Here the attack animation starts and calls AttackStateBehaviour.OnStateEnter() function
                 _animator.SetTrigger("Attack");
             }
@@ -84,7 +82,7 @@ public abstract class Enemy : Health
 
     protected virtual void OnFixedUpdate()
     {
-        if (!PlayerInRangeToStop() && _onAggro && !isAttacking && !isDead)
+        if (!PlayerInRangeToStop() && _onAggro && canMove)
         {
             Vector2 dir = (target.position - transform.position).normalized;
             _rb.linearVelocity = dir * speed;
@@ -114,14 +112,13 @@ public abstract class Enemy : Health
     // Called by AttackStateBehaviour when attack is completed
     public void OnExitAttackState()
     {
-        isAttacking = false;
+        canMove = true;
         // Cooldown begins once the animation has finished
         _nextAttackTime = _nextAttackRate;
     }
 
     public override void Death()
     {
-        GameState.Instance.RegisterActivatedEnemy(this.gameObject);
         gameObject.SetActive(false);
         _onAggro = false;
     }
@@ -134,25 +131,29 @@ public abstract class Enemy : Health
         transform.position = _startPosition;
         _nextAttackTime = 0;
         _onAggro = false;
-        isDead = false;
+        canMove = true;
         var tempColor = spriteRenderer.color;
         tempColor.a = 1;
         spriteRenderer.color = tempColor;
         col2D.enabled = true;
 
-        _animator.SetBool("isDead", false);
         _rb.linearVelocity = Vector2.zero;
         // This will change when implemented death animation
+        _animator.SetBool("isDead", false);
         _animator.SetFloat("horizontal", 0f);
         _animator.SetFloat("vertical", -1f);
+        _animator.SetFloat("speed", 0f);
+        _animator.Play("idle",0,0f);
     }
 
     // UTILS
     // Avoids activating aggro at respawn
     public override void StartDeath()
     {
+        GameState.Instance.RegisterActivatedEnemy(this.gameObject);
         _animator.SetBool("isDead", true);
-        isDead = true;
+        canMove = false;
+        col2D.enabled = false;
     }
 
     IEnumerator JustRespawn()
@@ -165,7 +166,6 @@ public abstract class Enemy : Health
     public void ChangeAlpha()
     {
         StartCoroutine(FadeOutCoroutine());
-        col2D.enabled = false;
     }
 
     IEnumerator FadeOutCoroutine()
