@@ -46,7 +46,7 @@ public class Player : Health
     }
 
     // ATTACK
-    // Triggered when Z key or RMB is pressed
+    // Triggered when Q key or LMB is pressed
     public void OnMeleeAttack()
     {
         if (_nextMeleeAttackTime <= 0 && _playerMovement.canMove)
@@ -56,7 +56,7 @@ public class Player : Health
         }
     }
 
-    // Triggered when X key or LMB is pressed
+    // Triggered when E key or RMB is pressed
     public void OnRangedAttack()
     {
         if (_nextRangedAttackTime <= 0 && _playerMovement.canMove)
@@ -66,7 +66,7 @@ public class Player : Health
         }
     }
 
-    // Triggered when C key or MMB is pressed
+    // Triggered when Space key or MMB is pressed
     public void OnBlockSkill()
     {
         if (_nextBlockTime <= 0 && _playerMovement.canMove)
