@@ -1,5 +1,6 @@
-using UnityEngine;
 using System.Collections;
+using Unity.VisualScripting;
+using UnityEngine;
 
 public class FinalBoss : RangedEnemy
 {
@@ -26,7 +27,7 @@ public class FinalBoss : RangedEnemy
     {
         if (target)
         {
-            if (_attackingTime <= 0)
+            if (_attackingTime <= 0 && canMove)
             {
                 OldRotateTowardsTarget();
             }
@@ -67,7 +68,6 @@ public class FinalBoss : RangedEnemy
                 {
                     _timesAttacked++;
                 }
-
                 MeleeAttack();
             }
         }
@@ -90,7 +90,7 @@ public class FinalBoss : RangedEnemy
 
     protected override void OnFixedUpdate()
     {
-        if (!PlayerInRangeToStop() && !_isRetreating && _attackingTime <= 0)
+        if (!PlayerInRangeToStop() && !_isRetreating && _attackingTime <= 0 && canMove)
         {
             Vector2 dir = (target.position - transform.position).normalized;
             _rb.linearVelocity = dir * speed;

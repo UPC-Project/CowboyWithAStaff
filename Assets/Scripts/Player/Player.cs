@@ -7,6 +7,8 @@ public class Player : Health
     [SerializeField] private PlayerMovement _playerMovement;
     public bool _inBossFight = false;
 
+    public static Player Instance { get; private set; }
+
     [Header("Melee Attack")]
     [SerializeField] private int _meleeAttackDamage = 1;
     [SerializeField] private float _nextMeleeAttackTime;
@@ -32,7 +34,16 @@ public class Player : Health
     private void Awake()
     {
         health = maxHealth;
-        DontDestroyOnLoad(this.gameObject);
+
+        // Singleton pattern
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+
+        DontDestroyOnLoad(this.gameObject); // Persist across scenes
     }
 
     private void Update()

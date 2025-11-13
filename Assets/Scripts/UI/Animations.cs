@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Animations : MonoBehaviour
 {
-    // singleton
+    // Singleton pattern
     public static Animations Instance { get; private set; }
 
     void Awake()

@@ -31,7 +31,7 @@ public abstract class Enemy : Health
 
     protected virtual void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        target = Player.Instance.transform;
         _rb = GetComponent<Rigidbody2D>();
         _col2D = GetComponent<Collider2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
