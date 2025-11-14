@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1197513471173609027}
   - component: {fileID: 2315608713684040507}
   - component: {fileID: 2482433381441733713}
+  - component: {fileID: 6355134459824395746}
   m_Layer: 0
   m_Name: Final Boss Prefab
   m_TagString: Enemy
@@ -61,7 +62,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 0c5f323cd952bdb4cad40dd651da4541, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83,7 +84,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -712631045867808456, guid: b670ab75dde984907b8570040daa08c5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 18ff6641c944d6540bb7a01d9c5110b8, type: 3}
   m_Color: {r: 0.3784458, g: 0.26517445, b: 0.9528302, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -174,17 +175,17 @@ MonoBehaviour:
   target: {fileID: 0}
   _aggroRadius: 0
   _onAggro: 0
-  _animator: {fileID: 0}
+  _animator: {fileID: 6355134459824395746}
   speed: 2
   distanceToStop: 8
   _isRepealing: 0
+  _isStuned: 0
   _damage: 1
   _nextAttackTime: 0
   _nextAttackRate: 2
-  isAttacking: 0
-  isDead: 0
+  canMove: 1
   distanceToShoot: 20
-  bullets: 3
+  bullets: 4
   timeBetweenBullets: 0.1
   _firingPoint: {fileID: 3977118988319342750}
   _firingPointDistance: 0
@@ -199,7 +200,30 @@ MonoBehaviour:
   speedSecondFase: 5
   retreatSpeed: 10
   _attackingTime: 0
-  _attackingRate: 0.3
+  _attackingRate: 0.4
+  _winGameUI: {fileID: 0}
+--- !u!95 &6355134459824395746
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469882179136398060}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5a1db202daa79b64e8892d020b55eee1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3670927437408735752
 GameObject:
   m_ObjectHideFlags: 0

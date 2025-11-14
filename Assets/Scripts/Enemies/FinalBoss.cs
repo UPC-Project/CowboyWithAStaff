@@ -29,7 +29,7 @@ public class FinalBoss : RangedEnemy
         {
             if (_attackingTime <= 0 && canMove)
             {
-                OldRotateTowardsTarget();
+                RotateTowardsTarget();
             }
 
             if (_nextAttackTime > 0)
@@ -155,35 +155,16 @@ public class FinalBoss : RangedEnemy
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, _hitRadius);
     }
-    // Delete this when animation is implemented, use default rotation from Enemy class
-    private void OldRotateTowardsTarget()
-    {
-        Vector2 targetDirection = target.position - transform.position;
-        float angle = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg - 90f;
-        Quaternion q = Quaternion.Euler(new Vector3(0, 0, angle));
-        float difference = Quaternion.Angle(transform.localRotation, q);
-        transform.localRotation = Quaternion.Slerp(transform.localRotation, q, 0.1f);
-    }
 
-    // Delete this when animation is implemented, use default rotation from RangedEnemy class 
-    public override void Attack()
-    {
-        StartCoroutine(BurstAttack(_firingPoint.position, transform.rotation));
-    }
+    
 
     // It's not repealed
     public override void RepelFromPLayer(Vector3 playerPos, float repelForce) { }
 
-    // override not necessary when animation is implemented
-    public override void StartDeath()
-    {
-        canMove = false;
-        // this call will be in Death()
-        StartCoroutine(_winGameUI.WinGame());
-    }
+   
     public override void Death()
     {
-        //StartCoroutine(WinGame());
+        StartCoroutine(_winGameUI.WinGame());
     }
 }
 
