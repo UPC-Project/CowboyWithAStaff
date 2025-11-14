@@ -6,6 +6,7 @@ public abstract class HealthSystem : MonoBehaviour
     public int health;
     public int maxHealth = 5;
 
+
     public virtual void Awake()
     {
         health = maxHealth;
@@ -15,6 +16,12 @@ public abstract class HealthSystem : MonoBehaviour
     {
         health -= damage;
         if (health <= 0) Death();
+    }
+
+    // Reset healt state for respawn at checkpoint
+    public void ResetHealth()
+    {
+        health = maxHealth;
     }
 
     // if necessary, override this method.
