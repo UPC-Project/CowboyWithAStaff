@@ -74,10 +74,15 @@ public class Player : Health
             // Change when animation is done
             AttackAnimation(PlayerSkill.Block.ToString());
             invulnerable = true;
-            // Bullets are destroy at the SMB script
-            if (!_inBossFight) RepelEnemies();
         }
     }
+
+    public void BlockSkill()
+    {
+            if (!_inBossFight) RepelEnemies();
+    }
+
+
 
     private void RepelEnemies()
     {
