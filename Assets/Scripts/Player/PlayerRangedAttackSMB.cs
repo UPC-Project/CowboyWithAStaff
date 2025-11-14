@@ -1,3 +1,4 @@
+using Constants;
 using UnityEngine;
 
 public class PlayerRangedAttackSMB : StateMachineBehaviour
@@ -23,6 +24,6 @@ public class PlayerRangedAttackSMB : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         var player = animator.GetComponentInParent<Player>();
-        player?.OnExitAttackState(false);
+        player?.OnExitAttackState(PlayerSkill.RangedAttack);
     }
 }

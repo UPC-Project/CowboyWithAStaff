@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -23,7 +24,6 @@ public class PlayerMovement : MonoBehaviour
     {
         _playerInput = GetComponent<PlayerInput>();
     }
-
 
     private void Update()
     {
@@ -72,6 +72,15 @@ public class PlayerMovement : MonoBehaviour
             _rb.linearVelocity = Vector2.zero;
         }
     }
+
+    // See if it's worth it
+    //public IEnumerator Stune()
+    //{
+    //    canMove = false;
+    //    _animator.SetFloat("speed", 0f);
+    //    yield return new WaitForSeconds(.5f);
+    //    canMove = true;
+    //}
 
     // The animation will be only in 8 angles
     private float fixAngle(float angle)

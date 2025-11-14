@@ -1,26 +1,33 @@
 using UnityEngine;
+using Constants;
 
 public class Player : Health
 {
     public int healingPotions = 0;
     [SerializeField] private PlayerMovement _playerMovement;
+    public bool _inBossFight = false;
 
     [Header("Melee Attack")]
     [SerializeField] private int _meleeAttackDamage = 1;
     [SerializeField] private float _nextMeleeAttackTime;
     [SerializeField] private float _attackMeleeCooldown;
-    [SerializeField] private float _hitRadius;
+    public float hitRadius;
 
     [Header("Ranged Attack")]
     [SerializeField] private float _nextRangedAttackTime;
     [SerializeField] private float _attackRangedCooldown;
     [SerializeField] private GameObject _facingPoint;
 
+    [Header("Block Skill")]
+    [SerializeField] private float _nextBlockTime;
+    [SerializeField] private float _attackBlockCooldown;
+    public float repelForce;
+    public bool invulnerable = false;
+
     [Header("Animation")]
     [SerializeField] private Animator _animator;
     private Vector2 _attackDirection;
     public bool _isDying = false;
-
 
     private void Update()
     {
@@ -32,26 +39,60 @@ public class Player : Health
         {
             _nextRangedAttackTime -= Time.deltaTime;
         }
+        if (_nextBlockTime > 0)
+        {
+            _nextBlockTime -= Time.deltaTime;
+        }
     }
 
-    // ATTACK SYSTEM
-    // Triggered when Z key or RMB is pressed
+    // ATTACK
+    // Triggered when Q key or LMB is pressed
     public void OnMeleeAttack()
     {
         if (_nextMeleeAttackTime <= 0 && _playerMovement.canMove)
         {
-            AttackAnimation("MeleeAttack");
+            AttackAnimation(PlayerSkill.MeleeAttack.ToString());
             // MeleeAttack() is called in PlayerMeleeAttackStateBehaviour
         }
     }
 
-    // Triggered when X key or LMB is pressed
+    // Triggered when E key or RMB is pressed
     public void OnRangedAttack()
     {
         if (_nextRangedAttackTime <= 0 && _playerMovement.canMove)
         {
-            AttackAnimation("RangedAttack");
+            AttackAnimation(PlayerSkill.RangedAttack.ToString());
             // RangedAttack() is called in PlayerRangedAttackStateBehaviour
+        }
+    }
+
+    // Triggered when Space key or MMB is pressed
+    public void OnBlockSkill()
+    {
+        if (_nextBlockTime <= 0 && _playerMovement.canMove)
+        {
+            // Change when animation is done
+            AttackAnimation(PlayerSkill.Block.ToString());
+            invulnerable = true;
+        }
+    }
+
+    public void BlockSkill()
+    {
+            if (!_inBossFight) RepelEnemies();
+    }
+
+
+
+    private void RepelEnemies()
+    {
+        Collider2D[] objects = Physics2D.OverlapCircleAll(transform.position, hitRadius * 2);
+        foreach (Collider2D collider in objects)
+        {
+            if (collider.CompareTag("Enemy"))
+            {
+                collider.transform.GetComponent<Enemy>().RepelFromPLayer(transform.position, repelForce);
+            }
         }
     }
 
@@ -68,23 +109,27 @@ public class Player : Health
     }
 
     // Called by PlayerRangedAttackStateBehaviour/PlayerMeleeAttackStateBehaviour when attack is completed
-    public void OnExitAttackState(bool isMelee)
+    public void OnExitAttackState(PlayerSkill playerSkill)
     {
         _playerMovement.canMove = true;
         // Cooldown begins once the animation has finished
-        if (isMelee)
+        if (playerSkill == PlayerSkill.MeleeAttack)
         {
             _nextMeleeAttackTime = _attackMeleeCooldown;
         }
-        else
+        else if (playerSkill == PlayerSkill.RangedAttack)
         {
             _nextRangedAttackTime = _attackRangedCooldown;
+        } else
+        {
+            invulnerable = false;
+            _nextBlockTime = _attackBlockCooldown;
         }
     }
 
     public void MeleeAttack()
     {
-        Collider2D[] objects = Physics2D.OverlapCircleAll(gameObject.transform.position, _hitRadius);
+        Collider2D[] objects = Physics2D.OverlapCircleAll(gameObject.transform.position, hitRadius);
         foreach (Collider2D collider in objects)
         {
             if (collider.CompareTag("Enemy"))
@@ -100,6 +145,7 @@ public class Player : Health
         BulletPool.Instance.RequestBullet(_facingPoint.transform.position, _facingPoint.transform.rotation);
     }
 
+    // DEATH
     public override void StartDeath()
     {
         if (!_isDying)
@@ -117,14 +163,7 @@ public class Player : Health
         _playerMovement.canMove = true;
     }
 
-    // Comment this function if you don't want to see the melee range attack
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(gameObject.transform.position, _hitRadius);
-    }
-
-    // HEAL SYSTEM
+    // HEALTH
     // Triggered when H key is pressed
     public void OnHeal()
     {
@@ -135,6 +174,12 @@ public class Player : Health
         }
     }
 
+    public override void TakeDamage(int damage)
+    {
+        if (!invulnerable) health -= damage;
+        if (health <= 0) StartDeath();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("HealingPotion"))
@@ -143,6 +188,13 @@ public class Player : Health
             collision.gameObject.SetActive(false);
             GameState.Instance.RegisterCollectedItem(collision.gameObject);
         }
+    }
+
+    // Comment this function if you don't want to see the melee range attack
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(gameObject.transform.position, hitRadius);
     }
 
 }

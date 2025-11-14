@@ -1,3 +1,4 @@
+using Constants;
 using UnityEngine;
 
 public class PlayerMeleeAttackSMB : StateMachineBehaviour
@@ -22,6 +23,6 @@ public class PlayerMeleeAttackSMB : StateMachineBehaviour
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         var player = animator.GetComponentInParent<Player>();
-        player?.OnExitAttackState(true);
+        player?.OnExitAttackState(PlayerSkill.MeleeAttack);
     }
 }

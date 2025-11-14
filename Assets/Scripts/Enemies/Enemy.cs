@@ -19,12 +19,14 @@ public abstract class Enemy : Health
     [Header("Movement")]
     public float speed;
     public float distanceToStop = 5f;
+    public bool _isRepealing = false;
+    public bool _isStuned = false;
 
     [Header("Attack")]
     [SerializeField] protected int _damage;
     [SerializeField] protected float _nextAttackTime;
     [SerializeField] protected float _nextAttackRate;
-    // The enemy is not attacking nor dead
+    // The enemy is not attacking nor defeated
     public bool canMove = true;
 
     protected virtual void Start()
@@ -82,12 +84,12 @@ public abstract class Enemy : Health
 
     protected virtual void OnFixedUpdate()
     {
-        if (!PlayerInRangeToStop() && _onAggro && canMove)
+        if (!PlayerInRangeToStop() && _onAggro && canMove && !_isRepealing)
         {
             Vector2 dir = (target.position - transform.position).normalized;
             _rb.linearVelocity = dir * speed;
         }
-        else
+        else if (!_isRepealing)
         {
             _rb.linearVelocity = new Vector2(0, 0);
         }
@@ -146,6 +148,13 @@ public abstract class Enemy : Health
         _animator.Play("idle",0,0f);
     }
 
+    public virtual void RepelFromPLayer(Vector3 playerPos, float repelForce)
+    {
+        StartCoroutine(RepealSelf());
+        Vector2 dir = -((playerPos - transform.position).normalized);
+        _rb.linearVelocity = dir * repelForce;
+    }
+
     // UTILS
     // Avoids activating aggro at respawn
     public override void StartDeath()
@@ -161,6 +170,19 @@ public abstract class Enemy : Health
         _respawnFlag = false;
         yield return new WaitForSeconds(.2f);
         _respawnFlag = true;
+    }
+
+    IEnumerator RepealSelf()
+    {
+        // Repealing enemy
+        _isRepealing = true;
+        yield return new WaitForSeconds(.2f);
+        _isRepealing = false;
+        // Enemy stuned
+        canMove = false;
+        _animator.SetFloat("speed", 0f);
+        yield return new WaitForSeconds(.5f);
+        canMove = true;
     }
 
     public void ChangeAlpha()

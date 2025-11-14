@@ -3,6 +3,8 @@ using System.Collections;
 
 public class FinalBoss : RangedEnemy
 {
+    private PlayerMovement _playerMovement;
+
     [SerializeField] private int _attackTimeMultiplier = 1;
     [SerializeField] private int _timesAttacked = 0;
     [SerializeField] private int _restartLoopAt = 2;
@@ -19,6 +21,13 @@ public class FinalBoss : RangedEnemy
     // Parameters wont be necessary when animation is added
     public float _attackingTime;
     public float _attackingRate;
+
+    protected override void Start()
+    {
+        base.Start();
+        _playerMovement = target.GetComponent<PlayerMovement>();
+    }
+
 
     protected override void OnUpdate()
     {
@@ -113,10 +122,13 @@ public class FinalBoss : RangedEnemy
             if (collider.CompareTag("Player"))
             {
                 collider.transform.GetComponent<Player>().TakeDamage(_damage);
+                // See if it's worth it
+                //StartCoroutine(_playerMovement.Stune());
                 StartCoroutine(Retreat());
             }
             // Boss destroys bullets when atacking melee, will be implementing depending on the animation
-            //if (collider.CompareTag("Bullet") && ...)
+            // Will be implemented in SMB probably
+            //if (collider.CompareTag("Bullet"))
             //{
             //    (collider.gameObject).SetActive(false);
             //}
@@ -166,6 +178,9 @@ public class FinalBoss : RangedEnemy
         StartCoroutine(BurstAttack(_firingPoint.position, transform.rotation));
     }
 
+    // It's not repealed
+    public override void RepelFromPLayer(Vector3 playerPos, float repelForce) { }
+    
 }
 
 

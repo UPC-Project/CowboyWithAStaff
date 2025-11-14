@@ -11,7 +11,7 @@ public abstract class Health : MonoBehaviour
         health = maxHealth;
     }
 
-    public void TakeDamage(int damage)
+    public virtual void TakeDamage(int damage)
     {
         health -= damage;
         if (health <= 0) StartDeath();
