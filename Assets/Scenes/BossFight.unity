@@ -7178,14 +7178,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2482433381441733713, guid: b4db79c3a58a56d498d0bf99469451e5, type: 3}
-      propertyPath: health
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2482433381441733713, guid: b4db79c3a58a56d498d0bf99469451e5, type: 3}
-      propertyPath: maxHealth
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2482433381441733713, guid: b4db79c3a58a56d498d0bf99469451e5, type: 3}
       propertyPath: _winGameUI
       value: 
       objectReference: {fileID: 903870259}
