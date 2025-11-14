@@ -401,7 +401,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   movementSpeed: 8
   canMove: 1
-  _rb: {fileID: 2292355812158504671}
+  rb: {fileID: 2292355812158504671}
   _facingPoint: {fileID: 5486496809863762681}
   _animator: {fileID: 6881568274525310399}
 --- !u!114 &7368951889331973350

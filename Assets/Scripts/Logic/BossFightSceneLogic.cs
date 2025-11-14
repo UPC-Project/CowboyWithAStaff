@@ -13,6 +13,7 @@ public class BossFightSceneLogic : MonoBehaviour
     {
         _playerMovement = Player.Instance.gameObject.GetComponent<PlayerMovement>();
         _playerMovement.enabled = false; // Player can't move
+        _playerMovement.rb.linearVelocity = Vector2.zero;
         Player.Instance._inBossFight = true;
         _finalBoss.canMove = false; // Boss can't move
 
