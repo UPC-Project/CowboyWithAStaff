@@ -34,8 +34,7 @@ Transform:
   m_LocalPosition: {x: -2.37, y: 3.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 4151678773898344265}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2572931540884829996
@@ -180,7 +179,7 @@ MonoBehaviour:
   _aggroRadius: 12
   _onAggro: 0
   _animator: {fileID: 361486152876841280}
-  _audioSource: {fileID: 0}
+  _audioSource: {fileID: -7058362199731315540}
   _idleSounds:
   - {fileID: 8300000, guid: 5debdeeacfac74d43b67e0d3bd7497b1, type: 3}
   - {fileID: 8300000, guid: 8d451feefa858c84fb4e19e5b934f89d, type: 3}
@@ -207,6 +206,8 @@ MonoBehaviour:
   _idleSoundRateTime: 0
   speed: 2
   distanceToStop: 3
+  _isRepealing: 0
+  _isStuned: 0
   _damage: 1
   _nextAttackTime: 0
   _nextAttackRate: 3
