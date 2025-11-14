@@ -8,6 +8,7 @@ public class RangedEnemy : Enemy
     public float timeBetweenBullets = 0.1f;
     [SerializeField] protected Transform _firingPoint;
     [SerializeField] protected float _firingPointDistance;
+
     public override void Attack()
     {
         float h = _animator.GetFloat("horizontal");
@@ -19,6 +20,7 @@ public class RangedEnemy : Enemy
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         _firingPoint.localRotation = Quaternion.Euler(0f, 0f, angle - 90f);
 
+        // Use _attackSounds later and modularize this in Enemy class
         AudioManager.Instance.Play("SnakeShoot");
 
         StartCoroutine(BurstAttack(_firingPoint.position, _firingPoint.rotation));
@@ -41,14 +43,10 @@ public class RangedEnemy : Enemy
         return distanceToTarget <= distanceToShoot;
     }
 
-    private void IdleSound()
-    {
-
-        AudioManager.Instance.Play("SnakeIdle");
-    }
-
+    // Modularize this in Enemy class later
     public void PlayFootstepSound()
     {
+        // Use _moveSounds later
         AudioManager.Instance.Play("SnakeWalk");
     }
 }

@@ -179,6 +179,31 @@ MonoBehaviour:
   _aggroRadius: 12
   _onAggro: 0
   _animator: {fileID: 361486152876841280}
+  _audioSource: {fileID: 0}
+  _idleSounds:
+  - {fileID: 8300000, guid: 5debdeeacfac74d43b67e0d3bd7497b1, type: 3}
+  - {fileID: 8300000, guid: 8d451feefa858c84fb4e19e5b934f89d, type: 3}
+  - {fileID: 8300000, guid: 0b20346b47cf138468d20818e1a5695f, type: 3}
+  _moveSounds:
+  - {fileID: 8300000, guid: cb1fd7a762007e44099ff8fd21183559, type: 3}
+  - {fileID: 8300000, guid: 0ed603fec2719fd488361baa09152992, type: 3}
+  - {fileID: 8300000, guid: df122c0ed0ae58e41b2a4c35d9b99d91, type: 3}
+  - {fileID: 8300000, guid: 257282b7e2d736e4da9e5c5de5f3ffec, type: 3}
+  - {fileID: 8300000, guid: 77e5c4779cb12034e9663aa1a30ff949, type: 3}
+  - {fileID: 8300000, guid: 6cf12f84b520e934b90cfd345b4652a7, type: 3}
+  - {fileID: 8300000, guid: 24731ffa92c1ec44ab6abf2f2a366606, type: 3}
+  - {fileID: 8300000, guid: 2e5200d3384fa8c48b6b7908fb5c51a5, type: 3}
+  _attackSounds:
+  - {fileID: 8300000, guid: 55759196541c1f14ab0976c70449b66c, type: 3}
+  - {fileID: 8300000, guid: e6e00fc3b87c00d4fa96b8543319f27f, type: 3}
+  _damageSounds:
+  - {fileID: 8300000, guid: c9b00e5712d527f43bff4f43029d2e3e, type: 3}
+  - {fileID: 8300000, guid: 17b57a67c985b6a4c9c1b4f23b668611, type: 3}
+  - {fileID: 8300000, guid: 5a34e7f5de7d39042ad0f09b39173444, type: 3}
+  - {fileID: 8300000, guid: 51e4a691d25b6ab4491653427b60d14c, type: 3}
+  - {fileID: 8300000, guid: 2242e8791cbff6b4aa756912b91ea3f5, type: 3}
+  _nextIdleSoundTime: 0
+  _idleSoundRateTime: 0
   speed: 2
   distanceToStop: 3
   _damage: 1
