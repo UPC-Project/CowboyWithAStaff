@@ -4,18 +4,39 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    [Header("Audio Lists")]
     public Sound[] sounds;
+    public Sound[] musicTracks;
 
+ 
     private AudioSource musicSource;
     private AudioSource sfxSource;
 
+    public static AudioManager Instance { get; private set; }
     void Awake()
     {
+        Instance = this;
+
         musicSource = gameObject.AddComponent<AudioSource>();
         sfxSource = gameObject.AddComponent<AudioSource>();
 
         musicSource.playOnAwake = false;
         sfxSource.playOnAwake = false;
+
+        musicSource.loop = true;
+    }
+
+    public void PlayMusic(string name)
+    {
+        Sound s = Array.Find(musicTracks, track => track.name == name);
+
+        AudioClip clipToPlay = s.clips[UnityEngine.Random.Range(0, s.clips.Length)];
+
+        musicSource.clip = clipToPlay;
+        musicSource.volume = s.volume;
+        musicSource.pitch = s.pitch;
+        musicSource.loop = s.loop; 
+        musicSource.Play();
     }
 
     public void Play(string name)
@@ -24,19 +45,9 @@ public class AudioManager : MonoBehaviour
 
         AudioClip clipToPlay = s.clips[UnityEngine.Random.Range(0, s.clips.Length)];
 
-        if (s.loop)
-        {
-            musicSource.clip = clipToPlay;
-            musicSource.volume = s.volume;
-            musicSource.pitch = s.pitch;
-            musicSource.loop = true;
-            musicSource.Play();
-        }
-        else
-        {
-            sfxSource.pitch = s.pitch;
-            sfxSource.PlayOneShot(clipToPlay, s.volume);
-        }
+        sfxSource.pitch = s.pitch;
+        sfxSource.PlayOneShot(clipToPlay, s.volume);
+
     }
 
     public void StopMusic()
@@ -52,4 +63,6 @@ public class AudioManager : MonoBehaviour
             musicSource.Stop();
         }
     }
+
+
 }

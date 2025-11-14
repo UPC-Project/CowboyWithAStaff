@@ -21,7 +21,7 @@ public class MeleeEnemy : Enemy
     }
     public override void Attack()
     {
-        FindFirstObjectByType<AudioManager>().Play("ZombieHit");
+        AudioManager.Instance.Play("ZombieHit");
         Collider2D[] objects = Physics2D.OverlapCircleAll(transform.position, _hitRadius);
         foreach (Collider2D collider in objects)
         {
@@ -42,7 +42,7 @@ public class MeleeEnemy : Enemy
 
     public override void TakeDamage(int damage)
     {
-        FindFirstObjectByType<AudioManager>().Play("ZombieTakeDamage");
+        AudioManager.Instance.Play("ZombieTakeDamage");
         base.TakeDamage(damage); 
     }
 
@@ -53,6 +53,7 @@ public class MeleeEnemy : Enemy
         float v = _animator.GetFloat("vertical");
         bool isCurrentlyMoving = Mathf.Abs(h) > 0.1f || Mathf.Abs(v) > 0.1f;
 
+        Debug.Log($"h: {h}, v: {v}");
         bool isCurrentlyIdle = !isCurrentlyMoving;
 
         if (isCurrentlyIdle == _wasIdleLastFrame)
@@ -74,6 +75,6 @@ public class MeleeEnemy : Enemy
 
     public void PlayFootstepSound()
     {
-        FindFirstObjectByType<AudioManager>().Play("ZombieWalk");
+        AudioManager.Instance.Play("ZombieWalk");
     }
 }

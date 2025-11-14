@@ -19,7 +19,7 @@ public class RangedEnemy : Enemy
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         _firingPoint.localRotation = Quaternion.Euler(0f, 0f, angle - 90f);
 
-        FindFirstObjectByType<AudioManager>().Play("SnakeShoot");
+        AudioManager.Instance.Play("SnakeShoot");
 
         StartCoroutine(BurstAttack(_firingPoint.position, _firingPoint.rotation));
     }
@@ -44,13 +44,12 @@ public class RangedEnemy : Enemy
     private void IdleSound()
     {
 
-        FindFirstObjectByType<AudioManager>().Play("SnakeIdle");
-
+        AudioManager.Instance.Play("SnakeIdle");
     }
 
     public void PlayFootstepSound()
     {
-        FindFirstObjectByType<AudioManager>().Play("SnakeWalk");
+        AudioManager.Instance.Play("SnakeWalk");
     }
 }
 
