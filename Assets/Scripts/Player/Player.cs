@@ -137,12 +137,15 @@ public class Player : Health
                 collider.transform.GetComponent<Enemy>().TakeDamage(_meleeAttackDamage);
             }
         }
+
+        AudioManager.Instance.Play("PlayerMeleeAttack");
     }
 
     public void RangedAttack()
     {
         // The bullet damage is in the Bullet script
         BulletPool.Instance.RequestBullet(_facingPoint.transform.position, _facingPoint.transform.rotation);
+        AudioManager.Instance.Play("PlayerShoot");
     }
 
     // DEATH
@@ -169,6 +172,7 @@ public class Player : Health
     {
         if (healingPotions > 0)
         {
+            AudioManager.Instance.Play("PotionUse");
             health = maxHealth;
             healingPotions -= 1;
         }
@@ -184,12 +188,18 @@ public class Player : Health
     {
         if (collision.gameObject.CompareTag("HealingPotion"))
         {
+            AudioManager.Instance.Play("PotionPickup");
             healingPotions += 1;
             collision.gameObject.SetActive(false);
             GameState.Instance.RegisterCollectedItem(collision.gameObject);
         }
     }
 
+
+    public void PlayFootstepSound()
+    {
+        AudioManager.Instance.Play("PlayerWalk");
+    }
     // Comment this function if you don't want to see the melee range attack
     private void OnDrawGizmos()
     {

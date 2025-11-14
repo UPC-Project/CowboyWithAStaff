@@ -18,6 +18,7 @@ public class GameState : MonoBehaviour
     }
     void Start()
     {
+        AudioManager.Instance.PlayMusic("LevelMusic");
         _player = FindAnyObjectByType<Player>();
 
         _respawnPoint = _player.transform.position;
