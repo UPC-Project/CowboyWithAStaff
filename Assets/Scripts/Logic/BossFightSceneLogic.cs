@@ -12,18 +12,18 @@ public class BossFightSceneLogic : MonoBehaviour
     private void Start()
     {
         _playerMovement = Player.Instance.gameObject.GetComponent<PlayerMovement>();
-        //_playerMovement.enabled = false; // Player can't move
+        _playerMovement.enabled = false; // Player can't move
         Player.Instance._inBossFight = true;
-        //_finalBoss.canMove = false; // Boss can't move
+        _finalBoss.canMove = false; // Boss can't move
 
-        //foreach (var output in _director.playableAsset.outputs)
-        //{
-        //    if (output.streamName == "Player Animation" || output.streamName == "Player Position")
+        foreach (var output in _director.playableAsset.outputs)
+        {
+            if (output.streamName == "Player Animation" || output.streamName == "Player Position")
                 
-        //    {
-        //        _director.SetGenericBinding(output.sourceObject, Player.Instance.gameObject);
-        //    }
-        //}
+            {
+                _director.SetGenericBinding(output.sourceObject, Player.Instance.gameObject);
+            }
+        }
     }
 
     private void OnEnable()
