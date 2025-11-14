@@ -105,7 +105,7 @@ public class Player : HealthSystem
     // Triggered when H key is pressed
     public void OnHeal()
     {
-        if (healingPotions > 0)
+        if (healingPotions > 0 && health < maxHealth)
         {
             health = maxHealth;
             healingPotions -= 1;
