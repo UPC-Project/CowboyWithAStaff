@@ -1,6 +1,7 @@
 using UnityEngine.Audio;
 using System;
 using UnityEngine;
+using System.Linq;
 
 public class AudioManager : MonoBehaviour
 {
@@ -8,11 +9,11 @@ public class AudioManager : MonoBehaviour
     public Sound[] sounds;
     public Sound[] musicTracks;
 
- 
-    private AudioSource musicSource;
-    private AudioSource sfxSource;
+    [SerializeField] private AudioSource musicSource;
+    [SerializeField] private AudioSource sfxSource;
 
     public static AudioManager Instance { get; private set; }
+
     void Awake()
     {
         Instance = this;
@@ -35,7 +36,6 @@ public class AudioManager : MonoBehaviour
         musicSource.clip = clipToPlay;
         musicSource.volume = s.volume;
         musicSource.pitch = s.pitch;
-        musicSource.loop = s.loop; 
         musicSource.Play();
     }
 
@@ -47,7 +47,6 @@ public class AudioManager : MonoBehaviour
 
         sfxSource.pitch = s.pitch;
         sfxSource.PlayOneShot(clipToPlay, s.volume);
-
     }
 
     public void StopMusic()

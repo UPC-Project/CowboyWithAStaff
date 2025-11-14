@@ -13,6 +13,7 @@ public static class SoundUtils
         {
             yield return new WaitForSeconds(UnityEngine.Random.Range(intervalRange.x, intervalRange.y));
             AudioClip clip = clips[UnityEngine.Random.Range(0, clips.Count)];
+            audioSource.volume = volume;
             audioSource.clip = clip;
 
             audioSource.Play();

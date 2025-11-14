@@ -137,8 +137,8 @@ public class Player : Health
                 collider.transform.GetComponent<Enemy>().TakeDamage(_meleeAttackDamage);
             }
         }
-        AudioManager.Instance.Play("PlayerMeleeAttack");
 
+        AudioManager.Instance.Play("PlayerMeleeAttack");
     }
 
     public void RangedAttack()

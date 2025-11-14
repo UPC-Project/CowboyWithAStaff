@@ -43,11 +43,11 @@ public class RangedEnemy : Enemy
         return distanceToTarget <= distanceToShoot;
     }
 
+    // Call it with SMB instead of Animation Event
     // Modularize this in Enemy class later
     public void PlayFootstepSound()
     {
-        // Use _moveSounds later
-        AudioManager.Instance.Play("SnakeWalk");
+        StartCoroutine(SoundUtils.PlayRandomSounds(_audioSourceWalk, _moveSounds, (1f, 5f), () => isWalking(), 0.5f));
     }
 }
 

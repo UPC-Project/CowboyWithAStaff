@@ -36,6 +36,6 @@ public class MeleeEnemy : Enemy
     // Modularize this in Enemy class later
     public void PlayFootstepSound()
     {
-        StartCoroutine(SoundUtils.PlayRandomSounds(_audioSource, _moveSounds, (2f, 8f), () => canMove, 0.2f));
+        StartCoroutine(SoundUtils.PlayRandomSounds(_audioSourceWalk, _moveSounds, (1f, 5f), () => isWalking(), 0.5f));
     }
 }
