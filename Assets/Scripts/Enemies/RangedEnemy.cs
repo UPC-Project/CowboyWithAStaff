@@ -20,6 +20,9 @@ public class RangedEnemy : Enemy
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         _firingPoint.localRotation = Quaternion.Euler(0f, 0f, angle - 90f);
 
+        // Use _attackSounds later and modularize this in Enemy class
+        AudioManager.Instance.Play("SnakeShoot");
+
         StartCoroutine(BurstAttack(_firingPoint.position, _firingPoint.rotation));
     }
 
@@ -39,4 +42,12 @@ public class RangedEnemy : Enemy
         float distanceToTarget = Vector2.Distance(target.position, transform.position);
         return distanceToTarget <= distanceToShoot;
     }
+
+    // Call it with SMB instead of Animation Event
+    // Modularize this in Enemy class later
+    public void PlayFootstepSound()
+    {
+        StartCoroutine(SoundUtils.PlayRandomSounds(_audioSourceWalk, _moveSounds, (1f, 5f), () => isWalking(), 0.5f));
+    }
 }
+
