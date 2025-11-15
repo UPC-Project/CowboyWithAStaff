@@ -10,7 +10,6 @@ public class Checkpoint : MonoBehaviour
         {
             activated = true;
             GameState.Instance.SetCheckpoint(transform.position);
-            Debug.Log("Pisaste un check");
         }
     }
 }

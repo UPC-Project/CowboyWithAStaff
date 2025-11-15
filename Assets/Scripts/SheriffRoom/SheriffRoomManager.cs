@@ -98,7 +98,6 @@ public class SheriffRoomManager : MonoBehaviour
 
     private void OnPlayerDied()
     {
-        Debug.Log("OnPlayerDied");
         Player playerScript = FindAnyObjectByType<Player>();
         playerScript.OnPlayerDied -= OnPlayerDied;
         foreach (Health enemy in _activeEnemies)
