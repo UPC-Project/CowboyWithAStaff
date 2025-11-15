@@ -12,6 +12,7 @@ public class SheriffRoomManager : MonoBehaviour
 
     // TODO: Change when Player is Singleton
     private Player _player;
+    private GameState _gameState;
 
     [Header("Setup")]
     [SerializeField] private GameObject _entryTriggerObject;
@@ -46,6 +47,7 @@ public class SheriffRoomManager : MonoBehaviour
     {
         _exitTriggerObject.gameObject.SetActive(false);
         _player = FindAnyObjectByType<Player>();
+        _gameState = FindAnyObjectByType<GameState>();
     }
 
     public void StartRoom()
@@ -53,6 +55,7 @@ public class SheriffRoomManager : MonoBehaviour
         if (_currentState != RoomState.Idle) return;
         RoomSequence(_player.gameObject);
         _player.OnPlayerDied += OnPlayerDied;
+        _gameState.FreezeAllEnemies();
     }
 
     private void RoomSequence(GameObject player)
@@ -119,6 +122,7 @@ public class SheriffRoomManager : MonoBehaviour
         _currentState = RoomState.Idle;
         _currentWaveIndex = 0;
         _exitTriggerObject.SetActive(false);
+        _gameState.ReactivateFrozenEnemies();
     }
 
     private void CompleteRoom()
