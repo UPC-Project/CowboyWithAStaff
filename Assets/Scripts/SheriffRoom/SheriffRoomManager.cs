@@ -128,7 +128,6 @@ public class SheriffRoomManager : MonoBehaviour
     private void CompleteRoom()
     {
         _currentState = RoomState.Completed;
-        _player.hasGraveyardKey = true;
         Instantiate(_keyPrefab, _keySpawnPoint.position, Quaternion.identity);
         _entryTriggerObject.SetActive(false);
         _exitTriggerObject.SetActive(true);
