@@ -30,7 +30,9 @@ public class Player : Health
     private Vector2 _attackDirection;
     public bool _isDying = false;
 
-
+    [Header("Sheriff Room")]
+    // TODO: Integration with key will be after merging with boss fight scene
+    public bool hasGraveyardKey = false;
     public event Action OnPlayerDied;
 
 
@@ -166,7 +168,7 @@ public class Player : Health
 
     public override void Death()
     {
-        OnPlayerDied?.Invoke();
+        OnPlayerDied?.Invoke(); // SheriffRoomManager listens to this event
         GameState.Instance.Respawn();
         _isDying = false;
         _playerMovement.canMove = true;

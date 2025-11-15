@@ -1,14 +1,9 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
-public class ExitRoomTrigger : MonoBehaviour
+public class ExitSheriffRoomTrigger : MonoBehaviour
 {
     [SerializeField] public Transform _exitTeleportTarget;
-
-    private void Awake()
-    {
-        GetComponent<Collider2D>().isTrigger = true;
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -41,8 +41,8 @@ public abstract class Enemy : Health
     // The enemy is not attacking nor defeated
     public bool canMove = true;
 
-    public event Action<Health> OnEnemyDied;
-    public bool isManagedByRoom = false;
+    public event Action<Enemy> OnEnemyDied;
+    public bool isManagedBySheriffRoom = false;
 
 
     protected virtual void Start()
@@ -88,7 +88,7 @@ public abstract class Enemy : Health
                 if (collider.CompareTag("Player") && _respawnFlag)
                 {
                     _onAggro = true;
-                    if (!isManagedByRoom)
+                    if (!isManagedBySheriffRoom)
                     {
                         GameState.Instance.RegisterActivatedEnemy(this.gameObject);
                     }
@@ -143,7 +143,7 @@ public abstract class Enemy : Health
     // Called by EnemyDeathSMB when attack is completed
     public override void Death()
     {
-        OnEnemyDied?.Invoke(this);
+        OnEnemyDied?.Invoke(this); // SheriffRoomManager listens to this event
         gameObject.SetActive(false);
         _onAggro = false;
     }
@@ -191,7 +191,7 @@ public abstract class Enemy : Health
     // Avoids activating aggro at respawn
     public override void StartDeath()
     {
-        if (!isManagedByRoom)
+        if (!isManagedBySheriffRoom)
         {
             GameState.Instance.RegisterActivatedEnemy(this.gameObject);
         }

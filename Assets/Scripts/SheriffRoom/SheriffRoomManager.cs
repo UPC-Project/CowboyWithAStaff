@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class SheriffRoomManager : MonoBehaviour
 {
+    public static SheriffRoomManager Instance { get; private set; }
+    // Room states
+    public enum RoomState { Idle, Fighting, Completed }
+    // Base state
+    public RoomState _currentState = RoomState.Idle;
 
-    //room states
-    private enum RoomState { Idle, Fighting, Completed }
-    //base state
-    private RoomState _currentState = RoomState.Idle;
+    // TODO: Change when Player is Singleton
+    private Player _player;
 
     [Header("Setup")]
     [SerializeField] private GameObject _entryTriggerObject;
-    [SerializeField] private SheriffRoomTrigger _entryTrigger;
+    [SerializeField] private EnterSheriffRoomTrigger _entryTrigger;
     [SerializeField] private Transform _playerTeleportTarget;
     [SerializeField] private Transform _exitTeleport;
     [SerializeField] private GameObject _exitTriggerObject;
@@ -20,34 +23,43 @@ public class SheriffRoomManager : MonoBehaviour
     [Header("Waves")]
     [SerializeField] private Wave[] _wave;
     private int _currentWaveIndex = 0;
-    private List<Health> _activeEnemies = new List<Health>();
+    private List<Enemy> _activeEnemies = new List<Enemy>();
 
     [Header("Rewards")]
     [SerializeField] private GameObject _keyPrefab;
     [SerializeField] private Transform _keySpawnPoint;
 
+    private void Awake()
+    {
+        // Singleton pattern
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+
+        DontDestroyOnLoad(this.gameObject); // Persist across scenes
+    }
+
     public void Start()
     {
         _exitTriggerObject.gameObject.SetActive(false);
+        _player = FindAnyObjectByType<Player>();
     }
 
-    public void StartRoom(GameObject player)
+    public void StartRoom()
     {
-
         if (_currentState != RoomState.Idle) return;
-        StartCoroutine(RoomSequence(player));
-        Player playerScript = player.GetComponent<Player>();
-        playerScript.OnPlayerDied += OnPlayerDied;
-
+        RoomSequence(_player.gameObject);
+        _player.OnPlayerDied += OnPlayerDied;
     }
 
-    private IEnumerator RoomSequence(GameObject player)
+    private void RoomSequence(GameObject player)
     {
         _currentState = RoomState.Fighting;
         player.transform.position = _playerTeleportTarget.position;
         StartNextWave();
-
-        yield return null;
     }
 
     private void StartNextWave()
@@ -72,7 +84,7 @@ public class SheriffRoomManager : MonoBehaviour
             GameObject enemyObj = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
             Enemy enemyScript = enemyObj.GetComponent<Enemy>();
 
-            enemyScript.isManagedByRoom = true;
+            enemyScript.isManagedBySheriffRoom = true;
 
             enemyScript.OnEnemyDied += OnEnemyDied;
             _activeEnemies.Add(enemyScript);
@@ -82,40 +94,37 @@ public class SheriffRoomManager : MonoBehaviour
         }
     }
 
-    private void OnEnemyDied(Health deadEnemy)
+    private void OnEnemyDied(Enemy deadEnemy)
     {
-        Enemy enemyScript = deadEnemy.GetComponent<Enemy>();
-        enemyScript.OnEnemyDied -= OnEnemyDied;
+        deadEnemy.OnEnemyDied -= OnEnemyDied;
         _activeEnemies.Remove(deadEnemy);
 
+        // If all enemies are defeated, start the next wave
         if (_activeEnemies.Count == 0)
         {
             _currentWaveIndex++;
             StartNextWave();
         }
-
     }
 
     private void OnPlayerDied()
     {
-        Player playerScript = FindAnyObjectByType<Player>();
-        playerScript.OnPlayerDied -= OnPlayerDied;
-        foreach (Health enemy in _activeEnemies)
+        _player.OnPlayerDied -= OnPlayerDied;
+        foreach (Enemy enemy in _activeEnemies)
         {
-            Enemy enemyScript = enemy.GetComponent<Enemy>();
-            enemyScript.OnEnemyDied -= OnEnemyDied;
+            enemy.OnEnemyDied -= OnEnemyDied;
             Destroy(enemy.gameObject);
         }
         _activeEnemies.Clear();
         _currentState = RoomState.Idle;
         _currentWaveIndex = 0;
-        _entryTrigger.ResetTrigger();
         _exitTriggerObject.SetActive(false);
     }
 
     private void CompleteRoom()
     {
         _currentState = RoomState.Completed;
+        _player.hasGraveyardKey = true;
         Instantiate(_keyPrefab, _keySpawnPoint.position, Quaternion.identity);
         _entryTriggerObject.SetActive(false);
         _exitTriggerObject.SetActive(true);

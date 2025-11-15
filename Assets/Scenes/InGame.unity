@@ -910,7 +910,7 @@ GameObject:
   m_Component:
   - component: {fileID: 39517425}
   m_Layer: 0
-  m_Name: HallDoors
+  m_Name: SheriffRoom Doors
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3701,11 +3701,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3686721714059810549, guid: 5b52c14190872c94a958202b75210e15, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.5
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 3686721714059810549, guid: 5b52c14190872c94a958202b75210e15, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 61.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3686721714059810549, guid: 5b52c14190872c94a958202b75210e15, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -3718,6 +3718,10 @@ PrefabInstance:
     - target: {fileID: 7003044057291396335, guid: 5b52c14190872c94a958202b75210e15, type: 3}
       propertyPath: m_Name
       value: shadow
+      objectReference: {fileID: 0}
+    - target: {fileID: 7368951889331973350, guid: 5b52c14190872c94a958202b75210e15, type: 3}
+      propertyPath: maxHealth
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8078200177674512349, guid: 5b52c14190872c94a958202b75210e15, type: 3}
       propertyPath: m_FlipX
@@ -3781,7 +3785,7 @@ GameObject:
   - component: {fileID: 380924859}
   - component: {fileID: 380924858}
   m_Layer: 0
-  m_Name: EntryHallTrigger
+  m_Name: EntrySheriffRoom Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9611,7 +9615,7 @@ GameObject:
   m_Component:
   - component: {fileID: 873239419}
   m_Layer: 0
-  m_Name: ExitHallTp
+  m_Name: ExitSheriffRoom Tp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9642,7 +9646,7 @@ GameObject:
   m_Component:
   - component: {fileID: 875074915}
   m_Layer: 0
-  m_Name: SheriffHallLogic
+  m_Name: SheriffRoom Logic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15388,7 +15392,7 @@ GameObject:
   - component: {fileID: 1497002514}
   - component: {fileID: 1497002513}
   m_Layer: 0
-  m_Name: ExitHallTrigger
+  m_Name: ExitSheriffRoom Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -16633,7 +16637,7 @@ GameObject:
   - component: {fileID: 1608884017}
   - component: {fileID: 1608884018}
   m_Layer: 0
-  m_Name: HallGroud
+  m_Name: SheriffRoom Groud
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16967,7 +16971,7 @@ GameObject:
   - component: {fileID: 1656336259}
   - component: {fileID: 1656336260}
   m_Layer: 0
-  m_Name: SheriffHall
+  m_Name: SheriffRoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17005,6 +17009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 922ea924d924daf42843a24c93bb5266, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SheriffRoomManager
+  _currentState: 0
   _entryTriggerObject: {fileID: 1497002511}
   _entryTrigger: {fileID: 380924858}
   _playerTeleportTarget: {fileID: 1814488449}
@@ -18290,7 +18295,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1814488449}
   m_Layer: 0
-  m_Name: EntryHallTp
+  m_Name: EntrySheriffRoom Tp
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -19779,7 +19784,7 @@ GameObject:
   - component: {fileID: 1982192364}
   - component: {fileID: 1982192363}
   m_Layer: 0
-  m_Name: ChekPointHall
+  m_Name: CheckPoint SheriffRoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
