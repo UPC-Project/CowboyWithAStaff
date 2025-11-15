@@ -22,7 +22,7 @@ public class PlayerBlockSkillSMB : StateMachineBehaviour
         }
 
 
-        if (!_player._inBossFight)
+        if (!_player.inBossFight)
         {
             Collider2D[] objects = Physics2D.OverlapCircleAll(_player.transform.position, _player.hitRadius);
             foreach (Collider2D collider in objects)

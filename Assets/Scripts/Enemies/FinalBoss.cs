@@ -1,10 +1,9 @@
-using UnityEngine;
 using System.Collections;
+using Unity.VisualScripting;
+using UnityEngine;
 
 public class FinalBoss : RangedEnemy
 {
-    private PlayerMovement _playerMovement;
-
     [SerializeField] private int _attackTimeMultiplier = 1;
     [SerializeField] private int _timesAttacked = 0;
     [SerializeField] private int _restartLoopAt = 2;
@@ -22,18 +21,13 @@ public class FinalBoss : RangedEnemy
     public float _attackingTime;
     public float _attackingRate;
 
-    protected override void Start()
-    {
-        base.Start();
-        _playerMovement = target.GetComponent<PlayerMovement>();
-    }
-
+    [SerializeField] private WinGameUI _winGameUI;
 
     protected override void OnUpdate()
     {
         if (target)
         {
-            if (_attackingTime <= 0)
+            if (_attackingTime <= 0 && canMove)
             {
                 OldRotateTowardsTarget();
             }
@@ -74,7 +68,6 @@ public class FinalBoss : RangedEnemy
                 {
                     _timesAttacked++;
                 }
-
                 MeleeAttack();
             }
         }
@@ -97,7 +90,7 @@ public class FinalBoss : RangedEnemy
 
     protected override void OnFixedUpdate()
     {
-        if (!PlayerInRangeToStop() && !_isRetreating && _attackingTime <= 0)
+        if (!PlayerInRangeToStop() && !_isRetreating && _attackingTime <= 0 && canMove)
         {
             Vector2 dir = (target.position - transform.position).normalized;
             _rb.linearVelocity = dir * speed;
@@ -180,7 +173,18 @@ public class FinalBoss : RangedEnemy
 
     // It's not repealed
     public override void RepelFromPLayer(Vector3 playerPos, float repelForce) { }
-    
+
+    // override not necessary when animation is implemented
+    public override void StartDeath()
+    {
+        canMove = false;
+        // this call will be in Death()
+        StartCoroutine(_winGameUI.WinGame());
+    }
+    public override void Death()
+    {
+        //StartCoroutine(WinGame());
+    }
 }
 
 

@@ -7,8 +7,8 @@ public abstract class Enemy : Health
 {
     public Transform target;
     protected Rigidbody2D _rb;
-    public Collider2D col2D;
-    public SpriteRenderer spriteRenderer;
+    private Collider2D _col2D;
+    private SpriteRenderer _spriteRenderer;
     [SerializeField] protected float _aggroRadius;
     [SerializeField] protected bool _onAggro = false;
     private Vector3 _startPosition;
@@ -25,8 +25,6 @@ public abstract class Enemy : Health
     [SerializeField] protected List<AudioClip> _moveSounds;
     [SerializeField] protected List<AudioClip> _attackSounds;
     [SerializeField] protected List<AudioClip> _damageSounds;
-    [SerializeField] protected float _nextIdleSoundTime;
-    [SerializeField] protected float _idleSoundRateTime;
 
     [Header("Movement")]
     public float speed;
@@ -47,12 +45,12 @@ public abstract class Enemy : Health
 
     protected virtual void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        target = Player.Instance.transform;
         _rb = GetComponent<Rigidbody2D>();
-        col2D = GetComponent<Collider2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        _col2D = GetComponent<Collider2D>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
         _startPosition = transform.position;
-        StartCoroutine(SoundUtils.PlayRandomSounds(_audioSource, _idleSounds, (2f, 10f), () => canMove, 1f));
+        StartCoroutine(SoundUtils.PlayRandomSoundsLoop(_audioSource, _idleSounds, (2f, 10f), () => canMove));
     }
 
     private void Update()
@@ -137,7 +135,7 @@ public abstract class Enemy : Health
         canMove = true;
         // Cooldown begins once the animation has finished
         _nextAttackTime = _nextAttackRate;
-        StartCoroutine(SoundUtils.PlayRandomSounds(_audioSource, _idleSounds, (2f, 10f), () => canMove, 0.2f));
+        StartCoroutine(SoundUtils.PlayRandomSoundsLoop(_audioSource, _idleSounds, (2f, 10f), () => canMove));
     }
 
     // Called by EnemyDeathSMB when attack is completed
@@ -146,6 +144,18 @@ public abstract class Enemy : Health
         OnEnemyDied?.Invoke(this); // SheriffRoomManager listens to this event
         gameObject.SetActive(false);
         _onAggro = false;
+    }
+
+    public override void TakeDamage(int damage)
+    {
+        SoundUtils.PlayARandomSound(_audioSource, _damageSounds);
+        base.TakeDamage(damage);
+    }
+
+    // Call it with SMB instead of Animation Event
+    public void PlayFootstepSound()
+    {
+        SoundUtils.PlayARandomSound(_audioSourceWalk, _moveSounds);
     }
 
     public void ForceAggro()
@@ -162,10 +172,10 @@ public abstract class Enemy : Health
         _nextAttackTime = 0;
         _onAggro = false;
         canMove = true;
-        var tempColor = spriteRenderer.color;
+        var tempColor = _spriteRenderer.color;
         tempColor.a = 1;
-        spriteRenderer.color = tempColor;
-        col2D.enabled = true;
+        _spriteRenderer.color = tempColor;
+        _col2D.enabled = true;
 
         _rb.linearVelocity = Vector2.zero;
 
@@ -177,7 +187,7 @@ public abstract class Enemy : Health
         _animator.Play("idle", 0, 0f);
 
         // Sounds
-        StartCoroutine(SoundUtils.PlayRandomSounds(_audioSource, _idleSounds, (2f, 10f), () => canMove, 0.2f));
+        StartCoroutine(SoundUtils.PlayRandomSoundsLoop(_audioSource, _idleSounds, (2f, 10f), () => canMove));
     }
 
     public virtual void RepelFromPLayer(Vector3 playerPos, float repelForce)
@@ -197,7 +207,7 @@ public abstract class Enemy : Health
         }
         _animator.SetBool("isDead", true);
         canMove = false;
-        col2D.enabled = false;
+        _col2D.enabled = false;
     }
     IEnumerator JustRespawn()
     {
@@ -205,11 +215,6 @@ public abstract class Enemy : Health
         yield return new WaitForSeconds(.2f);
         _respawnFlag = true;
     }
-
-    public bool isWalking()
-    {
-        return _rb.linearVelocity.sqrMagnitude > 0.01f;
-    } 
 
     IEnumerator RepealSelf()
     {
@@ -231,7 +236,7 @@ public abstract class Enemy : Health
 
     IEnumerator FadeOutCoroutine()
     {
-        Color color = spriteRenderer.color;
+        Color color = _spriteRenderer.color;
         float startAlpha = color.a;
         float elapsed = 0f;
 
@@ -240,12 +245,12 @@ public abstract class Enemy : Health
             elapsed += Time.deltaTime;
             float t = elapsed / 1.2f;
             color.a = Mathf.Lerp(startAlpha, 0f, t);
-            spriteRenderer.color = color;
+            _spriteRenderer.color = color;
             yield return null;
         }
 
         color.a = 0f;
-        spriteRenderer.color = color;
+        _spriteRenderer.color = color;
     }
 
     protected virtual bool PlayerInRangeToStop()
