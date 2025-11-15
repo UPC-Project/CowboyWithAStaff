@@ -3644,10 +3644,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: shadow
       objectReference: {fileID: 0}
-    - target: {fileID: 7357064047387679890, guid: 5b52c14190872c94a958202b75210e15, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8078200177674512349, guid: 5b52c14190872c94a958202b75210e15, type: 3}
       propertyPath: m_FlipX
       value: 0
@@ -18142,11 +18138,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 0c5f323cd952bdb4cad40dd651da4541, type: 2}
     - target: {fileID: 4347738930083180683, guid: 9a556f5871c94c1429e509364267d88e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.8411503
+      value: -8.1
       objectReference: {fileID: 0}
     - target: {fileID: 4347738930083180683, guid: 9a556f5871c94c1429e509364267d88e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 19.582447
+      value: 21.9
       objectReference: {fileID: 0}
     - target: {fileID: 4347738930083180683, guid: 9a556f5871c94c1429e509364267d88e, type: 3}
       propertyPath: m_LocalPosition.z

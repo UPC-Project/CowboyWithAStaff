@@ -7,7 +7,7 @@ public class MeleeEnemy : Enemy
     public override void Attack()
     {
         // Use _attackSounds later and modularize this in Enemy class
-        AudioManager.Instance.Play("ZombieHit");
+        SoundUtils.PlayARandomSound(_audioSource, _attackSounds);
         Collider2D[] objects = Physics2D.OverlapCircleAll(transform.position, _hitRadius);
         foreach (Collider2D collider in objects)
         {
@@ -26,17 +26,9 @@ public class MeleeEnemy : Enemy
         Gizmos.DrawWireSphere(transform.position, _hitRadius);
     }
 
-    public override void TakeDamage(int damage)
-    {
-        // Use _damageSounds and moudlarize this en Enemy class later
-        AudioManager.Instance.Play("ZombieTakeDamage");
-        base.TakeDamage(damage); 
-    }
+    
 
     // Call it with SMB instead of Animation Event
-    // Modularize this in Enemy class later
-    public void PlayFootstepSound()
-    {
-        SoundUtils.PlayARandomSound(_audioSourceWalk, _moveSounds, 0.3f);
-    }
+    
+   
 }

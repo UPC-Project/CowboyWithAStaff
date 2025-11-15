@@ -67,7 +67,7 @@ MonoBehaviour:
   - name: PotionPickup
     clips:
     - {fileID: 8300000, guid: 9b58565e302332a459b9f7afa102a069, type: 3}
-    volume: 1
+    volume: 0.2
     pitch: 1
     loop: 0
   - name: PotionUse
@@ -147,12 +147,6 @@ MonoBehaviour:
   - name: ZombieIdle
     clips:
     - {fileID: 8300000, guid: cfc7afe6b195ebd4785a3204b2281d40, type: 3}
-    volume: 0.228
-    pitch: 1
-    loop: 1
-  - name: LevelMusic
-    clips:
-    - {fileID: 8300000, guid: 1f551c523e59ccc40b0d6fe24138af3a, type: 3}
     volume: 0.228
     pitch: 1
     loop: 1

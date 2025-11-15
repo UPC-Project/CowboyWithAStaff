@@ -45,7 +45,7 @@ public abstract class Enemy : Health
         _col2D = GetComponent<Collider2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _startPosition = transform.position;
-        StartCoroutine(SoundUtils.PlayRandomSoundsLoop(_audioSource, _idleSounds, (2f, 10f), () => canMove, 1f));
+        StartCoroutine(SoundUtils.PlayRandomSoundsLoop(_audioSource, _idleSounds, (2f, 10f), () => canMove));
     }
 
     private void Update()
@@ -127,7 +127,7 @@ public abstract class Enemy : Health
         canMove = true;
         // Cooldown begins once the animation has finished
         _nextAttackTime = _nextAttackRate;
-        StartCoroutine(SoundUtils.PlayRandomSoundsLoop(_audioSource, _idleSounds, (2f, 10f), () => canMove, 0.2f));
+        StartCoroutine(SoundUtils.PlayRandomSoundsLoop(_audioSource, _idleSounds, (2f, 10f), () => canMove));
     }
 
     // Called by EnemyDeathSMB when attack is completed
@@ -135,6 +135,18 @@ public abstract class Enemy : Health
     {
         gameObject.SetActive(false);
         _onAggro = false;
+    }
+
+    public override void TakeDamage(int damage)
+    {
+        SoundUtils.PlayARandomSound(_audioSource, _damageSounds);
+        base.TakeDamage(damage);
+    }
+
+    // Call it with SMB instead of Animation Event
+    public void PlayFootstepSound()
+    {
+        SoundUtils.PlayARandomSound(_audioSourceWalk, _moveSounds);
     }
 
     public void ResetEnemyState()
@@ -161,7 +173,7 @@ public abstract class Enemy : Health
         _animator.Play("idle", 0, 0f);
 
         // Sounds
-        StartCoroutine(SoundUtils.PlayRandomSoundsLoop(_audioSource, _idleSounds, (2f, 10f), () => canMove, 0.2f));
+        StartCoroutine(SoundUtils.PlayRandomSoundsLoop(_audioSource, _idleSounds, (2f, 10f), () => canMove));
     }
 
     public virtual void RepelFromPLayer(Vector3 playerPos, float repelForce)
