@@ -49,6 +49,7 @@ public class GameState : MonoBehaviour
     // Called by Death()
     public void Respawn()
     {
+        Debug.Log("GameState Respaw()");
         _player.transform.position = _respawnPoint;
         _player.health = _respawnHealth;
         _player.healingPotions = _respawnHealingPotions;

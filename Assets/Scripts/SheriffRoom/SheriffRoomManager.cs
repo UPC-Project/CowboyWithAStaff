@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class SheriffRoomManager : MonoBehaviour
 {
+
+    //room states
     private enum RoomState { Idle, Fighting, Completed }
+    //base state
     private RoomState _currentState = RoomState.Idle;
 
     [Header("Setup")]
@@ -68,6 +71,9 @@ public class SheriffRoomManager : MonoBehaviour
             Transform spawnPoint = wave.spawnPoints[Random.Range(0, wave.spawnPoints.Length)];
             GameObject enemyObj = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
             Enemy enemyScript = enemyObj.GetComponent<Enemy>();
+
+            enemyScript.isManagedByRoom = true;
+
             enemyScript.OnEnemyDied += OnEnemyDied;
             _activeEnemies.Add(enemyScript);
             enemyScript.ForceAggro();
@@ -92,6 +98,7 @@ public class SheriffRoomManager : MonoBehaviour
 
     private void OnPlayerDied()
     {
+        Debug.Log("OnPlayerDied");
         Player playerScript = FindAnyObjectByType<Player>();
         playerScript.OnPlayerDied -= OnPlayerDied;
         foreach (Health enemy in _activeEnemies)

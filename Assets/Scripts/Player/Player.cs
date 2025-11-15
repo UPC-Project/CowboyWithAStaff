@@ -166,8 +166,8 @@ public class Player : Health
 
     public override void Death()
     {
-        GameState.Instance.Respawn();
         OnPlayerDied?.Invoke();
+        GameState.Instance.Respawn();
         _isDying = false;
         _playerMovement.canMove = true;
     }

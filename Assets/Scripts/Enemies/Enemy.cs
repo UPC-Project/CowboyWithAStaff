@@ -42,6 +42,7 @@ public abstract class Enemy : Health
     public bool canMove = true;
 
     public event Action<Health> OnEnemyDied;
+    public bool isManagedByRoom = false;
 
 
     protected virtual void Start()
@@ -87,7 +88,10 @@ public abstract class Enemy : Health
                 if (collider.CompareTag("Player") && _respawnFlag)
                 {
                     _onAggro = true;
-                    GameState.Instance.RegisterActivatedEnemy(this.gameObject);
+                    if (!isManagedByRoom)
+                    {
+                        GameState.Instance.RegisterActivatedEnemy(this.gameObject);
+                    }
                 }
             }
         }
@@ -187,7 +191,10 @@ public abstract class Enemy : Health
     // Avoids activating aggro at respawn
     public override void StartDeath()
     {
-        GameState.Instance.RegisterActivatedEnemy(this.gameObject);
+        if (!isManagedByRoom)
+        {
+            GameState.Instance.RegisterActivatedEnemy(this.gameObject);
+        }
         _animator.SetBool("isDead", true);
         canMove = false;
         col2D.enabled = false;
