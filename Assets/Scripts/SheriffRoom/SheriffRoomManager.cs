@@ -17,7 +17,7 @@ public class SheriffRoomManager : MonoBehaviour
     [Header("Waves")]
     [SerializeField] private Wave[] _wave;
     private int _currentWaveIndex = 0;
-    private List<HealthSystem> _activeEnemies = new List<HealthSystem>();
+    private List<Health> _activeEnemies = new List<Health>();
 
     [Header("Rewards")]
     [SerializeField] private GameObject _keyPrefab;
@@ -76,7 +76,7 @@ public class SheriffRoomManager : MonoBehaviour
         }
     }
 
-    private void OnEnemyDied(HealthSystem deadEnemy)
+    private void OnEnemyDied(Health deadEnemy)
     {
         Enemy enemyScript = deadEnemy.GetComponent<Enemy>();
         enemyScript.OnEnemyDied -= OnEnemyDied;
@@ -94,7 +94,7 @@ public class SheriffRoomManager : MonoBehaviour
     {
         Player playerScript = FindAnyObjectByType<Player>();
         playerScript.OnPlayerDied -= OnPlayerDied;
-        foreach (HealthSystem enemy in _activeEnemies)
+        foreach (Health enemy in _activeEnemies)
         {
             Enemy enemyScript = enemy.GetComponent<Enemy>();
             enemyScript.OnEnemyDied -= OnEnemyDied;

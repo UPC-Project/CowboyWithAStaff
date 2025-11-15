@@ -1,5 +1,6 @@
-using UnityEngine;
 using Constants;
+using System;
+using UnityEngine;
 
 public class Player : Health
 {
@@ -28,6 +29,10 @@ public class Player : Health
     [SerializeField] private Animator _animator;
     private Vector2 _attackDirection;
     public bool _isDying = false;
+
+
+    public event Action OnPlayerDied;
+
 
     private void Update()
     {
@@ -162,6 +167,7 @@ public class Player : Health
     public override void Death()
     {
         GameState.Instance.Respawn();
+        OnPlayerDied?.Invoke();
         _isDying = false;
         _playerMovement.canMove = true;
     }

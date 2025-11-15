@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -39,6 +40,9 @@ public abstract class Enemy : Health
     [SerializeField] protected float _nextAttackRate;
     // The enemy is not attacking nor defeated
     public bool canMove = true;
+
+    public event Action<Health> OnEnemyDied;
+
 
     protected virtual void Start()
     {
@@ -135,10 +139,16 @@ public abstract class Enemy : Health
     // Called by EnemyDeathSMB when attack is completed
     public override void Death()
     {
+        OnEnemyDied?.Invoke(this);
         gameObject.SetActive(false);
         _onAggro = false;
     }
 
+    public void ForceAggro()
+    {
+        gameObject.SetActive(true);
+        _onAggro = true;
+    }
     public void ResetEnemyState()
     {
         gameObject.SetActive(true);
