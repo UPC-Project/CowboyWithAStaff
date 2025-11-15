@@ -24,8 +24,6 @@ public abstract class Enemy : Health
     [SerializeField] protected List<AudioClip> _moveSounds;
     [SerializeField] protected List<AudioClip> _attackSounds;
     [SerializeField] protected List<AudioClip> _damageSounds;
-    [SerializeField] protected float _nextIdleSoundTime;
-    [SerializeField] protected float _idleSoundRateTime;
 
     [Header("Movement")]
     public float speed;
@@ -47,7 +45,7 @@ public abstract class Enemy : Health
         _col2D = GetComponent<Collider2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _startPosition = transform.position;
-        StartCoroutine(SoundUtils.PlayRandomSounds(_audioSource, _idleSounds, (2f, 10f), () => canMove, 1f));
+        StartCoroutine(SoundUtils.PlayRandomSoundsLoop(_audioSource, _idleSounds, (2f, 10f), () => canMove, 1f));
     }
 
     private void Update()
@@ -129,7 +127,7 @@ public abstract class Enemy : Health
         canMove = true;
         // Cooldown begins once the animation has finished
         _nextAttackTime = _nextAttackRate;
-        StartCoroutine(SoundUtils.PlayRandomSounds(_audioSource, _idleSounds, (2f, 10f), () => canMove, 0.2f));
+        StartCoroutine(SoundUtils.PlayRandomSoundsLoop(_audioSource, _idleSounds, (2f, 10f), () => canMove, 0.2f));
     }
 
     // Called by EnemyDeathSMB when attack is completed
@@ -163,7 +161,7 @@ public abstract class Enemy : Health
         _animator.Play("idle", 0, 0f);
 
         // Sounds
-        StartCoroutine(SoundUtils.PlayRandomSounds(_audioSource, _idleSounds, (2f, 10f), () => canMove, 0.2f));
+        StartCoroutine(SoundUtils.PlayRandomSoundsLoop(_audioSource, _idleSounds, (2f, 10f), () => canMove, 0.2f));
     }
 
     public virtual void RepelFromPLayer(Vector3 playerPos, float repelForce)
@@ -188,11 +186,6 @@ public abstract class Enemy : Health
         yield return new WaitForSeconds(.2f);
         _respawnFlag = true;
     }
-
-    public bool isWalking()
-    {
-        return _rb.linearVelocity.sqrMagnitude > 0.01f;
-    } 
 
     IEnumerator RepealSelf()
     {

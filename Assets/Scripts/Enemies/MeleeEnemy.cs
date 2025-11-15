@@ -33,9 +33,10 @@ public class MeleeEnemy : Enemy
         base.TakeDamage(damage); 
     }
 
+    // Call it with SMB instead of Animation Event
     // Modularize this in Enemy class later
     public void PlayFootstepSound()
     {
-        StartCoroutine(SoundUtils.PlayRandomSounds(_audioSourceWalk, _moveSounds, (1f, 5f), () => isWalking(), 0.5f));
+        SoundUtils.PlayARandomSound(_audioSourceWalk, _moveSounds, 0.3f);
     }
 }

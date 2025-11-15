@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7061205076781084763}
   - component: {fileID: 6556119359143456784}
   m_Layer: 0
-  m_Name: AudioManager 1
+  m_Name: AudioManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -160,6 +160,14 @@ MonoBehaviour:
   - name: LevelMusic
     clips:
     - {fileID: 8300000, guid: 1f551c523e59ccc40b0d6fe24138af3a, type: 3}
-    volume: 0
+    volume: 0.25
     pitch: 1
     loop: 1
+  - name: BossMusic
+    clips:
+    - {fileID: 8300000, guid: 93527b6b01233a44da6df0fb0ce175f0, type: 3}
+    volume: 0.25
+    pitch: 1
+    loop: 1
+  musicSource: {fileID: 0}
+  sfxSource: {fileID: 0}

@@ -5,17 +5,13 @@ using UnityEngine.SceneManagement;
 public class BossFightTrigger : MonoBehaviour
 {
     [SerializeField] private CanvasGroup _background;
-    private PlayerMovement _playerMovement;
-    private void Start()
-    {
-        _playerMovement = Player.Instance.gameObject.GetComponent<PlayerMovement>();
-    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
+            Player.Instance.audioSourceWalk.mute = true;
             Time.timeScale = 0f;
-            _playerMovement.enabled = false;
             StartCoroutine(EnterBossFight());
         }
     }

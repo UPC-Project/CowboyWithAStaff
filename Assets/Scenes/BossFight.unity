@@ -4657,7 +4657,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1344096784}
   - component: {fileID: 1344096783}
-  - component: {fileID: 1344096782}
   - component: {fileID: 1344096785}
   - component: {fileID: 1344096786}
   m_Layer: 0
@@ -4667,14 +4666,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1344096782
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1344096781}
-  m_Enabled: 1
 --- !u!20 &1344096783
 Camera:
   m_ObjectHideFlags: 0
@@ -5069,6 +5060,7 @@ MonoBehaviour:
   _finalBoss: {fileID: 2019374905}
   _director: {fileID: 1304749302}
   _cinematicCamera: {fileID: 1344096783}
+  _playerInput: {fileID: 0}
 --- !u!320 &1378842741
 PlayableDirector:
   m_ObjectHideFlags: 0
