@@ -1,7 +1,5 @@
-using UnityEngine.Audio;
 using System;
 using UnityEngine;
-using System.Linq;
 
 public class AudioManager : MonoBehaviour
 {
@@ -10,7 +8,7 @@ public class AudioManager : MonoBehaviour
     public Sound[] musicTracks;
 
     [SerializeField] private AudioSource musicSource;
-    [SerializeField] private AudioSource sfxSource;
+    public AudioSource sfxSource;
 
     public static AudioManager Instance { get; private set; }
 
@@ -25,11 +23,15 @@ public class AudioManager : MonoBehaviour
         sfxSource.playOnAwake = false;
 
         musicSource.loop = true;
+
+        DontDestroyOnLoad(this.gameObject); // Persist across scenes
     }
 
     public void PlayMusic(string name)
     {
         Sound s = Array.Find(musicTracks, track => track.name == name);
+
+        if (s == null) return;
 
         AudioClip clipToPlay = s.clips[UnityEngine.Random.Range(0, s.clips.Length)];
 
@@ -42,6 +44,8 @@ public class AudioManager : MonoBehaviour
     public void Play(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
+
+        if (s == null) return;
 
         AudioClip clipToPlay = s.clips[UnityEngine.Random.Range(0, s.clips.Length)];
 

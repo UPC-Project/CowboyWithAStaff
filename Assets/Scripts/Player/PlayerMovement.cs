@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public float movementSpeed;
     // Is not attacking or not dead
     public bool canMove = true;
-    [SerializeField] private Rigidbody2D _rb;
+    public Rigidbody2D rb;
     private PlayerInput _playerInput;
     private Vector2 _input;
 
@@ -65,11 +64,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (canMove)
         {
-            _rb.linearVelocity = new Vector2(_input.x * movementSpeed, _input.y * movementSpeed);
+            rb.linearVelocity = new Vector2(_input.x * movementSpeed, _input.y * movementSpeed);
         }
         else
         {
-            _rb.linearVelocity = Vector2.zero;
+            rb.linearVelocity = Vector2.zero;
         }
     }
 
@@ -106,6 +105,5 @@ public class PlayerMovement : MonoBehaviour
             return 180f;
         }
     }
-
 
 }

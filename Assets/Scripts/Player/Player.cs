@@ -1,11 +1,14 @@
-using UnityEngine;
 using Constants;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class Player : Health
 {
     public int healingPotions = 0;
     [SerializeField] private PlayerMovement _playerMovement;
-    public bool _inBossFight = false;
+    public bool inBossFight = false;
+
+    public static Player Instance { get; private set; }
 
     [Header("Melee Attack")]
     [SerializeField] private int _meleeAttackDamage = 1;
@@ -28,6 +31,29 @@ public class Player : Health
     [SerializeField] private Animator _animator;
     private Vector2 _attackDirection;
     public bool _isDying = false;
+
+    [Header("Sound")]
+    public AudioSource audioSource;
+    public AudioSource audioSourceWalk;
+    [SerializeField] protected List<AudioClip> _idleSounds;
+    [SerializeField] protected List<AudioClip> _moveSounds;
+    [SerializeField] protected List<AudioClip> _attackSounds;
+    [SerializeField] protected List<AudioClip> _damageSounds;
+
+    private void Awake()
+    {
+        health = maxHealth;
+
+        // Singleton pattern
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+
+        DontDestroyOnLoad(this.gameObject); // Persist across scenes
+    }
 
     private void Update()
     {
@@ -79,10 +105,8 @@ public class Player : Health
 
     public void BlockSkill()
     {
-            if (!_inBossFight) RepelEnemies();
+        if (!inBossFight) RepelEnemies();
     }
-
-
 
     private void RepelEnemies()
     {
@@ -120,7 +144,8 @@ public class Player : Health
         else if (playerSkill == PlayerSkill.RangedAttack)
         {
             _nextRangedAttackTime = _attackRangedCooldown;
-        } else
+        }
+        else
         {
             invulnerable = false;
             _nextBlockTime = _attackBlockCooldown;
@@ -198,8 +223,9 @@ public class Player : Health
 
     public void PlayFootstepSound()
     {
-        AudioManager.Instance.Play("PlayerWalk");
+        SoundUtils.PlayARandomSound(audioSourceWalk, _moveSounds, 0.5f);
     }
+
     // Comment this function if you don't want to see the melee range attack
     private void OnDrawGizmos()
     {
