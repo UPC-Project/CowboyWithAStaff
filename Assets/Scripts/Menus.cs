@@ -3,9 +3,6 @@ using UnityEngine.SceneManagement;
 public class Menus : MonoBehaviour
 {
     [SerializeField] private GameObject _pauseMenu;
-    [SerializeField] private GameObject _mainMenu;
-
-    private bool _isPaused = false;
 
     private void Start()
     {
@@ -13,9 +10,9 @@ public class Menus : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) //&& !_mainMenu.activeSelf
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (_isPaused)
+            if (_pauseMenu.activeSelf)
             {
                 ResumeGame();
             }
@@ -28,18 +25,14 @@ public class Menus : MonoBehaviour
 
     public void PauseGame()
     {
-        _isPaused = true;
         _pauseMenu.SetActive(true);
-        Time.timeScale = 0.0f;
-        Debug.Log("Game Paused");
+        Time.timeScale = 0f;
     }
 
     public void ResumeGame()
     {
-        _isPaused = false;
         _pauseMenu.SetActive(false);
-        Time.timeScale = 1.0f;
-        Debug.Log("Game Resumed");
+        Time.timeScale = 1f;
     }
 
     public void OptionQuitGame()

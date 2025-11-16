@@ -723,7 +723,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 20
   m_TargetDisplay: 0
 --- !u!114 &4113931965850726493
 MonoBehaviour:
@@ -778,7 +778,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Menus
   _pauseMenu: {fileID: 4034689163439708506}
-  _mainMenu: {fileID: 0}
 --- !u!1 &4006104540744033872
 GameObject:
   m_ObjectHideFlags: 0

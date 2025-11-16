@@ -1,0 +1,167 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5173604301099956895
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7061205076781084763}
+  - component: {fileID: 6556119359143456784}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7061205076781084763
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5173604301099956895}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6556119359143456784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5173604301099956895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60f36a994f3eb4e4f9394d7dec7650af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  sounds:
+  - name: PlayerShoot
+    clips:
+    - {fileID: 8300000, guid: c584a65175743b241b1518ffdf3a3310, type: 3}
+    - {fileID: 8300000, guid: 1cff739dc4c3b654189be152e50c6820, type: 3}
+    - {fileID: 8300000, guid: 231fac42b05829f428d4affbef7d4584, type: 3}
+    - {fileID: 8300000, guid: 1cff522a8ef486e428303e3b6e5bda01, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: PlayerMeleeAttack
+    clips:
+    - {fileID: 8300000, guid: 6d21296202cbbab4fa5e9b5732ba05cc, type: 3}
+    - {fileID: 8300000, guid: 1d58d89eafb04f0408392aa975acacc9, type: 3}
+    - {fileID: 8300000, guid: fc90a6eeadcda6641b355e2cf30285e7, type: 3}
+    - {fileID: 8300000, guid: 962b2d596b0048a49a6f77934bf86b2f, type: 3}
+    - {fileID: 8300000, guid: 845478fd341c02844a2dcf964c35df03, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: PotionPickup
+    clips:
+    - {fileID: 8300000, guid: 9b58565e302332a459b9f7afa102a069, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+  - name: PotionUse
+    clips:
+    - {fileID: 8300000, guid: faa926974103d3643b4995d15f169ca3, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: ZombieHit
+    clips:
+    - {fileID: 8300000, guid: 55759196541c1f14ab0976c70449b66c, type: 3}
+    - {fileID: 8300000, guid: e6e00fc3b87c00d4fa96b8543319f27f, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: ZombieTakeDamage
+    clips:
+    - {fileID: 8300000, guid: c9b00e5712d527f43bff4f43029d2e3e, type: 3}
+    - {fileID: 8300000, guid: 17b57a67c985b6a4c9c1b4f23b668611, type: 3}
+    - {fileID: 8300000, guid: 5a34e7f5de7d39042ad0f09b39173444, type: 3}
+    - {fileID: 8300000, guid: 51e4a691d25b6ab4491653427b60d14c, type: 3}
+    - {fileID: 8300000, guid: 2242e8791cbff6b4aa756912b91ea3f5, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+  - name: SnakeShoot
+    clips:
+    - {fileID: 8300000, guid: 307c005786bed5145bd62e895dddf0f1, type: 3}
+    volume: 0.183
+    pitch: 1
+    loop: 0
+  - name: ZombieWalk
+    clips:
+    - {fileID: 8300000, guid: cb1fd7a762007e44099ff8fd21183559, type: 3}
+    - {fileID: 8300000, guid: 0ed603fec2719fd488361baa09152992, type: 3}
+    - {fileID: 8300000, guid: df122c0ed0ae58e41b2a4c35d9b99d91, type: 3}
+    - {fileID: 8300000, guid: 257282b7e2d736e4da9e5c5de5f3ffec, type: 3}
+    - {fileID: 8300000, guid: 77e5c4779cb12034e9663aa1a30ff949, type: 3}
+    - {fileID: 8300000, guid: 6cf12f84b520e934b90cfd345b4652a7, type: 3}
+    - {fileID: 8300000, guid: 24731ffa92c1ec44ab6abf2f2a366606, type: 3}
+    - {fileID: 8300000, guid: 2e5200d3384fa8c48b6b7908fb5c51a5, type: 3}
+    volume: 0.278
+    pitch: 1
+    loop: 0
+  - name: SnakeWalk
+    clips:
+    - {fileID: 8300000, guid: cb1fd7a762007e44099ff8fd21183559, type: 3}
+    - {fileID: 8300000, guid: 0ed603fec2719fd488361baa09152992, type: 3}
+    - {fileID: 8300000, guid: df122c0ed0ae58e41b2a4c35d9b99d91, type: 3}
+    - {fileID: 8300000, guid: 257282b7e2d736e4da9e5c5de5f3ffec, type: 3}
+    - {fileID: 8300000, guid: 77e5c4779cb12034e9663aa1a30ff949, type: 3}
+    - {fileID: 8300000, guid: 6cf12f84b520e934b90cfd345b4652a7, type: 3}
+    - {fileID: 8300000, guid: 24731ffa92c1ec44ab6abf2f2a366606, type: 3}
+    - {fileID: 8300000, guid: 2e5200d3384fa8c48b6b7908fb5c51a5, type: 3}
+    volume: 0.221
+    pitch: 1
+    loop: 0
+  - name: PlayerWalk
+    clips:
+    - {fileID: 8300000, guid: cb1fd7a762007e44099ff8fd21183559, type: 3}
+    - {fileID: 8300000, guid: 0ed603fec2719fd488361baa09152992, type: 3}
+    - {fileID: 8300000, guid: df122c0ed0ae58e41b2a4c35d9b99d91, type: 3}
+    - {fileID: 8300000, guid: 257282b7e2d736e4da9e5c5de5f3ffec, type: 3}
+    - {fileID: 8300000, guid: 77e5c4779cb12034e9663aa1a30ff949, type: 3}
+    - {fileID: 8300000, guid: 6cf12f84b520e934b90cfd345b4652a7, type: 3}
+    - {fileID: 8300000, guid: 24731ffa92c1ec44ab6abf2f2a366606, type: 3}
+    - {fileID: 8300000, guid: 2e5200d3384fa8c48b6b7908fb5c51a5, type: 3}
+    volume: 0.701
+    pitch: 1
+    loop: 0
+  - name: SnakeIdle
+    clips:
+    - {fileID: 8300000, guid: 1796227310f218a4fb474870a91e0aaf, type: 3}
+    volume: 0.095
+    pitch: 1
+    loop: 1
+  - name: ZombieIdle
+    clips:
+    - {fileID: 8300000, guid: cfc7afe6b195ebd4785a3204b2281d40, type: 3}
+    volume: 0.228
+    pitch: 1
+    loop: 1
+  musicTracks:
+  - name: LevelMusic
+    clips:
+    - {fileID: 8300000, guid: 1f551c523e59ccc40b0d6fe24138af3a, type: 3}
+    volume: 0.25
+    pitch: 1
+    loop: 1
+  - name: BossMusic
+    clips:
+    - {fileID: 8300000, guid: 93527b6b01233a44da6df0fb0ce175f0, type: 3}
+    volume: 0.25
+    pitch: 1
+    loop: 1
+  musicSource: {fileID: 0}
+  sfxSource: {fileID: 0}
