@@ -10,17 +10,20 @@ public class BossFightSceneLogic : MonoBehaviour
     [SerializeField] private PlayableDirector _director; // Timeline director
     [SerializeField] private Camera _cinematicCamera; // Timeline director
     [SerializeField] private PlayerInput _playerInput;
+    [SerializeField] private GameObject _HUD;
 
     private void Start()
     {
         _playerMovement = Player.Instance.gameObject.GetComponent<PlayerMovement>();
         _playerInput = Player.Instance.GetComponent<PlayerInput>();
+        _HUD = Menus.Instance.gameObject;
 
         _playerMovement.rb.linearVelocity = Vector2.zero;
         _finalBoss.canMove = false; // Boss can't move
         _playerInput.DeactivateInput(); // Disable player input
         _playerMovement.canMove = false;
         Player.Instance.inBossFight = true;
+        _HUD.SetActive(false);
 
         foreach (var output in _director.playableAsset.outputs)
         {
@@ -53,6 +56,7 @@ public class BossFightSceneLogic : MonoBehaviour
         _playerInput.ActivateInput(); // Reactivate player input
         _playerMovement.canMove = true;
         _finalBoss.canMove = true; // Boss can move
+        _HUD.SetActive(true);
         Player.Instance.audioSourceWalk.mute = false;
         AudioManager.Instance.PlayMusic("BossMusic");
     }

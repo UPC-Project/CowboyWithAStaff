@@ -32,7 +32,6 @@ public class Bullet : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
         string hitTag = collision.gameObject.tag;
 
         // If the bullet hits something with the same tag as its owner, it is deactivated.
@@ -45,14 +44,12 @@ public class Bullet : MonoBehaviour
         else if (_ownerTag == "Player" && hitTag == "Enemy")
         {
             collision.gameObject.GetComponent<Enemy>().TakeDamage(_damage);
-            gameObject.SetActive(false); // Desactivar la bala
         }
 
         // If the bullet is from the "Enemy" and hits the "Player"
         else if (_ownerTag == "Enemy" && hitTag == "Player")
         {
             collision.gameObject.GetComponent<Player>().TakeDamage(_damage);
-            gameObject.SetActive(false); // Desactivar la bala
         }
 
         gameObject.SetActive(false);

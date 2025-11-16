@@ -3,7 +3,19 @@ using UnityEngine.SceneManagement;
 public class Menus : MonoBehaviour
 {
     [SerializeField] private GameObject _pauseMenu;
+    public static Menus Instance { get; private set; }
 
+    private void Awake()
+    {
+        // Singleton pattern
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        DontDestroyOnLoad(this.gameObject);
+    }
     private void Start()
     {
         Time.timeScale = 1.0f;
