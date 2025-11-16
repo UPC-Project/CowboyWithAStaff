@@ -313,7 +313,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 22
   m_TargetDisplay: 0
 --- !u!114 &216141030089340143
 MonoBehaviour:
@@ -661,3 +661,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GraveyardDoor
   _background: {fileID: 5741496445500641666}
   _NeedKeyText: {fileID: 0}
+  _playerInput: {fileID: 0}

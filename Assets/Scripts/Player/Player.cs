@@ -90,7 +90,7 @@ public class Player : Health
         {
             _nextBlockTime -= Time.deltaTime;
             _blockCooldown.gameObject.SetActive(true);
-            _blockCooldown.fillAmount = _nextMeleeAttackTime / _attackMeleeCooldown;
+            _blockCooldown.fillAmount = _nextBlockTime / _attackBlockCooldown;
         }
     }
 
