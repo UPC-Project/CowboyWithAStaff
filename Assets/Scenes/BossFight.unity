@@ -4756,6 +4756,52 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1062490988
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1062490990}
+  - component: {fileID: 1062490989}
+  m_Layer: 0
+  m_Name: Bullet Pool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1062490989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1062490988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20590b6621ab4f34c8bb55f2f3edd0bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
+  _bulletPrefab: {fileID: 8276062878403161376, guid: 4fd354759f677ac41854327329f05b20, type: 3}
+  _bulletList: []
+--- !u!4 &1062490990
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1062490988}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1066039408
 GameObject:
   m_ObjectHideFlags: 0
@@ -4921,52 +4967,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1105337919}
   m_CullTransparentMesh: 1
---- !u!1 &1133251368
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1133251370}
-  - component: {fileID: 1133251369}
-  m_Layer: 0
-  m_Name: Bullet Pool Player
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1133251369
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1133251368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20590b6621ab4f34c8bb55f2f3edd0bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
-  _bulletPrefab: {fileID: 8276062878403161376, guid: 4fd354759f677ac41854327329f05b20, type: 3}
-  _bulletList: []
---- !u!4 &1133251370
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1133251368}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1139572141
 GameObject:
   m_ObjectHideFlags: 0
@@ -6173,7 +6173,6 @@ MonoBehaviour:
   _director: {fileID: 1304749302}
   _cinematicCamera: {fileID: 1344096783}
   _playerInput: {fileID: 0}
-  _HUD: {fileID: 0}
 --- !u!320 &1378842741
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -7485,52 +7484,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1750826186
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1750826188}
-  - component: {fileID: 1750826187}
-  m_Layer: 0
-  m_Name: Bullet Pool Enemies
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1750826187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1750826186}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c281071b24ee7041a8d89e148001c36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BulletPoolEnemy
-  _bulletPrefab: {fileID: 8276062878403161376, guid: 358786a18173b90409f1bc4f960fd386, type: 3}
-  _bulletList: []
---- !u!4 &1750826188
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1750826186}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1876935988
 GameObject:
   m_ObjectHideFlags: 0
@@ -8359,10 +8312,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Final Boss Prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 1469882179136398060, guid: b4db79c3a58a56d498d0bf99469451e5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1819400165438427718, guid: b4db79c3a58a56d498d0bf99469451e5, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1819400165438427718, guid: b4db79c3a58a56d498d0bf99469451e5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0c5f323cd952bdb4cad40dd651da4541, type: 2}
+    - target: {fileID: 2482433381441733713, guid: b4db79c3a58a56d498d0bf99469451e5, type: 3}
+      propertyPath: maxHealth
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2482433381441733713, guid: b4db79c3a58a56d498d0bf99469451e5, type: 3}
       propertyPath: _winGameUI
       value: 
       objectReference: {fileID: 903870259}
+    - target: {fileID: 5758214415860978949, guid: b4db79c3a58a56d498d0bf99469451e5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5758214415860978949, guid: b4db79c3a58a56d498d0bf99469451e5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.5
@@ -8947,8 +8920,7 @@ SceneRoots:
   - {fileID: 1378842739}
   - {fileID: 1344096784}
   - {fileID: 2019374904}
+  - {fileID: 1062490990}
   - {fileID: 903870260}
   - {fileID: 626368366}
   - {fileID: 266478993}
-  - {fileID: 1750826188}
-  - {fileID: 1133251370}

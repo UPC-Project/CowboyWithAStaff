@@ -255,7 +255,6 @@ public class Player : Health
             healingPotions += 1;
             collision.gameObject.SetActive(false);
             GameState.Instance.RegisterCollectedItem(collision.gameObject);
-            UpdatePotionText();
         }
     }
 
@@ -292,8 +291,4 @@ public class Player : Health
         _potionText.text = healingPotions.ToString();
     }
 
-    public void AddKey()
-    {
-        _keyText.text = "1";
-    }
 }
