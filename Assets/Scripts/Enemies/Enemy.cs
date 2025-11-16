@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -37,6 +38,10 @@ public abstract class Enemy : Health
     [SerializeField] protected float _nextAttackRate;
     // The enemy is not attacking nor defeated
     public bool canMove = true;
+
+    public event Action<Enemy> OnEnemyDied;
+    public bool isManagedBySheriffRoom = false;
+
 
     protected virtual void Start()
     {
@@ -81,7 +86,10 @@ public abstract class Enemy : Health
                 if (collider.CompareTag("Player") && _respawnFlag)
                 {
                     _onAggro = true;
-                    GameState.Instance.RegisterActivatedEnemy(this.gameObject);
+                    if (!isManagedBySheriffRoom)
+                    {
+                        GameState.Instance.RegisterActivatedEnemy(this.gameObject);
+                    }
                 }
             }
         }
@@ -133,6 +141,7 @@ public abstract class Enemy : Health
     // Called by EnemyDeathSMB when attack is completed
     public override void Death()
     {
+        OnEnemyDied?.Invoke(this); // SheriffRoomManager listens to this event
         gameObject.SetActive(false);
         _onAggro = false;
     }
@@ -149,6 +158,11 @@ public abstract class Enemy : Health
         SoundUtils.PlayARandomSound(_audioSourceWalk, _moveSounds);
     }
 
+    public void ForceAggro()
+    {
+        gameObject.SetActive(true);
+        _onAggro = true;
+    }
     public void ResetEnemyState()
     {
         gameObject.SetActive(true);
@@ -187,7 +201,10 @@ public abstract class Enemy : Health
     // Avoids activating aggro at respawn
     public override void StartDeath()
     {
-        GameState.Instance.RegisterActivatedEnemy(this.gameObject);
+        if (!isManagedBySheriffRoom)
+        {
+            GameState.Instance.RegisterActivatedEnemy(this.gameObject);
+        }
         _animator.SetBool("isDead", true);
         canMove = false;
         _col2D.enabled = false;
