@@ -299,6 +299,7 @@ MonoBehaviour:
   target: {fileID: 0}
   _aggroRadius: 13
   _onAggro: 0
+  isManagedBySheriffRoom: 0
   _animator: {fileID: 357932377360902129}
   _audioSource: {fileID: 1239734381757194760}
   _audioSourceWalk: {fileID: 2420198158992039819}
@@ -312,14 +313,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 555de8efe2f59d440ac088628f987976, type: 3}
   _deathSounds: []
   speed: 2
-  distanceToStop: 8
+  _distanceToStop: 5
   _isRepealing: 0
   _isStuned: 0
+  canMove: 1
   _damage: 1
   _nextAttackTime: 0
   _nextAttackRate: 3
-  canMove: 1
-  isManagedBySheriffRoom: 0
   distanceToShoot: 12
   bullets: 2
   timeBetweenBullets: 0.15
