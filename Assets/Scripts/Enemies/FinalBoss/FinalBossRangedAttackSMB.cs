@@ -1,27 +1,27 @@
+using Constants;
 using UnityEngine;
 
-public class EnemyRangedAttackSMB : StateMachineBehaviour
+public class FinalBossRangedAttackSMB : StateMachineBehaviour
 {
-    private Enemy _enemy;
     private bool _hasAttacked;
+    private FinalBoss _finalBoss;
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        _enemy = animator.GetComponent<Enemy>();
         _hasAttacked = false;
+        _finalBoss = animator.GetComponentInParent<FinalBoss>();
     }
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (!_hasAttacked && stateInfo.normalizedTime >= 0.29f)
+        if (!_hasAttacked && stateInfo.normalizedTime >= 0.5f)
         {
-            _enemy?.Attack();
+            _finalBoss?.RangedAttack();
             _hasAttacked = true;
         }
     }
-
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        _enemy?.OnExitAttackState();
+        _finalBoss?.OnExitAttackState(FinalBossAnimationStates.rangedAttack);
     }
 }
