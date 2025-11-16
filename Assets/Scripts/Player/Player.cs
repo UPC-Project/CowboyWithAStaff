@@ -8,11 +8,12 @@ using System;
 
 public class Player : Health
 {
+    public static Player Instance { get; private set; }
+
     public int healingPotions = 0;
     [SerializeField] private PlayerMovement _playerMovement;
     public bool inBossFight = false;
-
-    public static Player Instance { get; private set; }
+    private SpriteRenderer _spriteRenderer;
 
     [Header("Melee Attack")]
     [SerializeField] private int _meleeAttackDamage = 1;
@@ -72,6 +73,11 @@ public class Player : Health
         Instance = this;
 
         DontDestroyOnLoad(this.gameObject); // Persist across scenes
+    }
+
+    private void Start()
+    {
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -233,9 +239,13 @@ public class Player : Health
 
     public override void TakeDamage(int damage)
     {
-        if (!invulnerable) health -= damage;
-        UpdateHeartsUI();
-        UpdatePotionText();
+        if (!invulnerable)
+        {
+            StartCoroutine(EntitiesUtils.FlashInvert(_spriteRenderer, 0.1f));
+            health -= damage;
+            UpdateHeartsUI();
+            UpdatePotionText();
+        }
         if (health <= 0) StartDeath();
     }
 

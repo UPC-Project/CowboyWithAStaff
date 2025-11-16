@@ -22,6 +22,7 @@ This game was created as a college project.
 - **Unity 6000.2.6f2**
 - **Blender** – for art
 - **FL Studio** – for sound and music
+- **Reaper** – for voice acting
 
 ## 🤝 Our Team
 
