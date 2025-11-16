@@ -11,15 +11,11 @@ public class SheriffRoomManager : MonoBehaviour
     public RoomState _currentState = RoomState.Idle;
 
     // TODO: Change when Player is Singleton
-    private Player _player;
     private GameState _gameState;
 
     [Header("Setup")]
-    [SerializeField] private GameObject _entryTriggerObject;
-    [SerializeField] private EnterSheriffRoomTrigger _entryTrigger;
     [SerializeField] private Transform _playerTeleportTarget;
     [SerializeField] private Transform _exitTeleport;
-    [SerializeField] private GameObject _exitTriggerObject;
 
     [Header("Waves")]
     [SerializeField] private Wave[] _wave;
@@ -45,16 +41,14 @@ public class SheriffRoomManager : MonoBehaviour
 
     public void Start()
     {
-        _exitTriggerObject.gameObject.SetActive(false);
-        _player = FindAnyObjectByType<Player>();
         _gameState = FindAnyObjectByType<GameState>();
     }
 
     public void StartRoom()
     {
         if (_currentState != RoomState.Idle) return;
-        RoomSequence(_player.gameObject);
-        _player.OnPlayerDied += OnPlayerDied;
+        RoomSequence(Player.Instance.gameObject);
+        Player.Instance.OnPlayerDied += OnPlayerDied;
         _gameState.FreezeAllEnemies();
     }
 
@@ -67,7 +61,7 @@ public class SheriffRoomManager : MonoBehaviour
 
     private void StartNextWave()
     {
-        if (_currentWaveIndex >= _wave.Length)
+        if (_currentWaveIndex >= _wave.Length && _activeEnemies.Count == 0)
         {
             CompleteRoom();
             return;
@@ -101,6 +95,7 @@ public class SheriffRoomManager : MonoBehaviour
     {
         deadEnemy.OnEnemyDied -= OnEnemyDied;
         _activeEnemies.Remove(deadEnemy);
+        Destroy(deadEnemy.gameObject);
 
         // If all enemies are defeated, start the next wave
         if (_activeEnemies.Count == 0)
@@ -112,7 +107,7 @@ public class SheriffRoomManager : MonoBehaviour
 
     private void OnPlayerDied()
     {
-        _player.OnPlayerDied -= OnPlayerDied;
+        Player.Instance.OnPlayerDied -= OnPlayerDied;
         foreach (Enemy enemy in _activeEnemies)
         {
             enemy.OnEnemyDied -= OnEnemyDied;
@@ -121,7 +116,6 @@ public class SheriffRoomManager : MonoBehaviour
         _activeEnemies.Clear();
         _currentState = RoomState.Idle;
         _currentWaveIndex = 0;
-        _exitTriggerObject.SetActive(false);
         _gameState.ReactivateFrozenEnemies();
     }
 
@@ -129,8 +123,6 @@ public class SheriffRoomManager : MonoBehaviour
     {
         _currentState = RoomState.Completed;
         Instantiate(_keyPrefab, _keySpawnPoint.position, Quaternion.identity);
-        _entryTriggerObject.SetActive(false);
-        _exitTriggerObject.SetActive(true);
     }
 
 }
