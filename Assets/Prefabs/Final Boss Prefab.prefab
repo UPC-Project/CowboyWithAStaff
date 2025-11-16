@@ -66,7 +66,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0c5f323cd952bdb4cad40dd651da4541, type: 2}
+  - {fileID: 2100000, guid: ea8d8b8f4fce2fe42b7cd95f4bb4ab54, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -185,10 +185,25 @@ MonoBehaviour:
   _audioSource: {fileID: 7555013371052373596}
   _audioSourceWalk: {fileID: 4642860229820569519}
   _idleSounds: []
-  _moveSounds: []
-  _attackSounds: []
-  _damageSounds: []
-  speed: 7
+  _moveSounds:
+  - {fileID: 8300000, guid: cb1fd7a762007e44099ff8fd21183559, type: 3}
+  - {fileID: 8300000, guid: 0ed603fec2719fd488361baa09152992, type: 3}
+  - {fileID: 8300000, guid: df122c0ed0ae58e41b2a4c35d9b99d91, type: 3}
+  _attackSounds:
+  - {fileID: 8300000, guid: 2bdeaf246412f2e47bc4b81e7e363e7a, type: 3}
+  _damageSounds:
+  - {fileID: 8300000, guid: 165584e47c4bccb40952a0e25bbc4cda, type: 3}
+  - {fileID: 8300000, guid: 605fb43b1a3cf5b4d928bd2982a942fd, type: 3}
+  - {fileID: 8300000, guid: 9e8c576c477d1864e8f4828792e2f7b5, type: 3}
+  - {fileID: 8300000, guid: e10cdae213c7a184fb8efb82c2b18c01, type: 3}
+  - {fileID: 8300000, guid: 9725021c3b6d9b344afbdf30a7a14cc0, type: 3}
+  - {fileID: 8300000, guid: 355615db16b426949bf70c894552821d, type: 3}
+  - {fileID: 8300000, guid: 2e46971b3b3323a47b8e74dbabd22107, type: 3}
+  - {fileID: 8300000, guid: 86d61bfcba0dc3c469f0e5b2183eff91, type: 3}
+  - {fileID: 8300000, guid: 344aca8498c87b54fb97890eb1253731, type: 3}
+  _deathSounds:
+  - {fileID: 8300000, guid: 838a6cf1c56fa384a8d8ca016cb3f7a8, type: 3}
+  speed: 5
   _distanceToStop: 10
   _isRepealing: 0
   _isStuned: 0
@@ -196,11 +211,11 @@ MonoBehaviour:
   _damage: 1
   _nextAttackTime: 0
   _nextAttackRate: 2
-  distanceToShoot: 20
+  distanceToShoot: 15
   bullets: 3
   timeBetweenBullets: 0.1
   _firingPoint: {fileID: 3977118988319342750}
-  _firingPointDistance: 2
+  _firingPointDistance: 2.5
   _attackTimeMultiplier: 1
   _timesAttacked: 0
   _restartLoopAt: 2
@@ -208,13 +223,15 @@ MonoBehaviour:
   _hitRadius: 1.5
   _isRetreating: 0
   invulnerable: 0
-  safeDistance: 8
-  distanceToStopMelee: 2
-  speedSecondPhase: 5
+  safeDistance: 15
+  distanceToStopMelee: 3
+  speedSecondPhase: 8
   retreatSpeed: 10
   _winGameUI: {fileID: 0}
-  _meleeAttackSounds: []
-  _retreatSounds: []
+  _meleeAttackSounds:
+  - {fileID: 8300000, guid: 91a3c04bb8ba3a948af5502707d0aaef, type: 3}
+  _retreatSounds:
+  - {fileID: 8300000, guid: 090f5bec24dc6e2418f10f9547297586, type: 3}
 --- !u!95 &6355134459824395746
 Animator:
   serializedVersion: 7
