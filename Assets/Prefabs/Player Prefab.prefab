@@ -418,7 +418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67422bca665744d4eaa5c3e32d5a4099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
-  health: 5
+  health: 10
   maxHealth: 10
   healingPotions: 0
   _playerMovement: {fileID: 3995635937428024576}
@@ -436,6 +436,7 @@ MonoBehaviour:
   invulnerable: 0
   _animator: {fileID: 6881568274525310399}
   _isDying: 0
+  hasGraveyardKey: 0
   audioSource: {fileID: 7357064047387679890}
   audioSourceWalk: {fileID: 6533529496152675934}
   _idleSounds: []
