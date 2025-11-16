@@ -2,6 +2,8 @@ using Constants;
 using System;
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UI;
+using TMPro;
 
 public class Player : Health
 {
@@ -32,6 +34,14 @@ public class Player : Health
     [SerializeField] private Animator _animator;
     private Vector2 _attackDirection;
     public bool _isDying = false;
+
+    [Header("Ui System")]
+    [SerializeField] private Image[] _heartsCanvas;
+    [SerializeField] private Image _hitCooldown;
+    [SerializeField] private Image _shotCooldown;
+    [SerializeField] private Image _blockCooldown;
+    [SerializeField] private TextMeshProUGUI _potionText;
+    [SerializeField] private TextMeshProUGUI _keyText;
 
     [Header("Sheriff Room")]
     // TODO: Integration with key will be after merging with boss fight scene
@@ -67,14 +77,20 @@ public class Player : Health
         if (_nextMeleeAttackTime > 0)
         {
             _nextMeleeAttackTime -= Time.deltaTime;
+            _hitCooldown.gameObject.SetActive(true);
+            _hitCooldown.fillAmount = _nextMeleeAttackTime / _attackMeleeCooldown;
         }
         if (_nextRangedAttackTime > 0)
         {
             _nextRangedAttackTime -= Time.deltaTime;
+            _shotCooldown.gameObject.SetActive(true);
+            _shotCooldown.fillAmount = _nextRangedAttackTime / _attackRangedCooldown;
         }
         if (_nextBlockTime > 0)
         {
             _nextBlockTime -= Time.deltaTime;
+            _blockCooldown.gameObject.SetActive(true);
+            _blockCooldown.fillAmount = _nextMeleeAttackTime / _attackMeleeCooldown;
         }
     }
 
@@ -208,6 +224,9 @@ public class Player : Health
             AudioManager.Instance.Play("PotionUse");
             health = maxHealth;
             healingPotions -= 1;
+
+            UpdateHeartsUI();
+            UpdatePotionText();
         }
     }
 
@@ -215,6 +234,7 @@ public class Player : Health
     {
         if (!invulnerable) health -= damage;
         if (health <= 0) StartDeath();
+        UpdateHeartsUI();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -239,6 +259,26 @@ public class Player : Health
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(gameObject.transform.position, hitRadius);
+    }
+
+    private void UpdateHeartsUI()
+    {
+        for (int i = 0; i < _heartsCanvas.Length; i++)
+        {
+            if (i < health)
+            {
+                _heartsCanvas[i].enabled = true;
+            }
+            else
+            {
+                _heartsCanvas[i].enabled = false;
+            }
+        }
+    }
+
+    private void UpdatePotionText()
+    {
+        _potionText.text = healingPotions.ToString();
     }
 
 }
