@@ -1,23 +1,40 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class BossFightTrigger : MonoBehaviour
 {
     [SerializeField] private CanvasGroup _background;
-    private PlayerMovement _playerMovement;
+    [SerializeField] private GameObject _NeedKeyText;
+    [SerializeField] private PlayerInput _playerInput;
+
     private void Start()
     {
-        _playerMovement = Player.Instance.gameObject.GetComponent<PlayerMovement>();
+        _playerInput = Player.Instance.GetComponent<PlayerInput>();
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            Time.timeScale = 0f;
-            _playerMovement.enabled = false;
-            StartCoroutine(EnterBossFight());
+            if (Player.Instance.hasGraveyardKey)
+            {
+                Player.Instance.audioSourceWalk.mute = true;
+                Time.timeScale = 0f;
+                _playerInput.DeactivateInput(); // Disable player input
+                StartCoroutine(EnterBossFight());
+            }
+            else
+            {
+                _NeedKeyText.SetActive(true);
+            }
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        _NeedKeyText.SetActive(false);
     }
 
     private IEnumerator EnterBossFight()

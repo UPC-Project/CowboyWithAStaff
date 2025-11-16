@@ -6,6 +6,8 @@ public class MeleeEnemy : Enemy
 
     public override void Attack()
     {
+        // Use _attackSounds later and modularize this in Enemy class
+        SoundUtils.PlayARandomSound(_audioSource, _attackSounds);
         Collider2D[] objects = Physics2D.OverlapCircleAll(transform.position, _hitRadius);
         foreach (Collider2D collider in objects)
         {
@@ -23,4 +25,10 @@ public class MeleeEnemy : Enemy
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, _hitRadius);
     }
+
+    
+
+    // Call it with SMB instead of Animation Event
+    
+   
 }

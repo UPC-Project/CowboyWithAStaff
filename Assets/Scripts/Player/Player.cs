@@ -1,11 +1,13 @@
-using UnityEngine;
 using Constants;
+using System;
+using UnityEngine;
+using System.Collections.Generic;
 
 public class Player : Health
 {
     public int healingPotions = 0;
     [SerializeField] private PlayerMovement _playerMovement;
-    public bool _inBossFight = false;
+    public bool inBossFight = false;
 
     public static Player Instance { get; private set; }
 
@@ -30,6 +32,20 @@ public class Player : Health
     [SerializeField] private Animator _animator;
     private Vector2 _attackDirection;
     public bool _isDying = false;
+
+    [Header("Sheriff Room")]
+    // TODO: Integration with key will be after merging with boss fight scene
+    public bool hasGraveyardKey = false;
+    public event Action OnPlayerDied;
+
+
+    [Header("Sound")]
+    public AudioSource audioSource;
+    public AudioSource audioSourceWalk;
+    [SerializeField] protected List<AudioClip> _idleSounds;
+    [SerializeField] protected List<AudioClip> _moveSounds;
+    [SerializeField] protected List<AudioClip> _attackSounds;
+    [SerializeField] protected List<AudioClip> _damageSounds;
 
     private void Awake()
     {
@@ -63,7 +79,7 @@ public class Player : Health
     }
 
     // ATTACK
-    // Triggered when Z key or RMB is pressed
+    // Triggered when Q key or LMB is pressed
     public void OnMeleeAttack()
     {
         if (_nextMeleeAttackTime <= 0 && _playerMovement.canMove)
@@ -73,7 +89,7 @@ public class Player : Health
         }
     }
 
-    // Triggered when X key or LMB is pressed
+    // Triggered when E key or RMB is pressed
     public void OnRangedAttack()
     {
         if (_nextRangedAttackTime <= 0 && _playerMovement.canMove)
@@ -83,7 +99,7 @@ public class Player : Health
         }
     }
 
-    // Triggered when C key or MMB is pressed
+    // Triggered when Space key or MMB is pressed
     public void OnBlockSkill()
     {
         if (_nextBlockTime <= 0 && _playerMovement.canMove)
@@ -91,9 +107,12 @@ public class Player : Health
             // Change when animation is done
             AttackAnimation(PlayerSkill.Block.ToString());
             invulnerable = true;
-            // Bullets are destroy at the SMB script
-            if (!_inBossFight) RepelEnemies();
         }
+    }
+
+    public void BlockSkill()
+    {
+        if (!inBossFight) RepelEnemies();
     }
 
     private void RepelEnemies()
@@ -132,7 +151,8 @@ public class Player : Health
         else if (playerSkill == PlayerSkill.RangedAttack)
         {
             _nextRangedAttackTime = _attackRangedCooldown;
-        } else
+        }
+        else
         {
             invulnerable = false;
             _nextBlockTime = _attackBlockCooldown;
@@ -149,12 +169,15 @@ public class Player : Health
                 collider.transform.GetComponent<Enemy>().TakeDamage(_meleeAttackDamage);
             }
         }
+
+        AudioManager.Instance.Play("PlayerMeleeAttack");
     }
 
     public void RangedAttack()
     {
         // The bullet damage is in the Bullet script
         BulletPool.Instance.RequestBullet(_facingPoint.transform.position, _facingPoint.transform.rotation);
+        AudioManager.Instance.Play("PlayerShoot");
     }
 
     // DEATH
@@ -170,6 +193,7 @@ public class Player : Health
 
     public override void Death()
     {
+        OnPlayerDied?.Invoke(); // SheriffRoomManager listens to this event
         GameState.Instance.Respawn();
         _isDying = false;
         _playerMovement.canMove = true;
@@ -181,6 +205,7 @@ public class Player : Health
     {
         if (healingPotions > 0)
         {
+            AudioManager.Instance.Play("PotionUse");
             health = maxHealth;
             healingPotions -= 1;
         }
@@ -196,10 +221,17 @@ public class Player : Health
     {
         if (collision.gameObject.CompareTag("HealingPotion"))
         {
+            AudioManager.Instance.Play("PotionPickup");
             healingPotions += 1;
             collision.gameObject.SetActive(false);
             GameState.Instance.RegisterCollectedItem(collision.gameObject);
         }
+    }
+
+
+    public void PlayFootstepSound()
+    {
+        SoundUtils.PlayARandomSound(audioSourceWalk, _moveSounds, 0.5f);
     }
 
     // Comment this function if you don't want to see the melee range attack

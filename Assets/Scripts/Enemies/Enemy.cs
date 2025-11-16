@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Enemy : Health
@@ -16,6 +18,14 @@ public abstract class Enemy : Health
     [SerializeField] protected Animator _animator;
     protected Vector2 _lastDirection = Vector2.down;
 
+    [Header("Sound")]
+    [SerializeField] protected AudioSource _audioSource;
+    [SerializeField] protected AudioSource _audioSourceWalk;
+    [SerializeField] protected List<AudioClip> _idleSounds;
+    [SerializeField] protected List<AudioClip> _moveSounds;
+    [SerializeField] protected List<AudioClip> _attackSounds;
+    [SerializeField] protected List<AudioClip> _damageSounds;
+
     [Header("Movement")]
     public float speed;
     public float distanceToStop = 5f;
@@ -29,6 +39,10 @@ public abstract class Enemy : Health
     // The enemy is not attacking nor defeated
     public bool canMove = true;
 
+    public event Action<Enemy> OnEnemyDied;
+    public bool isManagedBySheriffRoom = false;
+
+
     protected virtual void Start()
     {
         target = Player.Instance.transform;
@@ -36,6 +50,7 @@ public abstract class Enemy : Health
         _col2D = GetComponent<Collider2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _startPosition = transform.position;
+        StartCoroutine(SoundUtils.PlayRandomSoundsLoop(_audioSource, _idleSounds, (2f, 10f), () => canMove));
     }
 
     private void Update()
@@ -71,7 +86,10 @@ public abstract class Enemy : Health
                 if (collider.CompareTag("Player") && _respawnFlag)
                 {
                     _onAggro = true;
-                    GameState.Instance.RegisterActivatedEnemy(this.gameObject);
+                    if (!isManagedBySheriffRoom)
+                    {
+                        GameState.Instance.RegisterActivatedEnemy(this.gameObject);
+                    }
                 }
             }
         }
@@ -117,14 +135,34 @@ public abstract class Enemy : Health
         canMove = true;
         // Cooldown begins once the animation has finished
         _nextAttackTime = _nextAttackRate;
+        StartCoroutine(SoundUtils.PlayRandomSoundsLoop(_audioSource, _idleSounds, (2f, 10f), () => canMove));
     }
 
+    // Called by EnemyDeathSMB when attack is completed
     public override void Death()
     {
+        OnEnemyDied?.Invoke(this); // SheriffRoomManager listens to this event
         gameObject.SetActive(false);
         _onAggro = false;
     }
 
+    public override void TakeDamage(int damage)
+    {
+        SoundUtils.PlayARandomSound(_audioSource, _damageSounds);
+        base.TakeDamage(damage);
+    }
+
+    // Call it with SMB instead of Animation Event
+    public void PlayFootstepSound()
+    {
+        SoundUtils.PlayARandomSound(_audioSourceWalk, _moveSounds);
+    }
+
+    public void ForceAggro()
+    {
+        gameObject.SetActive(true);
+        _onAggro = true;
+    }
     public void ResetEnemyState()
     {
         gameObject.SetActive(true);
@@ -140,12 +178,16 @@ public abstract class Enemy : Health
         _col2D.enabled = true;
 
         _rb.linearVelocity = Vector2.zero;
-        // This will change when implemented death animation
+
+        // Reset animator
         _animator.SetBool("isDead", false);
         _animator.SetFloat("horizontal", 0f);
         _animator.SetFloat("vertical", -1f);
         _animator.SetFloat("speed", 0f);
-        _animator.Play("idle",0,0f);
+        _animator.Play("idle", 0, 0f);
+
+        // Sounds
+        StartCoroutine(SoundUtils.PlayRandomSoundsLoop(_audioSource, _idleSounds, (2f, 10f), () => canMove));
     }
 
     public virtual void RepelFromPLayer(Vector3 playerPos, float repelForce)
@@ -159,12 +201,14 @@ public abstract class Enemy : Health
     // Avoids activating aggro at respawn
     public override void StartDeath()
     {
-        GameState.Instance.RegisterActivatedEnemy(this.gameObject);
+        if (!isManagedBySheriffRoom)
+        {
+            GameState.Instance.RegisterActivatedEnemy(this.gameObject);
+        }
         _animator.SetBool("isDead", true);
         canMove = false;
         _col2D.enabled = false;
     }
-
     IEnumerator JustRespawn()
     {
         _respawnFlag = false;
