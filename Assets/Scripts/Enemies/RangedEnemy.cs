@@ -37,14 +37,10 @@ public class RangedEnemy : Enemy
         }
     }
 
-
-
     protected override bool PlayerInRangeToAttack()
     {
         float distanceToTarget = Vector2.Distance(target.position, transform.position);
         return distanceToTarget <= distanceToShoot;
     }
-
-   
 }
 

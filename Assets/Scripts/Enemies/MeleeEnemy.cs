@@ -24,11 +24,5 @@ public class MeleeEnemy : Enemy
         base.OnDrawGizmos();
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, _hitRadius);
-    }
-
-    
-
-    // Call it with SMB instead of Animation Event
-    
-   
+    }  
 }

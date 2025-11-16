@@ -149,6 +149,7 @@ public abstract class Enemy : Health
     public override void TakeDamage(int damage)
     {
         SoundUtils.PlayARandomSound(_audioSource, _damageSounds);
+        StartCoroutine(EntitiesUtils.FlashInvert(_spriteRenderer, 0.1f));
         base.TakeDamage(damage);
     }
 
