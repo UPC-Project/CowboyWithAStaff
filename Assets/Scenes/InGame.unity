@@ -2645,6 +2645,17 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 1.2
+--- !u!114 &176518479 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3283019086888013699, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
+  m_PrefabInstance: {fileID: 1342865395}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1001 &201736776
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3904,6 +3915,50 @@ PrefabInstance:
       propertyPath: m_Name
       value: shadow
       objectReference: {fileID: 0}
+    - target: {fileID: 7368951889331973350, guid: 5b52c14190872c94a958202b75210e15, type: 3}
+      propertyPath: _keyText
+      value: 
+      objectReference: {fileID: 2106985783}
+    - target: {fileID: 7368951889331973350, guid: 5b52c14190872c94a958202b75210e15, type: 3}
+      propertyPath: _potionText
+      value: 
+      objectReference: {fileID: 540326520}
+    - target: {fileID: 7368951889331973350, guid: 5b52c14190872c94a958202b75210e15, type: 3}
+      propertyPath: _hitCooldown
+      value: 
+      objectReference: {fileID: 176518479}
+    - target: {fileID: 7368951889331973350, guid: 5b52c14190872c94a958202b75210e15, type: 3}
+      propertyPath: _shotCooldown
+      value: 
+      objectReference: {fileID: 176518479}
+    - target: {fileID: 7368951889331973350, guid: 5b52c14190872c94a958202b75210e15, type: 3}
+      propertyPath: _blockCooldown
+      value: 
+      objectReference: {fileID: 1620288711}
+    - target: {fileID: 7368951889331973350, guid: 5b52c14190872c94a958202b75210e15, type: 3}
+      propertyPath: _heartsCanvas.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7368951889331973350, guid: 5b52c14190872c94a958202b75210e15, type: 3}
+      propertyPath: '_heartsCanvas.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1564055342}
+    - target: {fileID: 7368951889331973350, guid: 5b52c14190872c94a958202b75210e15, type: 3}
+      propertyPath: '_heartsCanvas.Array.data[1]'
+      value: 
+      objectReference: {fileID: 403342301}
+    - target: {fileID: 7368951889331973350, guid: 5b52c14190872c94a958202b75210e15, type: 3}
+      propertyPath: '_heartsCanvas.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1384154522}
+    - target: {fileID: 7368951889331973350, guid: 5b52c14190872c94a958202b75210e15, type: 3}
+      propertyPath: '_heartsCanvas.Array.data[3]'
+      value: 
+      objectReference: {fileID: 727828148}
+    - target: {fileID: 7368951889331973350, guid: 5b52c14190872c94a958202b75210e15, type: 3}
+      propertyPath: '_heartsCanvas.Array.data[4]'
+      value: 
+      objectReference: {fileID: 755031996}
     - target: {fileID: 8078200177674512349, guid: 5b52c14190872c94a958202b75210e15, type: 3}
       propertyPath: m_FlipX
       value: 0
@@ -4310,6 +4365,17 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 1.2
+--- !u!114 &403342301 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1431875553925379657, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
+  m_PrefabInstance: {fileID: 1342865395}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1 &407473594
 GameObject:
   m_ObjectHideFlags: 0
@@ -6159,6 +6225,17 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 1.2
+--- !u!114 &540326520 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5777212850155154232, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
+  m_PrefabInstance: {fileID: 1342865395}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &543320698
 GameObject:
   m_ObjectHideFlags: 0
@@ -7863,6 +7940,17 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 1.2
+--- !u!114 &727828148 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 249512296170432946, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
+  m_PrefabInstance: {fileID: 1342865395}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1 &737344456
 GameObject:
   m_ObjectHideFlags: 0
@@ -8090,6 +8178,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &755031996 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6505322649478909612, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
+  m_PrefabInstance: {fileID: 1342865395}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1 &772442317
 GameObject:
   m_ObjectHideFlags: 0
@@ -15300,6 +15399,17 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 1.2
+--- !u!114 &1384154522 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6911721139352493346, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
+  m_PrefabInstance: {fileID: 1342865395}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1001 &1407929322
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16751,6 +16861,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8307164122614967128, guid: e90acb46266f57b43a532be2bbf02b76, type: 3}
   m_PrefabInstance: {fileID: 1555517521}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1564055342 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8809532986175997242, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
+  m_PrefabInstance: {fileID: 1342865395}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1 &1570900477
 GameObject:
   m_ObjectHideFlags: 0
@@ -17638,6 +17759,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5717694944300907761, guid: 51a544580d11f654f9095ac6feeac8ba, type: 3}
   m_PrefabInstance: {fileID: 1612910129}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1620288711 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3434913781335549401, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
+  m_PrefabInstance: {fileID: 1342865395}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1 &1629159246
 GameObject:
   m_ObjectHideFlags: 0
@@ -21918,6 +22050,17 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: -0.25, y: -2.65}
   m_Radius: 0.9
+--- !u!114 &2106985783 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3317681145493042850, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
+  m_PrefabInstance: {fileID: 1342865395}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &2118636559
 PrefabInstance:
   m_ObjectHideFlags: 0
