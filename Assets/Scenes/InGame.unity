@@ -3965,10 +3965,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1620288711}
     - target: {fileID: 7368951889331973350, guid: 5b52c14190872c94a958202b75210e15, type: 3}
-      propertyPath: _heartsCanvas.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7368951889331973350, guid: 5b52c14190872c94a958202b75210e15, type: 3}
       propertyPath: '_heartsCanvas.Array.data[0]'
       value: 
       objectReference: {fileID: 1564055342}
