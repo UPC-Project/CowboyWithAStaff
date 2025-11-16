@@ -176,7 +176,7 @@ public class Player : Health
     public void RangedAttack()
     {
         // The bullet damage is in the Bullet script
-        BulletPool.Instance.RequestBullet(_facingPoint.transform.position, _facingPoint.transform.rotation);
+        BulletPool.Instance.RequestBullet(_facingPoint.transform.position, _facingPoint.transform.rotation, "Player");
         AudioManager.Instance.Play("PlayerShoot");
     }
 
