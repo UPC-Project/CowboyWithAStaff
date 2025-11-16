@@ -93,7 +93,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 0.8828125}
+  m_Size: {x: 6.4, y: 6.4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -230,6 +230,18 @@ MonoBehaviour:
   _winGameUI: {fileID: 0}
   _meleeAttackSounds:
   - {fileID: 8300000, guid: 91a3c04bb8ba3a948af5502707d0aaef, type: 3}
+  _monsterHurtSounds:
+  - {fileID: 8300000, guid: af1ed0e7e5ba4ba499291a85c2df5cc0, type: 3}
+  - {fileID: 8300000, guid: f9dc611d6517cad41a18991841256ca3, type: 3}
+  - {fileID: 8300000, guid: 2a09955b2b4f9a74799589fdbb0624a7, type: 3}
+  - {fileID: 8300000, guid: 3fc9400cb16598d409c4927369c8025c, type: 3}
+  - {fileID: 8300000, guid: cab43231429302045a35bc0464277ee7, type: 3}
+  - {fileID: 8300000, guid: e163ec4c209cd7c4a9350deaca8e9d66, type: 3}
+  - {fileID: 8300000, guid: f8b01709ce32b1d4aa8cb82c87a89259, type: 3}
+  - {fileID: 8300000, guid: da242416a4ea8914989c4b10bab71255, type: 3}
+  - {fileID: 8300000, guid: 142d741d15c31aa41bd9a2ecff69d246, type: 3}
+  - {fileID: 8300000, guid: 7bf6354a09a56194abeca30008cedccb, type: 3}
+  - {fileID: 8300000, guid: 16edd4d320a031a42af2bed7a0aacb63, type: 3}
   _retreatSounds:
   - {fileID: 8300000, guid: 090f5bec24dc6e2418f10f9547297586, type: 3}
 --- !u!95 &6355134459824395746

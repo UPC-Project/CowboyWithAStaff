@@ -27,6 +27,7 @@ public class FinalBoss : RangedEnemy
     // Extra sounds
     [Header("Extra Boss Sound")]
     [SerializeField] protected List<AudioClip> _meleeAttackSounds;
+    [SerializeField] protected List<AudioClip> _monsterHurtSounds;
     [SerializeField] protected List<AudioClip> _retreatSounds;
 
     protected override void Start()
@@ -175,6 +176,17 @@ public class FinalBoss : RangedEnemy
     public override void TakeDamage(int damage)
     {
         if (!invulnerable) base.TakeDamage(damage);
+
+      
+        if (_firstPhase)
+        {
+            SoundUtils.PlayARandomSound(_audioSource, _damageSounds);
+        }
+        else
+        {
+            SoundUtils.PlayARandomSound(_audioSource, _monsterHurtSounds);
+        }
+
         // Check phase 
         if (health <= (maxHealth / 2) && _firstPhase)
         {
