@@ -40,7 +40,7 @@ public class BulletPool : MonoBehaviour
         }
     }
 
-    public GameObject RequestBullet(Vector3 position, Quaternion rotation)
+    public GameObject RequestBullet(Vector3 position, Quaternion rotation, string ownerTag)
     {
         for (int i = 0; i < _bulletList.Count; i++)
         {
@@ -48,6 +48,7 @@ public class BulletPool : MonoBehaviour
             {
                 _bulletList[i].transform.position = position;
                 _bulletList[i].transform.rotation = rotation;
+                _bulletList[i].GetComponent<Bullet>().SetOwner(ownerTag);
                 _bulletList[i].SetActive(true);
                 return _bulletList[i];
             }

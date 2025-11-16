@@ -32,7 +32,7 @@ public class RangedEnemy : Enemy
         // See preferences.
         for (int i = 0; i < bullets; i++)
         {
-            BulletPool.Instance.RequestBullet(fixedShootPosition, fixedShootRotation);
+            BulletPool.Instance.RequestBullet(fixedShootPosition, fixedShootRotation, "Enemy");
             yield return new WaitForSeconds(timeBetweenBullets);
         }
     }

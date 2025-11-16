@@ -6,7 +6,8 @@ public abstract class Health : MonoBehaviour
     public int health;
     public int maxHealth = 5;
 
-    private void Awake()
+
+    public virtual void Awake()
     {
         health = maxHealth;
     }

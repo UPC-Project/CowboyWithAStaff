@@ -8,7 +8,13 @@ public class Bullet : MonoBehaviour
 
     [SerializeField] private float _lifeTime = 0.2f;
     private float _lifeTimer;
+    
+    private string _ownerTag;
 
+    public void SetOwner(string tag)
+    {
+        _ownerTag = tag;
+    }
 
     private void OnEnable()
     {
@@ -26,18 +32,27 @@ public class Bullet : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // TODO: if the bullet is from the player it shouldn't hit them.
 
-        // Bullet shoot from player to enemy
-        if (collision.gameObject.CompareTag("Enemy"))
+        string hitTag = collision.gameObject.tag;
+
+        // If the bullet hits something with the same tag as its owner, it is deactivated.
+        if (hitTag == _ownerTag)
         {
-            collision.gameObject.GetComponent<Enemy>().TakeDamage(_damage);
+            gameObject.SetActive(false);
         }
 
-        // Bullet shoot from enemy to player
-        if (collision.gameObject.CompareTag("Player"))
+        // If the bullet is from the "Player" and hits an "Enemy"
+        else if (_ownerTag == "Player" && hitTag == "Enemy")
+        {
+            collision.gameObject.GetComponent<Enemy>().TakeDamage(_damage);
+            gameObject.SetActive(false); // Desactivar la bala
+        }
+
+        // If the bullet is from the "Enemy" and hits the "Player"
+        else if (_ownerTag == "Enemy" && hitTag == "Player")
         {
             collision.gameObject.GetComponent<Player>().TakeDamage(_damage);
+            gameObject.SetActive(false); // Desactivar la bala
         }
 
         gameObject.SetActive(false);

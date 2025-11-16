@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: fc697d1b43edff04fa745839a3bb9528
+guid: b418fd1d5428a634f97e3c7b5d766478
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -198511055950318886
-    second: paper_texture_A2_0
+      213: -4125288654113501028
+    second: wood-2045380_1920_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: paper_texture_A2_0
+      name: wood-2045380_1920_0
       rect:
         serializedVersion: 2
-        x: 606
-        y: 192
-        width: 5031
-        height: 6561
+        x: 0
+        y: 0
+        width: 1920
+        height: 1280
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ad2f7121f3fbe3df0800000000000000
-      internalID: -198511055950318886
+      spriteID: c909d9763d700c6c0800000000000000
+      internalID: -4125288654113501028
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      paper_texture_A2_0: -198511055950318886
+      wood-2045380_1920_0: -4125288654113501028
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
