@@ -1,6 +1,7 @@
 using Constants;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class Player : Health
 {
@@ -31,6 +32,12 @@ public class Player : Health
     [SerializeField] private Animator _animator;
     private Vector2 _attackDirection;
     public bool _isDying = false;
+
+    [Header("Sheriff Room")]
+    // TODO: Integration with key will be after merging with boss fight scene
+    public bool hasGraveyardKey = false;
+    public event Action OnPlayerDied;
+
 
     [Header("Sound")]
     public AudioSource audioSource;
@@ -186,6 +193,7 @@ public class Player : Health
 
     public override void Death()
     {
+        OnPlayerDied?.Invoke(); // SheriffRoomManager listens to this event
         GameState.Instance.Respawn();
         _isDying = false;
         _playerMovement.canMove = true;

@@ -76,4 +76,22 @@ public class GameState : MonoBehaviour
     {
         _collectedItemsSinceCheckpoint.Add(item);
     }
+
+    public void FreezeAllEnemies()
+    {
+        foreach (GameObject enemy in _activatedEnemiesSinceCheckpoint)
+        {
+            Enemy enemyScript = enemy.GetComponent<Enemy>();
+            enemyScript.canMove = false;
+        }
+    }
+
+    public void ReactivateFrozenEnemies()
+    {
+        foreach (GameObject enemy in _activatedEnemiesSinceCheckpoint)
+        {
+            Enemy enemyScript = enemy.GetComponent<Enemy>();
+            enemyScript.canMove = true;
+        }
+    }
 }
