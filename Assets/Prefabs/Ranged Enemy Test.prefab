@@ -294,8 +294,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2576d131515b43b4a96d435fdbbc0513, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RangedEnemy
-  health: 3
-  maxHealth: 5
+  health: 2
+  maxHealth: 2
   target: {fileID: 0}
   _aggroRadius: 13
   _onAggro: 0

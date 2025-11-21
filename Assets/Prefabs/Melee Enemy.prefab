@@ -173,8 +173,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51729f5abcbdfac44a4232ac4747ad26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MeleeEnemy
-  health: 5
-  maxHealth: 5
+  health: 3
+  maxHealth: 3
   target: {fileID: 0}
   _aggroRadius: 12
   _onAggro: 0

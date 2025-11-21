@@ -1,6 +1,7 @@
 using System.Collections;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WinGameUI : MonoBehaviour
 {
@@ -8,9 +9,15 @@ public class WinGameUI : MonoBehaviour
     [SerializeField] private GameObject _winGameCanvas;
     [SerializeField] private TextMeshProUGUI _textWinGame;
     [SerializeField] private CanvasGroup _buttonsWinGame;
+    [SerializeField] private GameObject _HUD;
 
+    private void Start()
+    {
+        _HUD = Menus.Instance.gameObject;
+    }
     public IEnumerator WinGame()
     {
+        _HUD.SetActive(false);
         Time.timeScale = 0f;
         _camera.SetActive(true);
         _winGameCanvas.SetActive(true);
@@ -23,5 +30,15 @@ public class WinGameUI : MonoBehaviour
     }
 
     // TODO: button functionality when UI is merged
+    public void GoToMainMenu() // from pause menu
+    {
+        SceneManager.LoadScene("InGame");
+        SceneManager.LoadScene("Menus");
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 
 }

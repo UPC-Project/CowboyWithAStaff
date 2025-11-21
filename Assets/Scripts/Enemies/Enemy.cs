@@ -165,7 +165,7 @@ public abstract class Enemy : Health
         gameObject.SetActive(true);
         _onAggro = true;
     }
-    public void ResetEnemyState()
+    public virtual void ResetEnemyState()
     {
         gameObject.SetActive(true);
         StartCoroutine(JustRespawn());

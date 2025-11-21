@@ -3874,7 +3874,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3686721714059810549, guid: 5b52c14190872c94a958202b75210e15, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3686721714059810549, guid: 5b52c14190872c94a958202b75210e15, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3928,10 +3928,6 @@ PrefabInstance:
       propertyPath: _blockCooldown
       value: 
       objectReference: {fileID: 1620288711}
-    - target: {fileID: 7368951889331973350, guid: 5b52c14190872c94a958202b75210e15, type: 3}
-      propertyPath: hasGraveyardKey
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7368951889331973350, guid: 5b52c14190872c94a958202b75210e15, type: 3}
       propertyPath: '_heartsCanvas.Array.data[0]'
       value: 
@@ -17906,20 +17902,7 @@ MonoBehaviour:
   - waveName: EnemyWave2
     enemyPrefab:
     - {fileID: 1226867008975391852, guid: 9a556f5871c94c1429e509364267d88e, type: 3}
-    - {fileID: 1226867008975391852, guid: 9a556f5871c94c1429e509364267d88e, type: 3}
     - {fileID: 8828888363831825223, guid: 51a544580d11f654f9095ac6feeac8ba, type: 3}
-    spawnPoints:
-    - {fileID: 1629159247}
-    - {fileID: 486616954}
-    - {fileID: 1577574100}
-    - {fileID: 316713222}
-    delayBetweenSpawns: 3.5
-  - waveName: EnemyWave3
-    enemyPrefab:
-    - {fileID: 8828888363831825223, guid: 51a544580d11f654f9095ac6feeac8ba, type: 3}
-    - {fileID: 8828888363831825223, guid: 51a544580d11f654f9095ac6feeac8ba, type: 3}
-    - {fileID: 1226867008975391852, guid: 9a556f5871c94c1429e509364267d88e, type: 3}
-    - {fileID: 1226867008975391852, guid: 9a556f5871c94c1429e509364267d88e, type: 3}
     spawnPoints:
     - {fileID: 1629159247}
     - {fileID: 486616954}

@@ -10,6 +10,9 @@ public class FinalBoss : RangedEnemy
     [SerializeField] private int _restartLoopAt = 2;
     [SerializeField] private bool _firstPhase = true;
 
+    public float distanceToStopRanged = 2f;
+    public float speedFirstPhase = 5f;
+
     [SerializeField] private float _hitRadius;
     [SerializeField] private bool _isRetreating = false;
     private float _distanceToAttack;
@@ -35,6 +38,7 @@ public class FinalBoss : RangedEnemy
         base.Start();
         _distanceToAttack = distanceToShoot;
         _retreatTime = _retreatTimeCooldown;
+        GameState.Instance.RegisterActivatedEnemy(this.gameObject);
     }
 
     protected override void OnUpdate()
@@ -53,7 +57,6 @@ public class FinalBoss : RangedEnemy
             // Boss starts with ranged attacks, ends up attacking in melee
             else if (_firstPhase && PlayerInRangeToAttack() && canMove)
             {
-                Debug.Log("Final Boss Ranged Attack");
                 canMove = false;
                 _animator.SetTrigger("Attack"); // Ranged Attack called
 
@@ -85,6 +88,12 @@ public class FinalBoss : RangedEnemy
                 canMove = false;
                 _animator.SetTrigger("Attack"); // Melee Attack called
             }
+        }
+
+        // ugly fix
+        if (Player.Instance.health <= 0)
+        {
+            GameState.Instance.RegisterActivatedEnemy(this.gameObject);
         }
     }
 
@@ -131,7 +140,6 @@ public class FinalBoss : RangedEnemy
 
     public void OnExitAttackState(FinalBossAnimationStates state)
     {
-        Debug.Log("Final Boss Exit Attack State");
         canMove = true;
         StartCoroutine(SoundUtils.PlayRandomSoundsLoop(_audioSource, _idleSounds, (2f, 10f), () => canMove));
         if (state == FinalBossAnimationStates.rangedAttack)
@@ -177,7 +185,7 @@ public class FinalBoss : RangedEnemy
     {
         if (!invulnerable) base.TakeDamage(damage);
 
-      
+
         if (_firstPhase)
         {
             SoundUtils.PlayARandomSound(_audioSource, _damageSounds);
@@ -191,7 +199,7 @@ public class FinalBoss : RangedEnemy
         if (health <= (maxHealth / 2) && _firstPhase)
         {
             _firstPhase = false;
-            _animator.SetTrigger("secondPhase");
+            _animator.SetBool("secondPhase", true);
 
             // Change everything necessary for second phase
             _distanceToStop = distanceToStopMelee;
@@ -201,6 +209,20 @@ public class FinalBoss : RangedEnemy
             _nextAttackTime = 0;
             _timesAttacked = 0;
         }
+    }
+
+    public override void ResetEnemyState()
+    {
+        base.ResetEnemyState();
+        _animator.SetBool("secondPhase", false);
+        _firstPhase = true;
+        _distanceToStop = distanceToStopRanged;
+        _distanceToAttack = distanceToShoot;
+        speed = speedFirstPhase;
+        _nextAttackRate = 2;
+        _nextAttackTime = 0;
+        _timesAttacked = 0;
+        invulnerable = false;
     }
 
     // It's not repealed
