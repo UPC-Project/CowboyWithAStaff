@@ -272,7 +272,7 @@ public class Player : Health
         Gizmos.DrawWireSphere(gameObject.transform.position, hitRadius);
     }
 
-    private void UpdateHeartsUI()
+    public void UpdateHeartsUI()
     {
         for (int i = 0; i < _heartsCanvas.Length; i++)
         {
@@ -287,7 +287,7 @@ public class Player : Health
         }
     }
 
-    private void UpdatePotionText()
+    public void UpdatePotionText()
     {
         _potionText.text = healingPotions.ToString();
     }
