@@ -25,6 +25,7 @@ public abstract class Enemy : Health
     [SerializeField] protected List<AudioClip> _moveSounds;
     [SerializeField] protected List<AudioClip> _attackSounds;
     [SerializeField] protected List<AudioClip> _damageSounds;
+    [SerializeField] protected List<AudioClip> _deathSounds;
 
     [Header("Movement")]
     public float speed;
@@ -207,6 +208,7 @@ public abstract class Enemy : Health
             GameState.Instance.RegisterActivatedEnemy(this.gameObject);
         }
         _animator.SetBool("isDead", true);
+        SoundUtils.PlayARandomSound(_audioSource, _deathSounds);
         canMove = false;
         _col2D.enabled = false;
     }

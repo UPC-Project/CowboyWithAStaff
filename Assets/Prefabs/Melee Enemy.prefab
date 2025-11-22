@@ -185,6 +185,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5debdeeacfac74d43b67e0d3bd7497b1, type: 3}
   - {fileID: 8300000, guid: 8d451feefa858c84fb4e19e5b934f89d, type: 3}
   - {fileID: 8300000, guid: 0b20346b47cf138468d20818e1a5695f, type: 3}
+  - {fileID: 8300000, guid: 09bb3a0b3d6c2c941b9b06cf9c4d96cc, type: 3}
+  - {fileID: 8300000, guid: bb915448e7315204d8265e5b9f9ef5a3, type: 3}
+  - {fileID: 8300000, guid: 1141c9d87b28ee84fb564226075c2f23, type: 3}
   _moveSounds:
   - {fileID: 8300000, guid: cb1fd7a762007e44099ff8fd21183559, type: 3}
   - {fileID: 8300000, guid: 0ed603fec2719fd488361baa09152992, type: 3}
@@ -198,11 +201,19 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 55759196541c1f14ab0976c70449b66c, type: 3}
   - {fileID: 8300000, guid: e6e00fc3b87c00d4fa96b8543319f27f, type: 3}
   _damageSounds:
-  - {fileID: 8300000, guid: c9b00e5712d527f43bff4f43029d2e3e, type: 3}
-  - {fileID: 8300000, guid: 17b57a67c985b6a4c9c1b4f23b668611, type: 3}
-  - {fileID: 8300000, guid: 5a34e7f5de7d39042ad0f09b39173444, type: 3}
-  - {fileID: 8300000, guid: 51e4a691d25b6ab4491653427b60d14c, type: 3}
-  - {fileID: 8300000, guid: 2242e8791cbff6b4aa756912b91ea3f5, type: 3}
+  - {fileID: 8300000, guid: be9c4bbe0264e7840b1f72ec4433a2df, type: 3}
+  - {fileID: 8300000, guid: 2e395054ab3cac842bce469fa735243e, type: 3}
+  - {fileID: 8300000, guid: 0d42e63373511da4ca1303ceb015ecc8, type: 3}
+  - {fileID: 8300000, guid: 537282e8e7b6ffc499b1d9d88ff769f3, type: 3}
+  - {fileID: 8300000, guid: 070330cc79c97b047834452a1db52f7a, type: 3}
+  - {fileID: 8300000, guid: b43ed326b5b2d9449ba85152338330b2, type: 3}
+  - {fileID: 8300000, guid: 8255c2bd5e3125a42966a14171cc487d, type: 3}
+  - {fileID: 8300000, guid: 40602aa9d8728364f884536294f0e856, type: 3}
+  - {fileID: 8300000, guid: c1509f92b3e978a44872b3c83b14a1f9, type: 3}
+  _deathSounds:
+  - {fileID: 8300000, guid: 9bda68e7a15d2d0499fe7166e8880c26, type: 3}
+  - {fileID: 8300000, guid: 2014f20a2183fbd4787902b8bad1635c, type: 3}
+  - {fileID: 8300000, guid: 8cd3d61867bc5834e95e48865501e753, type: 3}
   speed: 2
   distanceToStop: 3
   _isRepealing: 0

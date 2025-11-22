@@ -303,20 +303,14 @@ MonoBehaviour:
   _audioSource: {fileID: 1239734381757194760}
   _audioSourceWalk: {fileID: 2420198158992039819}
   _idleSounds:
-  - {fileID: 8300000, guid: 1796227310f218a4fb474870a91e0aaf, type: 3}
-  _moveSounds:
-  - {fileID: 8300000, guid: cb1fd7a762007e44099ff8fd21183559, type: 3}
-  - {fileID: 8300000, guid: 0ed603fec2719fd488361baa09152992, type: 3}
-  - {fileID: 8300000, guid: df122c0ed0ae58e41b2a4c35d9b99d91, type: 3}
-  - {fileID: 8300000, guid: 257282b7e2d736e4da9e5c5de5f3ffec, type: 3}
-  - {fileID: 8300000, guid: 77e5c4779cb12034e9663aa1a30ff949, type: 3}
-  - {fileID: 8300000, guid: 6cf12f84b520e934b90cfd345b4652a7, type: 3}
-  - {fileID: 8300000, guid: 24731ffa92c1ec44ab6abf2f2a366606, type: 3}
-  - {fileID: 8300000, guid: 2e5200d3384fa8c48b6b7908fb5c51a5, type: 3}
+  - {fileID: 8300000, guid: 57e7d59b1ead7ba458da4e9bf455ddf9, type: 3}
+  - {fileID: 8300000, guid: 1174c034ce51fb046bf24c90a001cdd1, type: 3}
+  _moveSounds: []
   _attackSounds:
   - {fileID: 8300000, guid: 307c005786bed5145bd62e895dddf0f1, type: 3}
   _damageSounds:
-  - {fileID: 8300000, guid: e6e00fc3b87c00d4fa96b8543319f27f, type: 3}
+  - {fileID: 8300000, guid: 555de8efe2f59d440ac088628f987976, type: 3}
+  _deathSounds: []
   speed: 2
   distanceToStop: 8
   _isRepealing: 0
