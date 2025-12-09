@@ -244,7 +244,6 @@ public class Player : Health
             StartCoroutine(EntitiesUtils.FlashInvert(_spriteRenderer, 0.1f));
             health -= damage;
             UpdateHeartsUI();
-            UpdatePotionText();
         }
         if (health <= 0) StartDeath();
     }
