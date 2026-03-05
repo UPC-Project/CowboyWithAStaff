@@ -10,7 +10,6 @@ public class GameState : MonoBehaviour
     private int _respawnHealingPotions;
     private List<GameObject> _collectedItemsSinceCheckpoint = new List<GameObject>();
     [SerializeField] private List<GameObject> _activatedEnemiesSinceCheckpoint = new List<GameObject>();
-    private Player _player;
 
     public void Awake()
     {
@@ -19,19 +18,18 @@ public class GameState : MonoBehaviour
     void Start()
     {
         AudioManager.Instance.PlayMusic("LevelMusic");
-        _player = FindAnyObjectByType<Player>();
 
-        _respawnPoint = _player.transform.position;
-        _respawnHealth = _player.health;
-        _respawnHealingPotions = _player.healingPotions;
+        _respawnPoint = Player.Instance.transform.position;
+        _respawnHealth = Player.Instance.health;
+        _respawnHealingPotions = Player.Instance.healingPotions;
     }
 
     // When a Checkpoint is triggered
     public void SetCheckpoint(Vector2 newPosition)
     {
         _respawnPoint = newPosition;
-        _respawnHealth = _player.health;
-        _respawnHealingPotions = _player.healingPotions;
+        _respawnHealth = Player.Instance.health;
+        _respawnHealingPotions = Player.Instance.healingPotions;
         _collectedItemsSinceCheckpoint.Clear();
 
         foreach (GameObject enemy in _activatedEnemiesSinceCheckpoint.ToList())
@@ -49,11 +47,12 @@ public class GameState : MonoBehaviour
     // Called by Death()
     public void Respawn()
     {
-        _player.transform.position = _respawnPoint;
-        _player.health = _respawnHealth;
-        _player.healingPotions = _respawnHealingPotions;
-        _player.UpdateHeartsUI();
-        _player.UpdatePotionText();
+        Player.Instance.transform.position = _respawnPoint;
+        Player.Instance.health = _respawnHealth;
+        Player.Instance.healingPotions = _respawnHealingPotions;
+        UIManager.Instance.UpdateHeartsUI(Player.Instance.health);
+        UIManager.Instance.UpdatePotionText(Player.Instance.healingPotions.ToString());
+        UIManager.Instance.UpdateKey(Player.Instance.hasGraveyardKey);
 
         // Return collectables to their original position
         foreach (GameObject item in _collectedItemsSinceCheckpoint)

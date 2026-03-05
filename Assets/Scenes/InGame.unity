@@ -14798,6 +14798,30 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 401302900266763323, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
+      propertyPath: m_Name
+      value: Melee Skill
+      objectReference: {fileID: 0}
+    - target: {fileID: 401302900266763323, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 551727268321278182, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
+      propertyPath: m_Name
+      value: Ranged Skill Cooldown
+      objectReference: {fileID: 0}
+    - target: {fileID: 551727268321278182, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 800397111352422196, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
+      propertyPath: m_Name
+      value: Potions Text
+      objectReference: {fileID: 0}
+    - target: {fileID: 867478512214298369, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
+      propertyPath: m_Name
+      value: Ranged Skill
+      objectReference: {fileID: 0}
     - target: {fileID: 869134970813675692, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -14861,6 +14885,10 @@ PrefabInstance:
     - target: {fileID: 1867609736631456911, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2015306134338763772, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2159760997528090431, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
       propertyPath: m_AnchorMax.y
@@ -14894,13 +14922,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3283019086888013699, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
+      propertyPath: m_FillAmount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3434913781335549401, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
       propertyPath: m_FillAmount
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3652496082960339197, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
       propertyPath: m_FillAmount
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4105068453131727018, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
       propertyPath: m_AnchorMax.y
@@ -14925,6 +14957,14 @@ PrefabInstance:
     - target: {fileID: 4105068453131727018, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4283349456110499633, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
+      propertyPath: m_Name
+      value: Block Skill Image
+      objectReference: {fileID: 0}
+    - target: {fileID: 4283349456110499633, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4493564999560299779, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
       propertyPath: m_Pivot.x
@@ -15014,6 +15054,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -123.88086
       objectReference: {fileID: 0}
+    - target: {fileID: 4631081072099937480, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5020936152556918192, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
+      propertyPath: m_Name
+      value: Block Skill
+      objectReference: {fileID: 0}
     - target: {fileID: 6267966350226083103, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -15038,6 +15086,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6309621831215860086, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
+      propertyPath: m_Name
+      value: Melee Skill Image
+      objectReference: {fileID: 0}
     - target: {fileID: 6571556388430476226, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -15053,6 +15105,18 @@ PrefabInstance:
     - target: {fileID: 6571556388430476226, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6750678148320174584, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
+      propertyPath: m_Name
+      value: Melee Skill Cooldown
+      objectReference: {fileID: 0}
+    - target: {fileID: 6750678148320174584, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6764191088483479912, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
+      propertyPath: m_Name
+      value: KeySlot
       objectReference: {fileID: 0}
     - target: {fileID: 7661791939954723919, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
       propertyPath: m_AnchorMax.y
@@ -15071,12 +15135,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7707940492763459706, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
+      propertyPath: m_Name
+      value: Block Skill Cooldown
+      objectReference: {fileID: 0}
+    - target: {fileID: 7707940492763459706, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7825227083265524488, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
       propertyPath: m_Name
-      value: KeyCounter
+      value: Key Text
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240567548323886792, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
+      propertyPath: m_Name
+      value: CollectablesBar
       objectReference: {fileID: 0}
     - target: {fileID: 8980230957160462409, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
       propertyPath: m_AnchorMax.y
@@ -15094,10 +15166,29 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9104400986563342327, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
+      propertyPath: m_Name
+      value: Ranged Skill Image
+      objectReference: {fileID: 0}
+    - target: {fileID: 9104400986563342327, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119343617823553631, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
+      propertyPath: m_Name
+      value: HUD
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119343617823553631, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9119343617823553631, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1342865399}
   m_SourcePrefab: {fileID: 100100000, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
 --- !u!114 &1342865396 stripped
 MonoBehaviour:
@@ -15121,6 +15212,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!1 &1342865398 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9119343617823553631, guid: 03226b7acd900d740bf82afb0f094e96, type: 3}
+  m_PrefabInstance: {fileID: 1342865395}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1342865399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342865398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9038b6040845911499d74440a991d0cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIManager
+  _heartsCanvas:
+  - {fileID: 1564055342}
+  - {fileID: 403342301}
+  - {fileID: 1384154522}
+  - {fileID: 727828148}
+  - {fileID: 755031996}
+  _ranged_cooldown: {fileID: 1342865397}
+  _melee_cooldown: {fileID: 1342865396}
+  _block_cooldown: {fileID: 1620288711}
+  _potionText: {fileID: 540326520}
+  _keyText: {fileID: 2106985783}
 --- !u!1 &1354283020
 GameObject:
   m_ObjectHideFlags: 0

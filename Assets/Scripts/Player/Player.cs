@@ -2,8 +2,7 @@ using Constants;
 using System;
 using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine.UI;
-using TMPro;
+
 
 public class Player : Health
 {
@@ -36,13 +35,6 @@ public class Player : Health
     private Vector2 _attackDirection;
     public bool _isDying = false;
 
-    [Header("Ui System")]
-    [SerializeField] private Image[] _heartsCanvas;
-    [SerializeField] private Image _hitCooldown;
-    [SerializeField] private Image _shotCooldown;
-    [SerializeField] private Image _blockCooldown;
-    [SerializeField] private TextMeshProUGUI _potionText;
-    [SerializeField] private TextMeshProUGUI _keyText;
 
     [Header("Sheriff Room")]
     // TODO: Integration with key will be after merging with boss fight scene
@@ -58,7 +50,7 @@ public class Player : Health
     [SerializeField] protected List<AudioClip> _attackSounds;
     [SerializeField] protected List<AudioClip> _damageSounds;
 
-    private void Awake()
+    public override void Awake()
     {
         health = maxHealth;
 
@@ -83,20 +75,17 @@ public class Player : Health
         if (_nextMeleeAttackTime > 0)
         {
             _nextMeleeAttackTime -= Time.deltaTime;
-            _hitCooldown.gameObject.SetActive(true);
-            _hitCooldown.fillAmount = _nextMeleeAttackTime / _attackMeleeCooldown;
+            UIManager.Instance.UpdateSkills(PlayerSkill.MeleeAttack, _nextMeleeAttackTime / _attackMeleeCooldown);
         }
         if (_nextRangedAttackTime > 0)
         {
             _nextRangedAttackTime -= Time.deltaTime;
-            _shotCooldown.gameObject.SetActive(true);
-            _shotCooldown.fillAmount = _nextRangedAttackTime / _attackRangedCooldown;
+            UIManager.Instance.UpdateSkills(PlayerSkill.RangedAttack, _nextRangedAttackTime / _attackRangedCooldown);
         }
         if (_nextBlockTime > 0)
         {
             _nextBlockTime -= Time.deltaTime;
-            _blockCooldown.gameObject.SetActive(true);
-            _blockCooldown.fillAmount = _nextBlockTime / _attackBlockCooldown;
+            UIManager.Instance.UpdateSkills(PlayerSkill.Block, _nextBlockTime / _attackBlockCooldown);
         }
     }
 
@@ -108,6 +97,7 @@ public class Player : Health
         {
             AttackAnimation(PlayerSkill.MeleeAttack.ToString());
             // MeleeAttack() is called in PlayerMeleeAttackStateBehaviour
+            UIManager.Instance.UpdateSkills(PlayerSkill.MeleeAttack, 1);
         }
     }
 
@@ -118,6 +108,7 @@ public class Player : Health
         {
             AttackAnimation(PlayerSkill.RangedAttack.ToString());
             // RangedAttack() is called in PlayerRangedAttackStateBehaviour
+            UIManager.Instance.UpdateSkills(PlayerSkill.RangedAttack, 1);
         }
     }
 
@@ -129,6 +120,7 @@ public class Player : Health
             // Change when animation is done
             AttackAnimation(PlayerSkill.Block.ToString());
             invulnerable = true;
+            UIManager.Instance.UpdateSkills(PlayerSkill.Block, 1);
         }
     }
 
@@ -231,8 +223,8 @@ public class Player : Health
             health = maxHealth;
             healingPotions -= 1;
 
-            UpdateHeartsUI();
-            UpdatePotionText();
+            UIManager.Instance.UpdateHeartsUI(health);
+            UIManager.Instance.UpdatePotionText(healingPotions.ToString());
         }
     }
 
@@ -242,9 +234,9 @@ public class Player : Health
         {
             StartCoroutine(EntitiesUtils.FlashInvert(_spriteRenderer, 0.1f));
             health -= damage;
+            UIManager.Instance.UpdateHeartsUI(health);
         }
         if (health <= 0) StartDeath();
-        UpdateHeartsUI();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -255,45 +247,21 @@ public class Player : Health
             healingPotions += 1;
             collision.gameObject.SetActive(false);
             GameState.Instance.RegisterCollectedItem(collision.gameObject);
-            UpdatePotionText();
+            UIManager.Instance.UpdatePotionText(healingPotions.ToString());
         }
     }
 
-
+    // SOUNDS
     public void PlayFootstepSound()
     {
         SoundUtils.PlayARandomSound(audioSourceWalk, _moveSounds, 0.5f);
     }
 
+    // GIZMOS
     // Comment this function if you don't want to see the melee range attack
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(gameObject.transform.position, hitRadius);
-    }
-
-    public void UpdateHeartsUI()
-    {
-        for (int i = 0; i < _heartsCanvas.Length; i++)
-        {
-            if (i < health)
-            {
-                _heartsCanvas[i].enabled = true;
-            }
-            else
-            {
-                _heartsCanvas[i].enabled = false;
-            }
-        }
-    }
-
-    public void UpdatePotionText()
-    {
-        _potionText.text = healingPotions.ToString();
-    }
-
-    public void AddKey()
-    {
-        _keyText.text = "1";
     }
 }
