@@ -217,7 +217,7 @@ public class Player : Health
     // Triggered when H key is pressed
     public void OnHeal()
     {
-        if (healingPotions > 0)
+        if (healingPotions > 0 && health!=maxHealth)
         {
             AudioManager.Instance.Play("PotionUse");
             health = maxHealth;
