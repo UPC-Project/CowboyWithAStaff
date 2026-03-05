@@ -1,0 +1,3419 @@
+fileFormatVersion: 2
+guid: 7365d953e53187544adff7cf08ff8104
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8909458518474582149
+    second: monster_death_190_0
+  - first:
+      213: -1343422168178314131
+    second: monster_death_190_1
+  - first:
+      213: -6618574207015485821
+    second: monster_death_190_2
+  - first:
+      213: -3178491868210812964
+    second: monster_death_190_3
+  - first:
+      213: 5846916494884855094
+    second: monster_death_190_4
+  - first:
+      213: -825739414928494663
+    second: monster_death_190_5
+  - first:
+      213: 7443148555275842649
+    second: monster_death_190_6
+  - first:
+      213: -2990029901754383028
+    second: monster_death_190_7
+  - first:
+      213: -3146194166120882199
+    second: monster_death_190_8
+  - first:
+      213: -8074619495803452280
+    second: monster_death_190_9
+  - first:
+      213: 1029484399430845075
+    second: monster_death_190_10
+  - first:
+      213: 1034028500101785558
+    second: monster_death_190_11
+  - first:
+      213: 2202815148738704063
+    second: monster_death_190_12
+  - first:
+      213: -2139016232534914859
+    second: monster_death_190_13
+  - first:
+      213: -5908756139111264914
+    second: monster_death_190_14
+  - first:
+      213: -8691932399536525587
+    second: monster_death_190_15
+  - first:
+      213: -147767529944027845
+    second: monster_death_190_16
+  - first:
+      213: 6649512309953871792
+    second: monster_death_190_17
+  - first:
+      213: -8954353688981999698
+    second: monster_death_190_18
+  - first:
+      213: 126585280188646950
+    second: monster_death_190_19
+  - first:
+      213: 214279223697870021
+    second: monster_death_190_20
+  - first:
+      213: 7074157555831240651
+    second: monster_death_190_21
+  - first:
+      213: 4758739310565520808
+    second: monster_death_190_22
+  - first:
+      213: -5596476635392451220
+    second: monster_death_190_23
+  - first:
+      213: -3119213998239323841
+    second: monster_death_190_24
+  - first:
+      213: -8054887630328425038
+    second: monster_death_190_25
+  - first:
+      213: 5421293426901084291
+    second: monster_death_190_26
+  - first:
+      213: 929567301544317104
+    second: monster_death_190_27
+  - first:
+      213: -5662714728298235557
+    second: monster_death_190_28
+  - first:
+      213: -4569043732068232576
+    second: monster_death_190_29
+  - first:
+      213: -6392246305939878154
+    second: monster_death_190_30
+  - first:
+      213: -1957538144257336333
+    second: monster_death_190_31
+  - first:
+      213: -1773853826063821094
+    second: monster_death_190_32
+  - first:
+      213: -4420866024327090786
+    second: monster_death_190_33
+  - first:
+      213: -552079710392766232
+    second: monster_death_190_34
+  - first:
+      213: 6736810618850648550
+    second: monster_death_190_35
+  - first:
+      213: 8297476568867444111
+    second: monster_death_190_36
+  - first:
+      213: 403054069906450579
+    second: monster_death_190_37
+  - first:
+      213: -1921874455919609354
+    second: monster_death_190_38
+  - first:
+      213: 8820753202427583831
+    second: monster_death_190_39
+  - first:
+      213: -2785785094123192201
+    second: monster_death_190_40
+  - first:
+      213: 6346094816393618570
+    second: monster_death_190_41
+  - first:
+      213: -6729247053630341466
+    second: monster_death_190_42
+  - first:
+      213: -1681395262354016154
+    second: monster_death_190_43
+  - first:
+      213: -5143760074910288210
+    second: monster_death_190_44
+  - first:
+      213: -8242140085134922138
+    second: monster_death_190_45
+  - first:
+      213: -5451466909043175557
+    second: monster_death_190_46
+  - first:
+      213: -5582176826329022931
+    second: monster_death_190_47
+  - first:
+      213: -1986573100165855380
+    second: monster_death_190_48
+  - first:
+      213: -8577572464639974426
+    second: monster_death_190_49
+  - first:
+      213: -1941012501531876678
+    second: monster_death_190_50
+  - first:
+      213: 653715825993841170
+    second: monster_death_190_51
+  - first:
+      213: -4985820547262221779
+    second: monster_death_190_52
+  - first:
+      213: 6301958711934519430
+    second: monster_death_190_53
+  - first:
+      213: -7343552017549214806
+    second: monster_death_190_54
+  - first:
+      213: -1550544739136015971
+    second: monster_death_190_55
+  - first:
+      213: -9059871832779984261
+    second: monster_death_190_56
+  - first:
+      213: -5914937650359494104
+    second: monster_death_190_57
+  - first:
+      213: -8395678160171485861
+    second: monster_death_190_58
+  - first:
+      213: 2073649639279449925
+    second: monster_death_190_59
+  - first:
+      213: -869586948273604438
+    second: monster_death_190_60
+  - first:
+      213: -3030666964144992575
+    second: monster_death_190_61
+  - first:
+      213: 1497136843971335871
+    second: monster_death_190_62
+  - first:
+      213: -6510310085681045080
+    second: monster_death_190_63
+  - first:
+      213: 7627531790121689992
+    second: monster_death_190_64
+  - first:
+      213: -2953289935868303060
+    second: monster_death_190_65
+  - first:
+      213: 7773257687234375186
+    second: monster_death_190_66
+  - first:
+      213: -2088561855640092350
+    second: monster_death_190_67
+  - first:
+      213: -7781563706118188028
+    second: monster_death_190_68
+  - first:
+      213: -5164441650003569735
+    second: monster_death_190_69
+  - first:
+      213: 2429912319168266331
+    second: monster_death_190_70
+  - first:
+      213: -4052934489058326290
+    second: monster_death_190_71
+  - first:
+      213: 81776460002610742
+    second: monster_death_190_72
+  - first:
+      213: -7593639929124874691
+    second: monster_death_190_73
+  - first:
+      213: 6741261137591456934
+    second: monster_death_190_74
+  - first:
+      213: 3996029280781365755
+    second: monster_death_190_75
+  - first:
+      213: -4544970661853711753
+    second: monster_death_190_76
+  - first:
+      213: -7038075277948734290
+    second: monster_death_190_77
+  - first:
+      213: -6461624533565277073
+    second: monster_death_190_78
+  - first:
+      213: -1526792390008727168
+    second: monster_death_190_79
+  - first:
+      213: 6778874561294863319
+    second: monster_death_190_80
+  - first:
+      213: -1527518633596341972
+    second: monster_death_190_81
+  - first:
+      213: -5879550326107579982
+    second: monster_death_190_82
+  - first:
+      213: -5824874213472802723
+    second: monster_death_190_83
+  - first:
+      213: 6479360994013851884
+    second: monster_death_190_84
+  - first:
+      213: -7283642537198726354
+    second: monster_death_190_85
+  - first:
+      213: -7361789300729405411
+    second: monster_death_190_86
+  - first:
+      213: 9076762485153913336
+    second: monster_death_190_87
+  - first:
+      213: 2130970412488195677
+    second: monster_death_190_88
+  - first:
+      213: 3570822717363654293
+    second: monster_death_190_89
+  - first:
+      213: 7466698916140390903
+    second: monster_death_190_90
+  - first:
+      213: 9058919257504377455
+    second: monster_death_190_91
+  - first:
+      213: -3833596907342647487
+    second: monster_death_190_92
+  - first:
+      213: 4683617117392143186
+    second: monster_death_190_93
+  - first:
+      213: -544727527882921468
+    second: monster_death_190_94
+  - first:
+      213: -7784062383109718086
+    second: monster_death_190_95
+  - first:
+      213: 1699205169891281670
+    second: monster_death_190_96
+  - first:
+      213: 724669027091495600
+    second: monster_death_190_97
+  - first:
+      213: 879245602308877268
+    second: monster_death_190_98
+  - first:
+      213: 8853505228800115362
+    second: monster_death_190_99
+  - first:
+      213: 6416900646738452299
+    second: monster_death_190_100
+  - first:
+      213: -3698063116249340438
+    second: monster_death_190_101
+  - first:
+      213: 8636724056455819642
+    second: monster_death_190_102
+  - first:
+      213: -2413576360015981387
+    second: monster_death_190_103
+  - first:
+      213: -3042246246297613315
+    second: monster_death_190_104
+  - first:
+      213: -6921302317675478281
+    second: monster_death_190_105
+  - first:
+      213: -200319879094503823
+    second: monster_death_190_106
+  - first:
+      213: 587631864931233104
+    second: monster_death_190_107
+  - first:
+      213: -6739134098758528320
+    second: monster_death_190_108
+  - first:
+      213: 5155920362928000422
+    second: monster_death_190_109
+  - first:
+      213: 5158533488037335202
+    second: monster_death_190_110
+  - first:
+      213: -8584639273043577230
+    second: monster_death_190_111
+  - first:
+      213: -3664841394914712352
+    second: monster_death_190_112
+  - first:
+      213: -4575442576408263512
+    second: monster_death_190_113
+  - first:
+      213: -2515400200441872775
+    second: monster_death_190_114
+  - first:
+      213: -3973843068642949635
+    second: monster_death_190_115
+  - first:
+      213: -2976820505040014612
+    second: monster_death_190_116
+  - first:
+      213: -4323177365944592682
+    second: monster_death_190_117
+  - first:
+      213: 7099991352203903668
+    second: monster_death_190_118
+  - first:
+      213: 5037044306732433219
+    second: monster_death_190_119
+  - first:
+      213: 8877416672232397829
+    second: monster_death_190_120
+  - first:
+      213: 5072905313230218085
+    second: monster_death_190_121
+  - first:
+      213: 2475481673770248221
+    second: monster_death_190_122
+  - first:
+      213: -759891074863395783
+    second: monster_death_190_123
+  - first:
+      213: 5149524462519011910
+    second: monster_death_190_124
+  - first:
+      213: 4293930068548542864
+    second: monster_death_190_125
+  - first:
+      213: -7732984946716848620
+    second: monster_death_190_126
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 20
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: monster_death_190_0
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 801
+        width: 30
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b779e398eae3b5480800000000000000
+      internalID: -8909458518474582149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_1
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 782
+        width: 14
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d64b852e7a43b5de0800000000000000
+      internalID: -1343422168178314131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_2
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 766
+        width: 12
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38e774f43d91624a0800000000000000
+      internalID: -6618574207015485821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_3
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 767
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd7a3d97c7ab3e3d0800000000000000
+      internalID: -3178491868210812964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_4
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 738
+        width: 93
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63ddbf4e29b642150800000000000000
+      internalID: 5846916494884855094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_5
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 706
+        width: 62
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bfe52880626a84f0800000000000000
+      internalID: -825739414928494663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_6
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 778
+        width: 30
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 954bdafec206b4760800000000000000
+      internalID: 7443148555275842649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_7
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 763
+        width: 9
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c45422e65a74186d0800000000000000
+      internalID: -2990029901754383028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_8
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 740
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ef55fd33197654d0800000000000000
+      internalID: -3146194166120882199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_9
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 758
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8840138895031ff80800000000000000
+      internalID: -8074619495803452280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_10
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 721
+        width: 23
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 392c1e95b96794e00800000000000000
+      internalID: 1029484399430845075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_11
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 755
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d7623c317b995e00800000000000000
+      internalID: 1034028500101785558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_12
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 698
+        width: 36
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb27b6ee4b8f19e10800000000000000
+      internalID: 2202815148738704063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_13
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 726
+        width: 19
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d846fac110b052e0800000000000000
+      internalID: -2139016232534914859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_14
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 705
+        width: 43
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6d4ddfe891effda0800000000000000
+      internalID: -5908756139111264914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_15
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 717
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: deeaae1d88d006780800000000000000
+      internalID: -8691932399536525587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_16
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 669
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3d6954e63603fdf0800000000000000
+      internalID: -147767529944027845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_17
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 689
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bf336c1730d74c50800000000000000
+      internalID: 6649512309953871792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_18
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 710
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eafe40713cebbb380800000000000000
+      internalID: -8954353688981999698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_19
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 655
+        width: 26
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 626007344a8b1c100800000000000000
+      internalID: 126585280188646950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_20
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 633
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cc024391d549f200800000000000000
+      internalID: 214279223697870021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_21
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 629
+        width: 53
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc7777801d47c2260800000000000000
+      internalID: 7074157555831240651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_22
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 644
+        width: 47
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a5f1f8a0307a0240800000000000000
+      internalID: 4758739310565520808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_23
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 646
+        width: 60
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6dd8a9c6225552b0800000000000000
+      internalID: -5596476635392451220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_24
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 649
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f39e488156356b4d0800000000000000
+      internalID: -3119213998239323841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_25
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 633
+        width: 45
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b51698706a473090800000000000000
+      internalID: -8054887630328425038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_26
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 654
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 388699506ad4c3b40800000000000000
+      internalID: 5421293426901084291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_27
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 659
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b01e53298c76ec00800000000000000
+      internalID: 929567301544317104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_28
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 578
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b59396bf4fef961b0800000000000000
+      internalID: -5662714728298235557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_29
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 598
+        width: 9
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08219dafeee7790c0800000000000000
+      internalID: -4569043732068232576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_30
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 597
+        width: 63
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fe86a13add2a47a0800000000000000
+      internalID: -6392246305939878154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_31
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 571
+        width: 51
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fb9345ed6d65d4e0800000000000000
+      internalID: -1957538144257336333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_32
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 534
+        width: 33
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad69ffde7510267e0800000000000000
+      internalID: -1773853826063821094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_33
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 568
+        width: 37
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9de36c06cde5a2c0800000000000000
+      internalID: -4420866024327090786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_34
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 603
+        width: 17
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e0b65ead6e9658f0800000000000000
+      internalID: -552079710392766232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_35
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 608
+        width: 29
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e12caf8095fd7d50800000000000000
+      internalID: 6736810618850648550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_36
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 607
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f85987b3afe862370800000000000000
+      internalID: 8297476568867444111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_37
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 530
+        width: 53
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 398ac068a8fe79500800000000000000
+      internalID: 403054069906450579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_38
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 565
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f9b3086d512455e0800000000000000
+      internalID: -1921874455919609354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_39
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 562
+        width: 22
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75dd512ad4c996a70800000000000000
+      internalID: 8820753202427583831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_40
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 558
+        width: 18
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77085347737e659d0800000000000000
+      internalID: -2785785094123192201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_41
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 575
+        width: 10
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a84e61acc9bd11850800000000000000
+      internalID: 6346094816393618570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_42
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 582
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6aef4823579ec92a0800000000000000
+      internalID: -6729247053630341466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_43
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 507
+        width: 119
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6683d54daeb7aa8e0800000000000000
+      internalID: -1681395262354016154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_44
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 494
+        width: 53
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea6b225f671bd98b0800000000000000
+      internalID: -5143760074910288210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_45
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 540
+        width: 25
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66e6684e2490e9d80800000000000000
+      internalID: -8242140085134922138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_46
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 542
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7f4fa5babf7854b0800000000000000
+      internalID: -5451466909043175557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_47
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 463
+        width: 86
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2ebd3980cf1882b0800000000000000
+      internalID: -5582176826329022931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_48
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 542
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c67844c6a464e64e0800000000000000
+      internalID: -1986573100165855380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_49
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 527
+        width: 29
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e366f11a4756f880800000000000000
+      internalID: -8577572464639974426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_50
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 551
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab2a99de9632015e0800000000000000
+      internalID: -1941012501531876678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_51
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 525
+        width: 24
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21af9688417721900800000000000000
+      internalID: 653715825993841170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_52
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 518
+        width: 27
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d227796d0aececab0800000000000000
+      internalID: -4985820547262221779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_53
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 524
+        width: 11
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 688090e2f0e057750800000000000000
+      internalID: 6301958711934519430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_54
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 516
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aab306c0956761a90800000000000000
+      internalID: -7343552017549214806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_55
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 503
+        width: 41
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d91727f56cb5b7ae0800000000000000
+      internalID: -1550544739136015971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_56
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 520
+        width: 36
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b72f490c19ed44280800000000000000
+      internalID: -9059871832779984261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_57
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 472
+        width: 43
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82a1db1bb8be9eda0800000000000000
+      internalID: -5914937650359494104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_58
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 477
+        width: 23
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b55397e023f8c7b80800000000000000
+      internalID: -8395678160171485861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_59
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 475
+        width: 58
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5475ed93c5517cc10800000000000000
+      internalID: 2073649639279449925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_60
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 510
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa8f5de174b9ee3f0800000000000000
+      internalID: -869586948273604438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_61
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 467
+        width: 10
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ce40a90478e0f5d0800000000000000
+      internalID: -3030666964144992575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_62
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 449
+        width: 19
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb69f050706e6c410800000000000000
+      internalID: 1497136843971335871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_63
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 407
+        width: 82
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a1a65d587bb6a5a0800000000000000
+      internalID: -6510310085681045080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_64
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 485
+        width: 32
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 883e33f20cf6ad960800000000000000
+      internalID: 7627531790121689992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_65
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 476
+        width: 20
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2965d5537ec307d0800000000000000
+      internalID: -2953289935868303060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_66
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 382
+        width: 117
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21eed2b9ea820eb60800000000000000
+      internalID: 7773257687234375186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_67
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 421
+        width: 87
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2414427de00f303e0800000000000000
+      internalID: -2088561855640092350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_68
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 470
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 404d0cba905520490800000000000000
+      internalID: -7781563706118188028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_69
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 417
+        width: 22
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b31e448ea73458b0800000000000000
+      internalID: -5164441650003569735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_70
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 445
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b50ce5b4168c8b120800000000000000
+      internalID: 2429912319168266331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_71
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 384
+        width: 41
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee8cfb93e8511c7c0800000000000000
+      internalID: -4052934489058326290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_72
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 399
+        width: 48
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63ec171d147822100800000000000000
+      internalID: 81776460002610742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_73
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 337
+        width: 60
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d361a40a7b8fd9690800000000000000
+      internalID: -7593639929124874691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_74
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 379
+        width: 25
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a4d844b945cd8d50800000000000000
+      internalID: 6741261137591456934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_75
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 326
+        width: 67
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf17801857fb47730800000000000000
+      internalID: 3996029280781365755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_76
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 385
+        width: 50
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77233a963450de0c0800000000000000
+      internalID: -4544970661853711753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_77
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 332
+        width: 71
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea43863f2dbb35e90800000000000000
+      internalID: -7038075277948734290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_78
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 364
+        width: 37
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6c74ecc8b2b356a0800000000000000
+      internalID: -6461624533565277073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_79
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 370
+        width: 26
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08992cb196ebfcae0800000000000000
+      internalID: -1526792390008727168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_80
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 363
+        width: 53
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7db89ea5f76631e50800000000000000
+      internalID: 6778874561294863319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_81
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 286
+        width: 89
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2133b855e92dcae0800000000000000
+      internalID: -1527518633596341972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_82
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 385
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b9535d2124a76ea0800000000000000
+      internalID: -5879550326107579982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_83
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 375
+        width: 52
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d58ee9ca3c3e92fa0800000000000000
+      internalID: -5824874213472802723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_84
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 354
+        width: 33
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce0b7b3be705be950800000000000000
+      internalID: 6479360994013851884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_85
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 341
+        width: 54
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e23585be3bd4bea90800000000000000
+      internalID: -7283642537198726354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_86
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 324
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d10a0caa2aba5d990800000000000000
+      internalID: -7361789300729405411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_87
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 326
+        width: 34
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f9d036b36327fd70800000000000000
+      internalID: 9076762485153913336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_88
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 328
+        width: 33
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5ef93fbc4ab29d10800000000000000
+      internalID: 2130970412488195677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_89
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 332
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59e0b58a75c1e8130800000000000000
+      internalID: 3570822717363654293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_90
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 305
+        width: 32
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f9975d9a1b0f9760800000000000000
+      internalID: 7466698916140390903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_91
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 251
+        width: 33
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6a6e78811fb7bd70800000000000000
+      internalID: 9058919257504377455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_92
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 282
+        width: 80
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14f2ecd8ce35ccac0800000000000000
+      internalID: -3833596907342647487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_93
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 246
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 253091214fc8ff040800000000000000
+      internalID: 4683617117392143186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_94
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 251
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40a6921133db078f0800000000000000
+      internalID: -544727527882921468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_95
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 182
+        width: 72
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abfb349118479f390800000000000000
+      internalID: -7784062383109718086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_96
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 226
+        width: 52
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60b80e7691ac49710800000000000000
+      internalID: 1699205169891281670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_97
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 229
+        width: 18
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ba348304aa8e0a00800000000000000
+      internalID: 724669027091495600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_98
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 236
+        width: 26
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dbe1f38735b33c00800000000000000
+      internalID: 879245602308877268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_99
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 192
+        width: 36
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a2c1b30918fdda70800000000000000
+      internalID: 8853505228800115362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_100
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 162
+        width: 40
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4fd1d7d3296d0950800000000000000
+      internalID: 6416900646738452299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_101
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 193
+        width: 19
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae5ebfe5037ddacc0800000000000000
+      internalID: -3698063116249340438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_102
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 174
+        width: 18
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a71be1025cecbd770800000000000000
+      internalID: 8636724056455819642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_103
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 177
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b497f69611418ed0800000000000000
+      internalID: -2413576360015981387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_104
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 207
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfb4a225825c7c5d0800000000000000
+      internalID: -3042246246297613315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_105
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 192
+        width: 21
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f28dd3763892ff90800000000000000
+      internalID: -6921302317675478281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_106
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 194
+        width: 35
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1767f1d9122583df0800000000000000
+      internalID: -200319879094503823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_107
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 154
+        width: 41
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05d2de75110b72800800000000000000
+      internalID: 587631864931233104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_108
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 160
+        width: 14
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c296cd1e39c972a0800000000000000
+      internalID: -6739134098758528320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_109
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 186
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6adc68ab0428d8740800000000000000
+      internalID: 5155920362928000422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_110
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 90
+        width: 98
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a01c6450eac69740800000000000000
+      internalID: 5158533488037335202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_111
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 166
+        width: 27
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 276be55801c3dd880800000000000000
+      internalID: -8584639273043577230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_112
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 138
+        width: 31
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e426f12b2ed32dc0800000000000000
+      internalID: -3664841394914712352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_113
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 111
+        width: 29
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a4ccfee733c080c0800000000000000
+      internalID: -4575442576408263512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_114
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 68
+        width: 29
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97e37b848d0871dd0800000000000000
+      internalID: -2515400200441872775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_115
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 126
+        width: 16
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df5836c88c21ad8c0800000000000000
+      internalID: -3973843068642949635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_116
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 125
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce2bdf4c58530b6d0800000000000000
+      internalID: -2976820505040014612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_117
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 119
+        width: 23
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d61dd1471df004c0800000000000000
+      internalID: -4323177365944592682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_118
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 111
+        width: 24
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b28578748c388260800000000000000
+      internalID: 7099991352203903668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_119
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 61
+        width: 41
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34fb0bc0c1d27e540800000000000000
+      internalID: 5037044306732433219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_120
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 98
+        width: 16
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50cda87cd6be23b70800000000000000
+      internalID: 8877416672232397829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_121
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 99
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56367464184966640800000000000000
+      internalID: 5072905313230218085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_122
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 104
+        width: 25
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d18a015777daa5220800000000000000
+      internalID: 2475481673770248221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_123
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 92
+        width: 28
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93c07cee7135475f0800000000000000
+      internalID: -759891074863395783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_124
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 49
+        width: 36
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64a41ae1739c67740800000000000000
+      internalID: 5149524462519011910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_125
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 28
+        width: 42
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 091643aa5aa179b30800000000000000
+      internalID: 4293930068548542864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monster_death_190_126
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 26
+        width: 13
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41ecf7d792beea490800000000000000
+      internalID: -7732984946716848620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      monster_death_190_0: -8909458518474582149
+      monster_death_190_1: -1343422168178314131
+      monster_death_190_10: 1029484399430845075
+      monster_death_190_100: 6416900646738452299
+      monster_death_190_101: -3698063116249340438
+      monster_death_190_102: 8636724056455819642
+      monster_death_190_103: -2413576360015981387
+      monster_death_190_104: -3042246246297613315
+      monster_death_190_105: -6921302317675478281
+      monster_death_190_106: -200319879094503823
+      monster_death_190_107: 587631864931233104
+      monster_death_190_108: -6739134098758528320
+      monster_death_190_109: 5155920362928000422
+      monster_death_190_11: 1034028500101785558
+      monster_death_190_110: 5158533488037335202
+      monster_death_190_111: -8584639273043577230
+      monster_death_190_112: -3664841394914712352
+      monster_death_190_113: -4575442576408263512
+      monster_death_190_114: -2515400200441872775
+      monster_death_190_115: -3973843068642949635
+      monster_death_190_116: -2976820505040014612
+      monster_death_190_117: -4323177365944592682
+      monster_death_190_118: 7099991352203903668
+      monster_death_190_119: 5037044306732433219
+      monster_death_190_12: 2202815148738704063
+      monster_death_190_120: 8877416672232397829
+      monster_death_190_121: 5072905313230218085
+      monster_death_190_122: 2475481673770248221
+      monster_death_190_123: -759891074863395783
+      monster_death_190_124: 5149524462519011910
+      monster_death_190_125: 4293930068548542864
+      monster_death_190_126: -7732984946716848620
+      monster_death_190_13: -2139016232534914859
+      monster_death_190_14: -5908756139111264914
+      monster_death_190_15: -8691932399536525587
+      monster_death_190_16: -147767529944027845
+      monster_death_190_17: 6649512309953871792
+      monster_death_190_18: -8954353688981999698
+      monster_death_190_19: 126585280188646950
+      monster_death_190_2: -6618574207015485821
+      monster_death_190_20: 214279223697870021
+      monster_death_190_21: 7074157555831240651
+      monster_death_190_22: 4758739310565520808
+      monster_death_190_23: -5596476635392451220
+      monster_death_190_24: -3119213998239323841
+      monster_death_190_25: -8054887630328425038
+      monster_death_190_26: 5421293426901084291
+      monster_death_190_27: 929567301544317104
+      monster_death_190_28: -5662714728298235557
+      monster_death_190_29: -4569043732068232576
+      monster_death_190_3: -3178491868210812964
+      monster_death_190_30: -6392246305939878154
+      monster_death_190_31: -1957538144257336333
+      monster_death_190_32: -1773853826063821094
+      monster_death_190_33: -4420866024327090786
+      monster_death_190_34: -552079710392766232
+      monster_death_190_35: 6736810618850648550
+      monster_death_190_36: 8297476568867444111
+      monster_death_190_37: 403054069906450579
+      monster_death_190_38: -1921874455919609354
+      monster_death_190_39: 8820753202427583831
+      monster_death_190_4: 5846916494884855094
+      monster_death_190_40: -2785785094123192201
+      monster_death_190_41: 6346094816393618570
+      monster_death_190_42: -6729247053630341466
+      monster_death_190_43: -1681395262354016154
+      monster_death_190_44: -5143760074910288210
+      monster_death_190_45: -8242140085134922138
+      monster_death_190_46: -5451466909043175557
+      monster_death_190_47: -5582176826329022931
+      monster_death_190_48: -1986573100165855380
+      monster_death_190_49: -8577572464639974426
+      monster_death_190_5: -825739414928494663
+      monster_death_190_50: -1941012501531876678
+      monster_death_190_51: 653715825993841170
+      monster_death_190_52: -4985820547262221779
+      monster_death_190_53: 6301958711934519430
+      monster_death_190_54: -7343552017549214806
+      monster_death_190_55: -1550544739136015971
+      monster_death_190_56: -9059871832779984261
+      monster_death_190_57: -5914937650359494104
+      monster_death_190_58: -8395678160171485861
+      monster_death_190_59: 2073649639279449925
+      monster_death_190_6: 7443148555275842649
+      monster_death_190_60: -869586948273604438
+      monster_death_190_61: -3030666964144992575
+      monster_death_190_62: 1497136843971335871
+      monster_death_190_63: -6510310085681045080
+      monster_death_190_64: 7627531790121689992
+      monster_death_190_65: -2953289935868303060
+      monster_death_190_66: 7773257687234375186
+      monster_death_190_67: -2088561855640092350
+      monster_death_190_68: -7781563706118188028
+      monster_death_190_69: -5164441650003569735
+      monster_death_190_7: -2990029901754383028
+      monster_death_190_70: 2429912319168266331
+      monster_death_190_71: -4052934489058326290
+      monster_death_190_72: 81776460002610742
+      monster_death_190_73: -7593639929124874691
+      monster_death_190_74: 6741261137591456934
+      monster_death_190_75: 3996029280781365755
+      monster_death_190_76: -4544970661853711753
+      monster_death_190_77: -7038075277948734290
+      monster_death_190_78: -6461624533565277073
+      monster_death_190_79: -1526792390008727168
+      monster_death_190_8: -3146194166120882199
+      monster_death_190_80: 6778874561294863319
+      monster_death_190_81: -1527518633596341972
+      monster_death_190_82: -5879550326107579982
+      monster_death_190_83: -5824874213472802723
+      monster_death_190_84: 6479360994013851884
+      monster_death_190_85: -7283642537198726354
+      monster_death_190_86: -7361789300729405411
+      monster_death_190_87: 9076762485153913336
+      monster_death_190_88: 2130970412488195677
+      monster_death_190_89: 3570822717363654293
+      monster_death_190_9: -8074619495803452280
+      monster_death_190_90: 7466698916140390903
+      monster_death_190_91: 9058919257504377455
+      monster_death_190_92: -3833596907342647487
+      monster_death_190_93: 4683617117392143186
+      monster_death_190_94: -544727527882921468
+      monster_death_190_95: -7784062383109718086
+      monster_death_190_96: 1699205169891281670
+      monster_death_190_97: 724669027091495600
+      monster_death_190_98: 879245602308877268
+      monster_death_190_99: 8853505228800115362
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

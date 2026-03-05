@@ -2,6 +2,8 @@ using Constants;
 using System;
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UI;
+using TMPro;
 
 public class Player : Health
 {
@@ -33,6 +35,14 @@ public class Player : Health
     [SerializeField] private Animator _animator;
     private Vector2 _attackDirection;
     public bool _isDying = false;
+
+    [Header("Ui System")]
+    [SerializeField] private Image[] _heartsCanvas;
+    [SerializeField] private Image _hitCooldown;
+    [SerializeField] private Image _shotCooldown;
+    [SerializeField] private Image _blockCooldown;
+    [SerializeField] private TextMeshProUGUI _potionText;
+    [SerializeField] private TextMeshProUGUI _keyText;
 
     [Header("Sheriff Room")]
     // TODO: Integration with key will be after merging with boss fight scene
@@ -73,14 +83,20 @@ public class Player : Health
         if (_nextMeleeAttackTime > 0)
         {
             _nextMeleeAttackTime -= Time.deltaTime;
+            _hitCooldown.gameObject.SetActive(true);
+            _hitCooldown.fillAmount = _nextMeleeAttackTime / _attackMeleeCooldown;
         }
         if (_nextRangedAttackTime > 0)
         {
             _nextRangedAttackTime -= Time.deltaTime;
+            _shotCooldown.gameObject.SetActive(true);
+            _shotCooldown.fillAmount = _nextRangedAttackTime / _attackRangedCooldown;
         }
         if (_nextBlockTime > 0)
         {
             _nextBlockTime -= Time.deltaTime;
+            _blockCooldown.gameObject.SetActive(true);
+            _blockCooldown.fillAmount = _nextBlockTime / _attackBlockCooldown;
         }
     }
 
@@ -182,7 +198,7 @@ public class Player : Health
     public void RangedAttack()
     {
         // The bullet damage is in the Bullet script
-        BulletPool.Instance.RequestBullet(_facingPoint.transform.position, _facingPoint.transform.rotation);
+        BulletPool.Instance.RequestBullet(_facingPoint.transform.position, _facingPoint.transform.rotation, "Player");
         AudioManager.Instance.Play("PlayerShoot");
     }
 
@@ -214,6 +230,9 @@ public class Player : Health
             AudioManager.Instance.Play("PotionUse");
             health = maxHealth;
             healingPotions -= 1;
+
+            UpdateHeartsUI();
+            UpdatePotionText();
         }
     }
 
@@ -225,6 +244,7 @@ public class Player : Health
             health -= damage;
         }
         if (health <= 0) StartDeath();
+        UpdateHeartsUI();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -235,6 +255,7 @@ public class Player : Health
             healingPotions += 1;
             collision.gameObject.SetActive(false);
             GameState.Instance.RegisterCollectedItem(collision.gameObject);
+            UpdatePotionText();
         }
     }
 
@@ -251,4 +272,28 @@ public class Player : Health
         Gizmos.DrawWireSphere(gameObject.transform.position, hitRadius);
     }
 
+    public void UpdateHeartsUI()
+    {
+        for (int i = 0; i < _heartsCanvas.Length; i++)
+        {
+            if (i < health)
+            {
+                _heartsCanvas[i].enabled = true;
+            }
+            else
+            {
+                _heartsCanvas[i].enabled = false;
+            }
+        }
+    }
+
+    public void UpdatePotionText()
+    {
+        _potionText.text = healingPotions.ToString();
+    }
+
+    public void AddKey()
+    {
+        _keyText.text = "1";
+    }
 }

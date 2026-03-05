@@ -13,6 +13,8 @@ public abstract class Enemy : Health
     [SerializeField] protected bool _onAggro = false;
     private Vector3 _startPosition;
     private bool _respawnFlag = true;
+    public bool isManagedBySheriffRoom = false;
+    public event Action<Enemy> OnEnemyDied;
 
     [Header("Animation")]
     [SerializeField] protected Animator _animator;
@@ -25,22 +27,21 @@ public abstract class Enemy : Health
     [SerializeField] protected List<AudioClip> _moveSounds;
     [SerializeField] protected List<AudioClip> _attackSounds;
     [SerializeField] protected List<AudioClip> _damageSounds;
+    [SerializeField] protected List<AudioClip> _deathSounds;
 
     [Header("Movement")]
     public float speed;
-    public float distanceToStop = 5f;
-    public bool _isRepealing = false;
-    public bool _isStuned = false;
+    [SerializeField] protected float _distanceToStop = 5f;
+    [SerializeField] protected bool _isRepealing = false;
+    [SerializeField] protected bool _isStuned = false;
+    // The enemy is not attacking nor defeated
+    public bool canMove = true;
 
     [Header("Attack")]
     [SerializeField] protected int _damage;
     [SerializeField] protected float _nextAttackTime;
     [SerializeField] protected float _nextAttackRate;
-    // The enemy is not attacking nor defeated
-    public bool canMove = true;
 
-    public event Action<Enemy> OnEnemyDied;
-    public bool isManagedBySheriffRoom = false;
 
 
     protected virtual void Start()
@@ -164,7 +165,7 @@ public abstract class Enemy : Health
         gameObject.SetActive(true);
         _onAggro = true;
     }
-    public void ResetEnemyState()
+    public virtual void ResetEnemyState()
     {
         gameObject.SetActive(true);
         StartCoroutine(JustRespawn());
@@ -207,6 +208,7 @@ public abstract class Enemy : Health
             GameState.Instance.RegisterActivatedEnemy(this.gameObject);
         }
         _animator.SetBool("isDead", true);
+        SoundUtils.PlayARandomSound(_audioSource, _deathSounds);
         canMove = false;
         _col2D.enabled = false;
     }
@@ -254,16 +256,17 @@ public abstract class Enemy : Health
         _spriteRenderer.color = color;
     }
 
+    // UTILS
     protected virtual bool PlayerInRangeToStop()
     {
         float distanceToTarget = Vector2.Distance(transform.position, target.position);
-        return distanceToTarget <= distanceToStop;
+        return distanceToTarget <= _distanceToStop;
     }
 
     protected virtual bool PlayerInRangeToAttack()
     {
         float distanceToTarget = Vector2.Distance(transform.position, target.position);
-        return distanceToTarget <= distanceToStop;
+        return distanceToTarget <= _distanceToStop;
     }
 
     protected virtual void OnDrawGizmos()

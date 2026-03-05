@@ -2,10 +2,12 @@ using UnityEngine;
 
 public class EnemyMeleeAttackSMB : StateMachineBehaviour
 {
+    private Enemy _enemy;
     private bool _hasAttacked;
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        _enemy = animator.GetComponent<Enemy>();
         _hasAttacked = false;
     }
 
@@ -13,15 +15,13 @@ public class EnemyMeleeAttackSMB : StateMachineBehaviour
     {
         if (!_hasAttacked && stateInfo.normalizedTime >= 0.57f)
         {
-            var enemy = animator.GetComponentInParent<MeleeEnemy>();
-            enemy?.Attack();
+            _enemy?.Attack();
             _hasAttacked = true;
         }
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        var enemy = animator.GetComponentInParent<MeleeEnemy>();
-        enemy?.OnExitAttackState();
+        _enemy?.OnExitAttackState();
     }
 }

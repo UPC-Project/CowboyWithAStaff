@@ -7,7 +7,9 @@ public class BossFightTrigger : MonoBehaviour
 {
     [SerializeField] private CanvasGroup _background;
     [SerializeField] private GameObject _NeedKeyText;
+    
     [SerializeField] private PlayerInput _playerInput;
+
 
     private void Start()
     {
@@ -21,6 +23,7 @@ public class BossFightTrigger : MonoBehaviour
             if (Player.Instance.hasGraveyardKey)
             {
                 Player.Instance.audioSourceWalk.mute = true;
+               
                 Time.timeScale = 0f;
                 _playerInput.DeactivateInput(); // Disable player input
                 StartCoroutine(EnterBossFight());

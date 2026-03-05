@@ -2,10 +2,12 @@ using UnityEngine;
 
 public class EnemyRangedAttackSMB : StateMachineBehaviour
 {
+    private Enemy _enemy;
     private bool _hasAttacked;
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        _enemy = animator.GetComponent<Enemy>();
         _hasAttacked = false;
     }
 
@@ -13,14 +15,13 @@ public class EnemyRangedAttackSMB : StateMachineBehaviour
     {
         if (!_hasAttacked && stateInfo.normalizedTime >= 0.29f)
         {
-            var enemy = animator.GetComponentInParent<RangedEnemy>();
-            enemy?.Attack();
+            _enemy?.Attack();
             _hasAttacked = true;
         }
     }
+
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        var enemy = animator.GetComponentInParent<RangedEnemy>();
-        enemy?.OnExitAttackState();
+        _enemy?.OnExitAttackState();
     }
 }

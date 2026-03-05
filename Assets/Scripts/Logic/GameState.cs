@@ -52,6 +52,8 @@ public class GameState : MonoBehaviour
         _player.transform.position = _respawnPoint;
         _player.health = _respawnHealth;
         _player.healingPotions = _respawnHealingPotions;
+        _player.UpdateHeartsUI();
+        _player.UpdatePotionText();
 
         // Return collectables to their original position
         foreach (GameObject item in _collectedItemsSinceCheckpoint)

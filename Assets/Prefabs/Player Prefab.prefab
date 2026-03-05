@@ -418,8 +418,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67422bca665744d4eaa5c3e32d5a4099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
-  health: 10
-  maxHealth: 10
+  health: 5
+  maxHealth: 5
   healingPotions: 0
   _playerMovement: {fileID: 3995635937428024576}
   inBossFight: 0
@@ -436,6 +436,17 @@ MonoBehaviour:
   invulnerable: 0
   _animator: {fileID: 6881568274525310399}
   _isDying: 0
+  _heartsCanvas:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _hitCooldown: {fileID: 0}
+  _shotCooldown: {fileID: 0}
+  _blockCooldown: {fileID: 0}
+  _potionText: {fileID: 0}
+  _keyText: {fileID: 0}
   hasGraveyardKey: 0
   audioSource: {fileID: 7357064047387679890}
   audioSourceWalk: {fileID: 6533529496152675934}
@@ -591,8 +602,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 20
+  MinDistance: 20
+  MaxDistance: 20.000002
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -778,7 +789,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.9960785, g: 0.9960785, b: 0.9960785, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
