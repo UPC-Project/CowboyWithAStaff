@@ -23,6 +23,6 @@ public class FinalBossMeleeAttackSMB : StateMachineBehaviour
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        _finalBoss?.OnExitAttackState(FinalBossAnimationStates.meleeAtack);
+        _finalBoss?.OnExitAttackState(FinalBossAnimationStates.meleeAttack);
     }
 }

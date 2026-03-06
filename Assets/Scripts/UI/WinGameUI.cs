@@ -13,7 +13,7 @@ public class WinGameUI : MonoBehaviour
 
     private void Start()
     {
-        _HUD = Menus.Instance.gameObject;
+        _HUD = PauseMenu.Instance.gameObject;
     }
     public IEnumerator WinGame()
     {

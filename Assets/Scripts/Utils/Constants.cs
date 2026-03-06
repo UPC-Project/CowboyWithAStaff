@@ -1,5 +1,5 @@
 namespace Constants
 {
     public enum PlayerSkill { RangedAttack, MeleeAttack, Block }
-    public enum FinalBossAnimationStates { rangedAttack, meleeAtack, retreat, retreatSpin, retreatEnd }
+    public enum FinalBossAnimationStates { rangedAttack, meleeAttack, retreat, retreatSpin, retreatEnd }
 }
