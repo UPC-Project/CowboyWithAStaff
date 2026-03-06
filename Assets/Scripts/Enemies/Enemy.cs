@@ -147,6 +147,7 @@ public abstract class Enemy : Health
     {
         SoundUtils.PlayARandomSound(_audioSource, _damageSounds);
         StartCoroutine(EntitiesUtils.FlashInvert(_spriteRenderer, 0.1f));
+        _onAggro = true;
         base.TakeDamage(damage);
     }
 
