@@ -11,6 +11,7 @@ public abstract class Enemy : Health
     private SpriteRenderer _spriteRenderer;
     [SerializeField] protected float _aggroRadius;
     [SerializeField] protected bool _onAggro = false;
+    [SerializeField] protected bool _isDying = false;
     private Vector3 _startPosition;
     private bool _respawnFlag = true;
     public bool isManagedBySheriffRoom = false;
@@ -103,14 +104,14 @@ public abstract class Enemy : Health
 
     protected virtual void OnFixedUpdate()
     {
-        if (!PlayerInRangeToStop() && _onAggro && canMove && !_isRepealing)
+        if (!PlayerInRangeToStop() && _onAggro && canMove && !_isRepealing && !_isDying)
         {
             Vector2 dir = (target.position - transform.position).normalized;
             _rb.linearVelocity = dir * speed;
         }
         else if (!_isRepealing)
         {
-            _rb.linearVelocity = new Vector2(0, 0);
+            _rb.linearVelocity = Vector2.zero;
         }
     }
 
@@ -133,18 +134,13 @@ public abstract class Enemy : Health
     // Called by AttackStateBehaviour when attack is completed
     public void OnExitAttackState()
     {
-        canMove = true;
-        // Cooldown begins once the animation has finished
-        _nextAttackTime = _nextAttackRate;
-        StartCoroutine(SoundUtils.PlayRandomSoundsLoop(_audioSource, _idleSounds, (2f, 10f), () => canMove));
-    }
-
-    // Called by EnemyDeathSMB when attack is completed
-    public override void Death()
-    {
-        OnEnemyDied?.Invoke(this); // SheriffRoomManager listens to this event
-        gameObject.SetActive(false);
-        _onAggro = false;
+        if (!_isDying)
+        {
+            canMove = true;
+            // Cooldown begins once the animation has finished
+            _nextAttackTime = _nextAttackRate;
+            StartCoroutine(SoundUtils.PlayRandomSoundsLoop(_audioSource, _idleSounds, (2f, 10f), () => canMove));
+        }
     }
 
     public override void TakeDamage(int damage)
@@ -174,6 +170,7 @@ public abstract class Enemy : Health
         _nextAttackTime = 0;
         _onAggro = false;
         canMove = true;
+        _isDying = false;
         var tempColor = _spriteRenderer.color;
         tempColor.a = 1;
         _spriteRenderer.color = tempColor;
@@ -210,8 +207,18 @@ public abstract class Enemy : Health
         _animator.SetBool("isDead", true);
         SoundUtils.PlayARandomSound(_audioSource, _deathSounds);
         canMove = false;
+        _isDying = true;
         _col2D.enabled = false;
     }
+
+    // Called by EnemyDeathSMB when attack is completed
+    public override void Death()
+    {
+        OnEnemyDied?.Invoke(this); // SheriffRoomManager listens to this event
+        gameObject.SetActive(false);
+        _onAggro = false;
+    }
+
     IEnumerator JustRespawn()
     {
         _respawnFlag = false;

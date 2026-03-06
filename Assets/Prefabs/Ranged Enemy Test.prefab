@@ -299,6 +299,7 @@ MonoBehaviour:
   target: {fileID: 0}
   _aggroRadius: 13
   _onAggro: 0
+  _isDying: 0
   isManagedBySheriffRoom: 0
   _animator: {fileID: 357932377360902129}
   _audioSource: {fileID: 1239734381757194760}
