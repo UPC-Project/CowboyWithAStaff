@@ -53,11 +53,6 @@ public class PauseMenu : MonoBehaviour
         _playerInput.ActivateInput();
     }
 
-    public void GoMainMenu() // from pause menu
-    {
-        SceneManager.LoadScene("MainMenu");
-    }
-
     public void QuitGame()
     {
         Application.Quit();

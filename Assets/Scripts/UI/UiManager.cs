@@ -7,7 +7,6 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance { get; private set; }
 
-
     [SerializeField] private Image[] _heartsCanvas;
     [SerializeField] private Image _ranged_cooldown;
     [SerializeField] private Image _melee_cooldown;
