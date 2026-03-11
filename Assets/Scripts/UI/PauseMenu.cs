@@ -1,9 +1,11 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; 
-public class Menus : MonoBehaviour
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private GameObject _pauseMenu;
-    public static Menus Instance { get; private set; }
+    private PlayerInput _playerInput;
+    public static PauseMenu Instance { get; private set; }
 
     private void Awake()
     {
@@ -16,10 +18,12 @@ public class Menus : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(this.gameObject);
     }
+
     private void Start()
     {
-        Time.timeScale = 1.0f;
+        _playerInput = Player.Instance.GetComponent<PlayerInput>();
     }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -39,18 +43,14 @@ public class Menus : MonoBehaviour
     {
         _pauseMenu.SetActive(true);
         Time.timeScale = 0f;
+        _playerInput.DeactivateInput();
     }
 
     public void ResumeGame()
     {
         _pauseMenu.SetActive(false);
         Time.timeScale = 1f;
-    }
-
-    public void GoToMainMenu() // from pause menu
-    {
-        SceneManager.LoadScene("InGame");
-        SceneManager.LoadScene("Menus");
+        _playerInput.ActivateInput();
     }
 
     public void QuitGame()

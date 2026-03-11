@@ -3,14 +3,11 @@ using TMPro;
 
 public class KeyGraveyard : MonoBehaviour
 {
-
-
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // TODO: add to UI
+        AudioManager.Instance.Play("GetKey");
         Player.Instance.hasGraveyardKey = true;
-        Player.Instance.AddKey();
+        UIManager.Instance.UpdateKey(Player.Instance.hasGraveyardKey);
         Destroy(gameObject);
     }
 }
