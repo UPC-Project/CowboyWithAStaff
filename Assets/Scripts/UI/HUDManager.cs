@@ -3,14 +3,14 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIManager : MonoBehaviour
+public class HUDManager : MonoBehaviour
 {
-    public static UIManager Instance { get; private set; }
+    public static HUDManager Instance { get; private set; }
 
     [SerializeField] private Image[] _heartsCanvas;
-    [SerializeField] private Image _ranged_cooldown;
-    [SerializeField] private Image _melee_cooldown;
-    [SerializeField] private Image _block_cooldown;
+    [SerializeField] private Image _rangedCooldown;
+    [SerializeField] private Image _meleeCooldown;
+    [SerializeField] private Image _blockCooldown;
     [SerializeField] private TextMeshProUGUI _potionText;
     [SerializeField] private TextMeshProUGUI _keyText;
 
@@ -29,9 +29,9 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        _ranged_cooldown.fillAmount = 0;
-        _melee_cooldown.fillAmount = 0;
-        _block_cooldown.fillAmount = 0;
+        _rangedCooldown.fillAmount = 0;
+        _meleeCooldown.fillAmount = 0;
+        _blockCooldown.fillAmount = 0;
     }
 
     public void UpdateHeartsUI(int health)
@@ -62,14 +62,14 @@ public class UIManager : MonoBehaviour
     {
         if (skill == PlayerSkill.RangedAttack)
         {
-            _ranged_cooldown.fillAmount = fill;
+            _rangedCooldown.fillAmount = fill;
 
         } else if (skill == PlayerSkill.MeleeAttack) {
 
-            _melee_cooldown.fillAmount = fill;
+            _meleeCooldown.fillAmount = fill;
         } else 
         {
-            _block_cooldown.fillAmount = fill;
+            _blockCooldown.fillAmount = fill;
         }
     }
 }

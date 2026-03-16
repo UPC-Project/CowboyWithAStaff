@@ -75,17 +75,17 @@ public class Player : Health
         if (_nextMeleeAttackTime > 0)
         {
             _nextMeleeAttackTime -= Time.deltaTime;
-            UIManager.Instance.UpdateSkills(PlayerSkill.MeleeAttack, _nextMeleeAttackTime / _attackMeleeCooldown);
+            HUDManager.Instance.UpdateSkills(PlayerSkill.MeleeAttack, _nextMeleeAttackTime / _attackMeleeCooldown);
         }
         if (_nextRangedAttackTime > 0)
         {
             _nextRangedAttackTime -= Time.deltaTime;
-            UIManager.Instance.UpdateSkills(PlayerSkill.RangedAttack, _nextRangedAttackTime / _attackRangedCooldown);
+            HUDManager.Instance.UpdateSkills(PlayerSkill.RangedAttack, _nextRangedAttackTime / _attackRangedCooldown);
         }
         if (_nextBlockTime > 0)
         {
             _nextBlockTime -= Time.deltaTime;
-            UIManager.Instance.UpdateSkills(PlayerSkill.Block, _nextBlockTime / _attackBlockCooldown);
+            HUDManager.Instance.UpdateSkills(PlayerSkill.Block, _nextBlockTime / _attackBlockCooldown);
         }
     }
 
@@ -97,7 +97,7 @@ public class Player : Health
         {
             AttackAnimation(PlayerSkill.MeleeAttack.ToString());
             // MeleeAttack() is called in PlayerMeleeAttackStateBehaviour
-            UIManager.Instance.UpdateSkills(PlayerSkill.MeleeAttack, 1);
+            HUDManager.Instance.UpdateSkills(PlayerSkill.MeleeAttack, 1);
         }
     }
 
@@ -108,7 +108,7 @@ public class Player : Health
         {
             AttackAnimation(PlayerSkill.RangedAttack.ToString());
             // RangedAttack() is called in PlayerRangedAttackStateBehaviour
-            UIManager.Instance.UpdateSkills(PlayerSkill.RangedAttack, 1);
+            HUDManager.Instance.UpdateSkills(PlayerSkill.RangedAttack, 1);
         }
     }
 
@@ -120,7 +120,7 @@ public class Player : Health
             // Change when animation is done
             AttackAnimation(PlayerSkill.Block.ToString());
             invulnerable = true;
-            UIManager.Instance.UpdateSkills(PlayerSkill.Block, 1);
+            HUDManager.Instance.UpdateSkills(PlayerSkill.Block, 1);
         }
     }
 
@@ -223,8 +223,8 @@ public class Player : Health
             health = maxHealth;
             healingPotions -= 1;
 
-            UIManager.Instance.UpdateHeartsUI(health);
-            UIManager.Instance.UpdatePotionText(healingPotions.ToString());
+            HUDManager.Instance.UpdateHeartsUI(health);
+            HUDManager.Instance.UpdatePotionText(healingPotions.ToString());
         }
     }
 
@@ -234,7 +234,7 @@ public class Player : Health
         {
             StartCoroutine(EntitiesUtils.FlashInvert(_spriteRenderer, 0.1f));
             health -= damage;
-            UIManager.Instance.UpdateHeartsUI(health);
+            HUDManager.Instance.UpdateHeartsUI(health);
         }
         if (health <= 0) StartDeath();
     }
@@ -247,7 +247,7 @@ public class Player : Health
             healingPotions += 1;
             collision.gameObject.SetActive(false);
             GameState.Instance.RegisterCollectedItem(collision.gameObject);
-            UIManager.Instance.UpdatePotionText(healingPotions.ToString());
+            HUDManager.Instance.UpdatePotionText(healingPotions.ToString());
         }
     }
 

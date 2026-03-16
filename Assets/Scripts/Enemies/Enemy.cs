@@ -7,12 +7,12 @@ public abstract class Enemy : Health
 {
     public Transform target;
     protected Rigidbody2D _rb;
-    private Collider2D _col2D;
-    private SpriteRenderer _spriteRenderer;
+    protected Collider2D _col2D;
+    protected SpriteRenderer _spriteRenderer;
     [SerializeField] protected float _aggroRadius;
     [SerializeField] protected bool _onAggro = false;
     [SerializeField] protected bool _isDying = false;
-    private Vector3 _startPosition;
+    protected Vector3 _startPosition;
     private bool _respawnFlag = true;
     public bool isManagedBySheriffRoom = false;
     public event Action<Enemy> OnEnemyDied;
@@ -52,7 +52,7 @@ public abstract class Enemy : Health
         _col2D = GetComponent<Collider2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _startPosition = transform.position;
-        StartCoroutine(SoundUtils.PlayRandomSoundsLoop(_audioSource, _idleSounds, (2f, 10f), () => canMove));
+        StartCoroutine(SoundUtils.PlayRandomSoundsLoop(_audioSource, _idleSounds, (2f, 10f), () => canMove)); // while is not attacking or dead
     }
 
     private void Update()
@@ -151,7 +151,7 @@ public abstract class Enemy : Health
         base.TakeDamage(damage);
     }
 
-    // Call it with SMB instead of Animation Event
+    // Called by Animation Event
     public void PlayFootstepSound()
     {
         SoundUtils.PlayARandomSound(_audioSourceWalk, _moveSounds);

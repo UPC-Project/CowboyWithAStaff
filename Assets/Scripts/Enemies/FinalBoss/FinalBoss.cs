@@ -30,12 +30,15 @@ public class FinalBoss : RangedEnemy
     // Extra sounds
     [Header("Extra Boss Sound")]
     [SerializeField] protected List<AudioClip> _meleeAttackSounds;
-    [SerializeField] protected List<AudioClip> _monsterHurtSounds;
-    [SerializeField] protected List<AudioClip> _retreatSounds;
+    [SerializeField] protected List<AudioClip> _monsterDamageSounds;
+    [SerializeField] protected AudioClip _retreatSpinningSound;
+    [SerializeField] protected AudioClip _retreatShrinkSounds;
+    [SerializeField] protected AudioClip _retreatExpandSounds;
 
     protected override void Start()
     {
         base.Start();
+        _audioSource.Stop(); // Not playing idle monster sounds, human fase has not idle sounds
         _distanceToAttack = distanceToShoot;
         _retreatTime = _retreatTimeCooldown;
         GameState.Instance.RegisterActivatedEnemy(this.gameObject);
@@ -54,7 +57,7 @@ public class FinalBoss : RangedEnemy
             {
                 _nextAttackTime -= Time.deltaTime;
             }
-            // Boss starts with ranged attacks, ends up attacking in melee
+            // Boss starts with ranged attacks and ends up attacking in melee
             else if (_firstPhase && PlayerInRangeToAttack() && canMove)
             {
                 canMove = false;
@@ -125,23 +128,14 @@ public class FinalBoss : RangedEnemy
             {
                 collider.transform.GetComponent<Player>().TakeDamage(_damage);
                 SoundUtils.PlayARandomSound(_audioSource, _meleeAttackSounds);
-                // See if it's worth it
-                //StartCoroutine(_playerMovement.Stune());
-
             }
-            // Boss destroys bullets when atacking melee, will be implementing depending on the animation
-            // Will be implemented in SMB probably
-            //if (collider.CompareTag("Bullet"))
-            //{
-            //    (collider.gameObject).SetActive(false);
-            //}
         }
     }
 
     public void OnExitAttackState(FinalBossAnimationStates state)
     {
         canMove = true;
-        StartCoroutine(SoundUtils.PlayRandomSoundsLoop(_audioSource, _idleSounds, (2f, 10f), () => canMove));
+        if (!_firstPhase) StartCoroutine(SoundUtils.PlayRandomSoundsLoop(_audioSource, _idleSounds, (2f, 10f), () => canMove));
         if (state == FinalBossAnimationStates.rangedAttack)
         {
             _nextAttackTime = _nextAttackRate;
@@ -192,7 +186,7 @@ public class FinalBoss : RangedEnemy
         }
         else
         {
-            SoundUtils.PlayARandomSound(_audioSource, _monsterHurtSounds);
+            SoundUtils.PlayARandomSound(_audioSource, _monsterDamageSounds);
         }
 
         // Check phase 
@@ -223,6 +217,7 @@ public class FinalBoss : RangedEnemy
         _nextAttackTime = 0;
         _timesAttacked = 0;
         invulnerable = false;
+        _audioSource.Stop(); // Not playing idle monster sounds, human fase has not idle sounds
     }
 
     // It's not repealed
