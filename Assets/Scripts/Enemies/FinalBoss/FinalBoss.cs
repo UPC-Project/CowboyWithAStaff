@@ -257,7 +257,6 @@ public class FinalBoss : RangedEnemy
 
     public void PlayDeathSound()
     {
-        Debug.Log("here");
         _audioSource.clip = _deathSounds[0];
         _audioSource.Play();
     }
