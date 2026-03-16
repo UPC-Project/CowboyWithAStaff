@@ -29,11 +29,12 @@ public class FinalBoss : RangedEnemy
 
     // Extra sounds
     [Header("Extra Boss Sound")]
+    [SerializeField] protected AudioClip _transitionSound;
     [SerializeField] protected List<AudioClip> _meleeAttackSounds;
     [SerializeField] protected List<AudioClip> _monsterDamageSounds;
     [SerializeField] protected AudioClip _retreatSpinningSound;
-    [SerializeField] protected AudioClip _retreatShrinkSounds;
-    [SerializeField] protected AudioClip _retreatExpandSounds;
+    [SerializeField] protected AudioClip _retreatShrinkSound;
+    [SerializeField] protected AudioClip _retreatExpandSound;
 
     protected override void Start()
     {
@@ -231,7 +232,34 @@ public class FinalBoss : RangedEnemy
     // SOUNDS
     public void ReproduceRetreatSounds(FinalBossAnimationStates state)
     {
-        // if (state == FinalBossAnimationStates.retreat) then blabla
+        if (state == FinalBossAnimationStates.retreat)
+        {
+            _audioSource.clip = _retreatShrinkSound;
+            _audioSource.Play();
+        }
+        else if (state == FinalBossAnimationStates.retreatSpin)
+        {
+            _audioSourceWalk.clip = _retreatSpinningSound;
+            _audioSourceWalk.Play();
+        }
+        else
+        {
+            _audioSource.clip = _retreatExpandSound;
+            _audioSource.Play();
+        }
+    }
+
+    public void PlayTransitionSound()
+    {
+        _audioSource.clip = _transitionSound;
+        _audioSource.Play();
+    }
+
+    public void PlayDeathSound()
+    {
+        Debug.Log("here");
+        _audioSource.clip = _deathSounds[0];
+        _audioSource.Play();
     }
 
     // UTILS

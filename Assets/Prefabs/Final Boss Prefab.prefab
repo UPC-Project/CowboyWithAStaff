@@ -184,8 +184,8 @@ MonoBehaviour:
   _isDying: 0
   isManagedBySheriffRoom: 0
   _animator: {fileID: 6355134459824395746}
-  _audioSource: {fileID: 7555013371052373596}
-  _audioSourceWalk: {fileID: 4642860229820569519}
+  _audioSource: {fileID: 4642860229820569519}
+  _audioSourceWalk: {fileID: 7555013371052373596}
   _idleSounds:
   - {fileID: 8300000, guid: 282ebfaddd81e07478db01a53e565432, type: 3}
   - {fileID: 8300000, guid: e0052c98645828f4fa74f08f90eb1f9a, type: 3}
@@ -239,6 +239,7 @@ MonoBehaviour:
   speedSecondPhase: 8
   retreatSpeed: 10
   _winGameUI: {fileID: 0}
+  _transitionSound: {fileID: 8300000, guid: b8e5d5aadabd74742b7ed2f77ed2e395, type: 3}
   _meleeAttackSounds:
   - {fileID: 8300000, guid: 91a3c04bb8ba3a948af5502707d0aaef, type: 3}
   - {fileID: 8300000, guid: 3c185824daf1b5d45b4bcba3d7bdb4ec, type: 3}
@@ -255,8 +256,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7bf6354a09a56194abeca30008cedccb, type: 3}
   - {fileID: 8300000, guid: 16edd4d320a031a42af2bed7a0aacb63, type: 3}
   _retreatSpinningSound: {fileID: 8300000, guid: 090f5bec24dc6e2418f10f9547297586, type: 3}
-  _retreatShrinkSounds: {fileID: 8300000, guid: 0d5dd9a77d35a2244aa0dbc8e8104c04, type: 3}
-  _retreatExpandSounds: {fileID: 8300000, guid: 198fb68fc2e764f4fb54dbaff2eff802, type: 3}
+  _retreatShrinkSound: {fileID: 8300000, guid: 0d5dd9a77d35a2244aa0dbc8e8104c04, type: 3}
+  _retreatExpandSound: {fileID: 8300000, guid: 198fb68fc2e764f4fb54dbaff2eff802, type: 3}
 --- !u!95 &6355134459824395746
 Animator:
   serializedVersion: 7

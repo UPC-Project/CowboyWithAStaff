@@ -57,7 +57,7 @@ AnimatorState:
   m_Transitions:
   - {fileID: 5356337150890688492}
   m_StateMachineBehaviours:
-  - {fileID: -2548785643566734721}
+  - {fileID: -1636319586255556049}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -681,7 +681,7 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!114 &-2548785643566734721
+--- !u!114 &-1636319586255556049
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -690,9 +690,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6e7f4ce73a631e41af733a9c26c46d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 6eb03eac26c7d144aa099b061ae97ed1, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyDeathSMB
+  m_EditorClassIdentifier: Assembly-CSharp::FinalBossDeathSMB
 --- !u!1101 &-1286036222097006678
 AnimatorStateTransition:
   m_ObjectHideFlags: 1

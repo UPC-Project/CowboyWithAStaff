@@ -3,7 +3,6 @@ using System;
 using UnityEngine;
 using System.Collections.Generic;
 
-
 public class Player : Health
 {
     public static Player Instance { get; private set; }

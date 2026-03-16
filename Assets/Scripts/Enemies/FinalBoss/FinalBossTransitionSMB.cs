@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class FinalBossTransitionSMB : StateMachineBehaviour
@@ -9,6 +10,7 @@ public class FinalBossTransitionSMB : StateMachineBehaviour
         _finalBoss = animator.GetComponentInParent<FinalBoss>();
         _finalBoss.invulnerable = true;
         _finalBoss.canMove = false;
+        _finalBoss.PlayTransitionSound();
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
