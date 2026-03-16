@@ -9,15 +9,9 @@ public class WinGameUI : MonoBehaviour
     [SerializeField] private GameObject _winGameCanvas;
     [SerializeField] private TextMeshProUGUI _textWinGame;
     [SerializeField] private CanvasGroup _buttonsWinGame;
-    [SerializeField] private GameObject _HUD;
-
-    private void Start()
-    {
-        _HUD = PauseMenu.Instance.gameObject;
-    }
     public IEnumerator WinGame()
     {
-        _HUD.SetActive(false);
+        PauseMenu.Instance.gameObject.SetActive(false);
         Time.timeScale = 0f;
         _camera.SetActive(true);
         _winGameCanvas.SetActive(true);

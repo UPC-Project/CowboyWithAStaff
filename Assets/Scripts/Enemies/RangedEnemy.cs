@@ -3,7 +3,7 @@ using System.Collections;
 
 public class RangedEnemy : Enemy
 {
-    public float distanceToShoot = 8f;
+    public float distanceToShoot = 15f;
     public int bullets = 2;
     public float timeBetweenBullets = 0.1f;
     [SerializeField] protected Transform _firingPoint;

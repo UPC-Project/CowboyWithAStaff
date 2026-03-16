@@ -65,6 +65,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &672208269974510200
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -110,6 +111,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 0f3fd85ade3465940862f9fc21ccab00, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -119,7 +121,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &8828888363831825223
 GameObject:
@@ -163,6 +164,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6290301493939293924
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -208,6 +210,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 86dcc01d3bbbfd54fac82b915b0e5c18, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -217,7 +220,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!58 &2301704372885458823
 CircleCollider2D:
@@ -307,21 +309,24 @@ MonoBehaviour:
   _idleSounds:
   - {fileID: 8300000, guid: 57e7d59b1ead7ba458da4e9bf455ddf9, type: 3}
   - {fileID: 8300000, guid: 1174c034ce51fb046bf24c90a001cdd1, type: 3}
-  _moveSounds: []
+  _moveSounds:
+  - {fileID: 8300000, guid: 24731ffa92c1ec44ab6abf2f2a366606, type: 3}
+  - {fileID: 8300000, guid: 257282b7e2d736e4da9e5c5de5f3ffec, type: 3}
+  - {fileID: 8300000, guid: cb1fd7a762007e44099ff8fd21183559, type: 3}
   _attackSounds:
   - {fileID: 8300000, guid: 307c005786bed5145bd62e895dddf0f1, type: 3}
   _damageSounds:
   - {fileID: 8300000, guid: 555de8efe2f59d440ac088628f987976, type: 3}
   _deathSounds: []
   speed: 2
-  _distanceToStop: 5
+  _distanceToStop: 10
   _isRepealing: 0
   _isStuned: 0
   canMove: 1
   _damage: 1
   _nextAttackTime: 0
   _nextAttackRate: 3
-  distanceToShoot: 12
+  distanceToShoot: 15
   bullets: 2
   timeBetweenBullets: 0.15
   _firingPoint: {fileID: 2764932193950245700}

@@ -7,7 +7,7 @@ public class KeyGraveyard : MonoBehaviour
     {
         AudioManager.Instance.Play("GetKey");
         Player.Instance.hasGraveyardKey = true;
-        UIManager.Instance.UpdateKey(Player.Instance.hasGraveyardKey);
+        HUDManager.Instance.UpdateKey(Player.Instance.hasGraveyardKey);
         Destroy(gameObject);
     }
 }

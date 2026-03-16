@@ -50,9 +50,9 @@ public class GameState : MonoBehaviour
         Player.Instance.transform.position = _respawnPoint;
         Player.Instance.health = _respawnHealth;
         Player.Instance.healingPotions = _respawnHealingPotions;
-        UIManager.Instance.UpdateHeartsUI(Player.Instance.health);
-        UIManager.Instance.UpdatePotionText(Player.Instance.healingPotions.ToString());
-        UIManager.Instance.UpdateKey(Player.Instance.hasGraveyardKey);
+        HUDManager.Instance.UpdateHeartsUI(Player.Instance.health);
+        HUDManager.Instance.UpdatePotionText(Player.Instance.healingPotions.ToString());
+        HUDManager.Instance.UpdateKey(Player.Instance.hasGraveyardKey);
 
         // Return collectables to their original position
         foreach (GameObject item in _collectedItemsSinceCheckpoint)
