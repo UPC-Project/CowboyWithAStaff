@@ -4,6 +4,7 @@ using UnityEngine;
 public class ExitSheriffRoomTrigger : MonoBehaviour
 {
     [SerializeField] public Transform _exitTeleportTarget;
+    [SerializeField] private GameObject _roomTextEnd;
     private GameState _gameState;
 
     private void Start()
@@ -16,6 +17,7 @@ public class ExitSheriffRoomTrigger : MonoBehaviour
         if (collision.CompareTag("Player") && Player.Instance.hasGraveyardKey)
         {
             collision.transform.position = _exitTeleportTarget.position;
+            _roomTextEnd.SetActive(false);
             _gameState.ReactivateFrozenEnemies();
         }
     }

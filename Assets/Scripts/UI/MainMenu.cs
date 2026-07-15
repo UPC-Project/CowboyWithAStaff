@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private PlayableDirector _director; // Timeline director
     [SerializeField] private GameObject _timelineCanvas;
     [SerializeField] private GameObject _playButton;
+    [SerializeField] private GameObject _mainMenu;
 
     private AsyncOperation _inGameScene;
 
@@ -47,5 +48,6 @@ public class MainMenu : MonoBehaviour
     private void OnTimelineStopped(PlayableDirector director)
     {
         _playButton.SetActive(true);
+        _mainMenu.SetActive(false);
     }
 }

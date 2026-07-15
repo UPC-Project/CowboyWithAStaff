@@ -6,6 +6,9 @@ public class SheriffRoomManager : MonoBehaviour
 {
     public static SheriffRoomManager Instance { get; private set; }
     // Room states
+    [SerializeField] private GameObject _roomTextStart;
+    [SerializeField] private GameObject _roomTextEnd;
+
     public enum RoomState { Idle, Fighting, Completed }
     // Base state
     public RoomState _currentState = RoomState.Idle;
@@ -47,15 +50,18 @@ public class SheriffRoomManager : MonoBehaviour
     public void StartRoom()
     {
         if (_currentState != RoomState.Idle) return;
-        RoomSequence(Player.Instance.gameObject);
+        StartCoroutine(StartRoomSequence(Player.Instance.gameObject));
         Player.Instance.OnPlayerDied += OnPlayerDied;
         _gameState.FreezeAllEnemies();
     }
 
-    private void RoomSequence(GameObject player)
+    private IEnumerator StartRoomSequence(GameObject player)
     {
         _currentState = RoomState.Fighting;
         player.transform.position = _playerTeleportTarget.position;
+        _roomTextStart.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        _roomTextStart.SetActive(false);
         StartNextWave();
     }
 
@@ -123,6 +129,7 @@ public class SheriffRoomManager : MonoBehaviour
     {
         _currentState = RoomState.Completed;
         Instantiate(_keyPrefab, _keySpawnPoint.position, Quaternion.identity);
+        _roomTextEnd.SetActive(true);
     }
 
 }
