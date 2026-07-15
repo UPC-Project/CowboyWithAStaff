@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WinGameUI : MonoBehaviour
 {
@@ -23,6 +24,15 @@ public class WinGameUI : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void GoMainMenu()
+    {
+        Destroy(Player.Instance.gameObject);
+        Destroy(AudioManager.Instance.gameObject);
+        Destroy(HUDManager.Instance.gameObject);
+        Destroy(PauseMenu.Instance.gameObject);
+        SceneManager.LoadScene("MainMenu");
     }
 
 }

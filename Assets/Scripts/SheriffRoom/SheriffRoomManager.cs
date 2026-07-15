@@ -38,8 +38,6 @@ public class SheriffRoomManager : MonoBehaviour
             return;
         }
         Instance = this;
-
-        DontDestroyOnLoad(this.gameObject); // Persist across scenes
     }
 
     public void Start()
