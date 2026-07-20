@@ -38,8 +38,6 @@ public class SheriffRoomManager : MonoBehaviour
             return;
         }
         Instance = this;
-
-        DontDestroyOnLoad(this.gameObject); // Persist across scenes
     }
 
     public void Start()
@@ -130,6 +128,7 @@ public class SheriffRoomManager : MonoBehaviour
         _currentState = RoomState.Completed;
         Instantiate(_keyPrefab, _keySpawnPoint.position, Quaternion.identity);
         _roomTextEnd.SetActive(true);
+        Player.Instance.OnPlayerDied -= OnPlayerDied;
     }
 
 }
